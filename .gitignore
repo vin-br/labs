@@ -1,18 +1,90 @@
-# VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-# Local History for Visual Studio Code
-.history/
-
-# macOS
+# System files
 .DS_Store
+.Trash-*
+*.swp
+*~
 
-# PyEnv
-.python-version
+# Python (pyenv, venv, build artifacts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.venv/
+venv/
+.env
+.env*
+.pyenv
+python-*
+pyenv*
+.envrc
+.venv
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Rapp.history
+.Ruser
+.Rlock
+.Rcheck/
+.Rinstignore
+.Rbuildignore
+*_cache/
+*.rds
+*.rda
+*.Rout
+*.Rout.save
+*.Rout.fail
+*.aux.out
+*.log
+*.aux.Rout
+*.pdf
+*.bbl
+*.blg
+*.synctex.gz
+*.aux
+*.toc
+*.lot
+*.lof
+*.out.ps
+*.out.pdf
+*.dvi
+*.aux.xml
+*.bcf
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.synctex(busy)
+*.synctex.gz(busy)
+*.tex.aux
+*.tex.backup
+*.tex.bak
+*.tex.old
+*.tex.original
+*.tex~
+*.Rmd.knit.md
+*.nb.html
+*.knit.md
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
