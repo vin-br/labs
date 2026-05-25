@@ -69,3 +69,6 @@ venv.bak/
 # tropical-cyclone project files
 data/ibtracs.csv
 web_app/app/data/weights/base_augmented_model_histGradientBoost.pkl
+
+# cycling-operator project files
+cycling_operator/libs/
