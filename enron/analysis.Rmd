@@ -1,0 +1,877 @@
+---
+title: "Enron Email Analysis"
+author: "Vincent Boettcher"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: true
+    theme:
+      bootswatch: minty
+      primary: "#2d6a4f"
+    highlight: rstudio
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Introduction
+
+## About the Enron Dataset
+
+The Enron email corpus is a publicly available dataset for email network analysis. It was originally released by the Federal Energy Regulatory Commission (FERC) during its investigation, and has since been used in research on network analysis, natural language processing, and organizational behavior.
+
+Researchers distributing the dataset note its uniqueness and value for real-world email studies:
+
+> "This data is valuable; to my knowledge it is the only substantial collection of "real" email that is public."
+> — [William W. Cohen, CMU](https://www.cs.cmu.edu/~./enron/)
+
+This analysis looks at communications between **149 Enron employees** from 1999 to 2002, covering three main events:
+
+- **August 14, 2001**: CEO Jeffrey Skilling resigns after 6 months in the role
+- **October 31, 2001**: SEC launches formal investigation
+- **December 2, 2001**: Enron files for bankruptcy
+
+The dataset offers an overview of corporate communication during a period of organizational uncertainty, which can help us understand how information flows may shift under pressure.
+
+## Loading Data and Packages
+
+```{r load-data}
+# Load packages
+library(dplyr)
+library(plotly)
+library(tidyr)
+library(stringr)
+library(wordcloud2)
+
+# Color palette
+chart_colors <- viridisLite::viridis(14, option = "viridis")
+accent_color <- "#2d6a4f"
+
+# Load the Enron dataset
+load("enron.Rdata")
+```
+
+---
+
+# 1. Dataset Overview
+
+```{r overview}
+# Dataframe summary of the Enron dataset
+summary_tbl <- data.frame(
+  Category = c("Employees", "Messages", "Recipients"),
+  Value = c(
+    format(nrow(employeelist), big.mark = ","),
+    format(nrow(message), big.mark = ","),
+    format(nrow(recipientinfo), big.mark = ",")
+  ),
+  stringsAsFactors = FALSE
+)
+knitr::kable(summary_tbl, caption = "Summary of the Enron email dataset")
+```
+
+## Data Structure
+
+The Enron dataset consists of three main tables. Below is a preview of each:
+
+```{r data-structure}
+# Employee list preview
+knitr::kable(
+  head(employeelist %>%
+    select(firstName, lastName, status, Email_id) %>%
+    rename(
+      `First Name` = firstName,
+      `Last Name` = lastName,
+      Status = status,
+      `Primary Email` = Email_id
+    ), 5),
+  caption = "Preview of the first 5 rows for the employee list"
+)
+```
+
+```{r message-preview}
+# Message table preview
+knitr::kable(
+  head(message %>%
+    select(sender, date, subject) %>%
+    rename(
+      Sender = sender,
+      Date = date,
+      Subject = subject
+    ), 5),
+  caption = "Preview of the first 5 rows for the message table"
+)
+```
+
+```{r recipient-preview}
+# Recipient info preview
+knitr::kable(
+  head(recipientinfo %>%
+    select(rtype, rvalue) %>%
+    rename(
+      `Recipient Type` = rtype,
+      `Email Address` = rvalue
+    ), 5),
+  caption = "Preview of the first 5 rows for the recipient info"
+)
+```
+
+## Recipient Type Distribution
+
+Emails can be sent to recipients as direct recipients (To), carbon copies (CC), or blind carbon copies (BCC). Understanding this distribution provides insight into communication transparency and information dissemination patterns within this company.
+
+```{r recipient-types}
+# Recipient types summary
+recipient_type_summary <- recipientinfo %>%
+  group_by(rtype) %>%
+  summarise(
+    count = n(),
+    percentage = round(100 * n() / nrow(recipientinfo), 1)
+  ) %>%
+  arrange(desc(count)) %>%
+  rename(
+    `Recipient Type` = rtype,
+    Count = count,
+    `Percentage` = percentage
+  )
+
+knitr::kable(recipient_type_summary, caption = "Distribution of recipient type")
+```
+
+```{r recipient-type-plot, fig.width=7, fig.height=4}
+# Pie chart of recipient type distribution
+recipient_type_summary %>%
+  plot_ly(
+    labels = ~`Recipient Type`,
+    values = ~Count,
+    type = "pie",
+    marker = list(colors = chart_colors[c(4, 10, 12)]),
+    textinfo = "label+percent"
+  ) %>%
+  layout(title = "Recipient Type Distribution", showlegend = TRUE)
+```
+
+The percentage of direct recipients (TO) over CC and BCC could suggest that most communications were targeted rather than broadly distributed.
+
+## Email Communication Statistics
+
+The email communication shows distinct properties to underline communication density and participation patterns.
+
+```{r communication-stats}
+# Calculate unique senders and recipients
+unique_senders <- message %>%
+  filter(!is.na(sender)) %>%
+  summarise(count = n_distinct(sender)) %>%
+  pull(count)
+
+unique_recipients <- recipientinfo %>%
+  filter(!is.na(rvalue)) %>%
+  summarise(count = n_distinct(rvalue)) %>%
+  pull(count)
+
+# Messages per sender distribution
+msgs_per_sender <- message %>%
+  group_by(sender) %>%
+  summarise(message_count = n()) %>%
+  summarise(
+    min = min(message_count),
+    q25 = quantile(message_count, 0.25),
+    median = median(message_count),
+    mean = round(mean(message_count), 1),
+    q75 = quantile(message_count, 0.75),
+    max = max(message_count)
+  )
+
+# Email communication statistics table
+communication_stats <- data.frame(
+  Metric = c(
+    "Unique Senders",
+    "Unique Recipients",
+    "Avg Messages per Sender",
+    "Median Messages per Sender",
+    "Max Messages from Single Sender"
+  ),
+  Value = c(
+    format(unique_senders, big.mark = ","),
+    format(unique_recipients, big.mark = ","),
+    format(msgs_per_sender$mean, big.mark = ","),
+    format(msgs_per_sender$median, big.mark = ","),
+    format(msgs_per_sender$max, big.mark = ",")
+  )
+)
+
+knitr::kable(communication_stats, caption = "Email Communication Statistics")
+```
+
+The disparity between unique senders and recipients indicates external communication beyond the 149 employees, which could suggest interactions with clients, partners, and other stakeholders. The difference between mean and median messages per sender highlights a distribution where a small number of highly active persons dominate communication flow.
+
+## Data Quality
+
+The metrics below quantify missing or empty values across critical fields, helping to identify potential limitations in the dataset.
+
+```{r data-completeness}
+# Check for missing or empty values
+completeness <- data.frame(
+  Table = c(
+    "employeelist",
+    "employeelist",
+    "message",
+    "message",
+    "message",
+    "recipientinfo"
+  ),
+  Field = c(
+    "status",
+    "Email_id",
+    "sender",
+    "date",
+    "subject",
+    "rvalue"
+  ),
+  Missing = c(
+    sum(is.na(employeelist$status) | employeelist$status == ""),
+    sum(is.na(employeelist$Email_id) | employeelist$Email_id == ""),
+    sum(is.na(message$sender) | message$sender == ""),
+    sum(is.na(message$date)),
+    sum(is.na(message$subject) | message$subject == ""),
+    sum(is.na(recipientinfo$rvalue) | recipientinfo$rvalue == "")
+  )
+) %>%
+  mutate(
+    Total = c(
+      nrow(employeelist), nrow(employeelist),
+      nrow(message), nrow(message), nrow(message),
+      nrow(recipientinfo)
+    ),
+    Completeness = paste0(round(100 * (1 - Missing / Total), 1), "%")
+  ) %>%
+  select(Table, Field, Missing, Total, Completeness)
+
+knitr::kable(completeness, caption = "Data completeness by field")
+```
+
+The average 98% completeness rates across most fields indicate robust data quality suitable for analysis.
+
+---
+
+# 2. Active Employees Analysis
+
+This section looks at who sent and received the most emails, which can help identify communication hubs within the organization.
+
+```{r employee-prep}
+# Employee email lookup table
+# Employees may have multiple email addresses, so we pivot to long format
+employee_emails <- employeelist %>%
+  select(eid, firstName, lastName, status, Email_id, Email2, Email3, EMail4) %>%
+  pivot_longer(
+    cols = c(Email_id, Email2, Email3, EMail4),
+    values_to = "email"
+  ) %>%
+  filter(email != "") %>%
+  select(eid, firstName, lastName, status, email) %>%
+  mutate(email = tolower(email))
+```
+
+## Sent Messages Analysis
+
+```{r sent-analysis}
+# Count sent messages per employee
+sent_counts <- message %>%
+  mutate(sender = tolower(as.character(sender))) %>%
+  inner_join(employee_emails, by = c("sender" = "email")) %>%
+  group_by(eid, firstName, lastName, status, sender) %>%
+  summarise(sent = n(), .groups = "drop") %>%
+  arrange(desc(sent)) %>%
+  rename(email = sender)
+
+# Dataframe for display
+sent_counts_df <- sent_counts %>%
+  select(firstName, lastName, status, sent) %>%
+  rename(
+    `First Name` = firstName,
+    `Last Name` = lastName,
+    Status = status,
+    Sent = sent
+  ) %>%
+  as.data.frame()
+
+knitr::kable(head(sent_counts_df, 10), caption = "Top 10 email senders")
+```
+
+```{r sent-plot, fig.width=9, fig.height=6}
+# Top email senders bar chart
+sent_counts %>%
+  slice_head(n = 15) %>%
+  mutate(name = paste(firstName, lastName)) %>%
+  plot_ly(
+    x = ~sent,
+    y = ~reorder(name, sent),
+    color = ~status,
+    colors = chart_colors,
+    type = "bar",
+    orientation = "h"
+  ) %>%
+  layout(
+    title = "Top 15 Email Senders",
+    xaxis = list(title = "Messages Sent"),
+    yaxis = list(title = "", automargin = TRUE),
+    legend = list(title = list(text = "Status")),
+    margin = list(l = 150)
+  )
+```
+
+The top senders show a mix of employees and managers, with some individuals sending thousands of messages. This concentration could suggest certain people acted as information sources within the company.
+
+## Received Messages Analysis
+
+```{r received-analysis}
+# Count received messages per employee
+received_counts <- recipientinfo %>%
+  mutate(rvalue = tolower(as.character(rvalue))) %>%
+  inner_join(employee_emails, by = c("rvalue" = "email")) %>%
+  group_by(eid, firstName, lastName, status) %>%
+  summarise(received = n(), .groups = "drop") %>%
+  arrange(desc(received))
+
+# Dataframe for display
+received_counts_df <- received_counts %>%
+  select(firstName, lastName, status, received) %>%
+  rename(
+    `First Name` = firstName,
+    `Last Name` = lastName,
+    Status = status,
+    Received = received
+  ) %>%
+  as.data.frame()
+
+knitr::kable(head(received_counts_df, 10), caption = "Top 10 email recipients")
+```
+
+```{r received-plot, fig.width=9, fig.height=6}
+# Top email recipients bar chart
+received_counts %>%
+  slice_head(n = 15) %>%
+  mutate(name = paste(firstName, lastName)) %>%
+  plot_ly(
+    x = ~received,
+    y = ~reorder(name, received),
+    color = ~status,
+    colors = chart_colors,
+    type = "bar",
+    orientation = "h"
+  ) %>%
+  layout(
+    title = "Top 15 Email Recipients",
+    xaxis = list(title = "Messages Received"),
+    yaxis = list(title = "", automargin = TRUE),
+    legend = list(title = list(text = "Status")),
+    margin = list(l = 150)
+  )
+```
+
+The most active senders and recipients overlap to some degree, but not entirely. Some employees received far more messages than they sent, which could indicate they were decision makers or information sources who didn't need to respond to everything.
+
+## Sent vs. Received Relationship
+
+```{r sent-received-scatter, fig.width=9, fig.height=7}
+# Scatter plot of sent vs received messages
+combined_activity <- sent_counts %>%
+  full_join(
+    received_counts,
+    by = c("eid", "firstName", "lastName", "status")
+  ) %>%
+  mutate(
+    sent = replace_na(sent, 0),
+    received = replace_na(received, 0),
+    name = paste(firstName, lastName)
+  ) %>%
+  filter(sent > 0 | received > 0)
+
+max_val <- max(combined_activity$sent, combined_activity$received)
+
+combined_activity %>%
+  plot_ly(
+    x = ~sent,
+    y = ~received,
+    color = ~status,
+    colors = chart_colors,
+    type = "scatter",
+    mode = "markers",
+    text = ~name,
+    hovertemplate = paste0(
+      "<b>%{text}</b><br>Sent: %{x}<br>Received: %{y}<extra></extra>"
+    ),
+    marker = list(size = 9, opacity = 0.7)
+  ) %>%
+  layout(
+    title = "Email Sent vs. Received per Employee",
+    xaxis = list(title = "Messages Sent", range = c(0, max_val * 1.05)),
+    yaxis = list(title = "Messages Received", range = c(0, max_val * 1.05)),
+    legend = list(title = list(text = "Status")),
+    shapes = list(list(
+      type = "line", x0 = 0, x1 = max_val, y0 = 0, y1 = max_val,
+      line = list(dash = "dash", color = "#ccc", width = 1)
+    ))
+  )
+```
+
+The scatter plot shows varied communication patterns. Points above the diagonal line represent employees who received more than they sent, while points below sent more than they received. The distribution suggests different communication roles, with some employees functioning primarily as information sources and others as information consumers.
+
+---
+
+# 3. User Roles Analysis
+
+Looking at how different organizational roles communicate can give us a sense of how information flows through hierarchies.
+
+## Employee Status Distribution
+
+```{r status-distribution}
+# Summarize employee counts by status
+status_summary <- employeelist %>%
+  group_by(status) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  arrange(desc(count))
+
+knitr::kable(status_summary, caption = "Employee Count by Status")
+```
+
+```{r status-plot, fig.width=8, fig.height=5}
+# Employee distribution by role bar chart
+status_counts <- employeelist %>%
+  filter(!is.na(status)) %>%
+  group_by(status) %>%
+  summarise(count = n(), .groups = "drop")
+
+status_counts %>%
+  plot_ly(
+    x = ~count,
+    y = ~reorder(status, count),
+    color = ~status,
+    colors = chart_colors,
+    type = "bar",
+    orientation = "h",
+    showlegend = FALSE
+  ) %>%
+  layout(
+    title = "Employee Distribution by Status",
+    xaxis = list(title = "Count"),
+    yaxis = list(title = "", automargin = TRUE),
+    margin = list(l = 150)
+  )
+```
+
+Employees make up the largest group, followed by managers and traders. The relatively small number of directors and vice presidents aligns with a typical corporate hierarchy.
+
+## Communication Patterns by Role
+
+```{r role-communication}
+# Aggregate sent and received counts by status
+activity_by_status <- sent_counts %>%
+  full_join(
+    received_counts, by = c("eid", "firstName", "lastName", "status")
+  ) %>%
+  mutate(
+    sent = replace_na(sent, 0),
+    received = replace_na(received, 0)
+  ) %>%
+  filter(!is.na(status)) %>%
+  group_by(status) %>%
+  summarise(
+    total_sent = sum(sent),
+    total_received = sum(received),
+    avg_sent = mean(sent),
+    avg_received = mean(received),
+    n_employees = n(),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(total_sent))
+
+knitr::kable(activity_by_status, caption = "Activity by Employee Status")
+```
+
+```{r role-plot, fig.width=9, fig.height=6}
+# Average sent vs received by status
+activity_long <- activity_by_status %>%
+  pivot_longer(
+    cols = c(avg_sent, avg_received),
+    names_to = "type",
+    values_to = "avg"
+  ) %>%
+  mutate(type = ifelse(type == "avg_sent", "Sent", "Received"))
+
+activity_long %>%
+  plot_ly(
+    x = ~avg,
+    y = ~reorder(status, avg),
+    color = ~type,
+    colors = chart_colors[c(10, 4)],
+    type = "bar",
+    orientation = "h"
+  ) %>%
+  layout(
+    title = "Average Email Activity by Status",
+    xaxis = list(title = "Average Messages"),
+    yaxis = list(title = "", automargin = TRUE),
+    barmode = "group",
+    legend = list(title = list(text = "Type")),
+    margin = list(l = 150)
+  )
+```
+
+Traders and Directors tend to have higher average email activity, which makes sense given their roles can involve communication for deals and decisions.
+
+## Email Volume Distribution by Status
+
+```{r status-boxplot, fig.width=9, fig.height=6}
+# Boxplot of emails sent per employee by status
+employee_activity <- sent_counts %>%
+  full_join(
+    received_counts,
+    by = c("eid", "firstName", "lastName", "status")
+  ) %>%
+  mutate(
+    sent = replace_na(sent, 0),
+    received = replace_na(received, 0)
+  ) %>%
+  filter(!is.na(status))
+
+employee_activity %>%
+  plot_ly(
+    y = ~sent,
+    x = ~status,
+    color = ~status,
+    colors = chart_colors,
+    type = "box",
+    boxmean = "sd"
+  ) %>%
+  layout(
+    title = "Distribution of Emails Sent by Employee Status",
+    yaxis = list(title = "Messages Sent (log)", type = "log"),
+    xaxis = list(title = "", automargin = TRUE),
+    showlegend = FALSE,
+    margin = list(b = 100)
+  )
+```
+
+The boxplot reveals the spread of email activity within each status group. Most employees within each category have relatively modest activity, while outliers in certain groups send far more messages. Traders show the widest range of activity, which could reflect different specializations or responsibilities within that role. The presence of high outliers across multiple status levels suggests that individual communication patterns vary considerably regardless of organizational position.
+
+---
+
+# 4. Temporal Analysis
+
+Looking at email volume over time helps us see how communication patterns may have shifted during key company events.
+
+## Daily Email Volume
+
+```{r temporal-daily}
+# Aggregate daily email volume
+daily_volume <- message %>%
+  filter(!is.na(date)) %>%
+  group_by(date) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  arrange(date)
+
+# Main events dates
+events <- data.frame(
+  date = as.Date(c("2001-08-14", "2001-10-31", "2001-12-02")),
+  event = c("CEO Resignation", "SEC Investigation", "Bankruptcy")
+)
+```
+
+```{r temporal-plot, fig.width=10, fig.height=7}
+# Visualize email volume timeline with events
+
+# Calculate smoothed trend using loess
+loess_fit <- loess(count ~ as.numeric(date), data = daily_volume, span = 0.1)
+daily_volume$smoothed <- predict(loess_fit)
+
+# Event shapes for vertical lines
+event_shapes <- lapply(seq_len(nrow(events)), function(i) {
+  list(
+    type = "line",
+    x0 = events$date[i],
+    x1 = events$date[i],
+    y0 = 0,
+    y1 = 1,
+    yref = "paper",
+    line = list(color = "#ff642b", width = 2, dash = "dash")
+  )
+})
+
+# Event annotations
+event_annotations <- lapply(seq_len(nrow(events)), function(i) {
+  list(
+    x = events$date[i],
+    y = 1,
+    yref = "paper",
+    text = events$event[i],
+    showarrow = FALSE,
+    textangle = -90,
+    xanchor = "right",
+    yanchor = "top",
+    font = list(size = 12)
+  )
+})
+
+plot_ly(daily_volume) %>%
+  add_lines(
+    x = ~date, y = ~count, name = "Daily",
+    line = list(color = "#b1b1b1", width = 1)
+  ) %>%
+  add_lines(
+    x = ~date, y = ~smoothed, name = "Trend",
+    line = list(color = chart_colors[10], width = 3)
+  ) %>%
+  layout(
+    title = "Daily Email Volume",
+    xaxis = list(
+      title = "Date",
+      range = c(as.Date("1999-06-01"), as.Date("2002-06-01"))
+    ),
+    yaxis = list(title = "Number of Messages"),
+    shapes = event_shapes,
+    annotations = event_annotations,
+    hovermode = "x unified"
+  )
+```
+
+The trend line shows a buildup through 2000-2001 followed by a decline. Email volume reached its peak around mid-2001, with noticeable activity around each of the marked events. After the bankruptcy filing, there was a logical and noticeable drop in activity.
+
+## Weekly Patterns
+
+```{r weekly-pattern, fig.width=8, fig.height=5}
+# Analyze day of the week patterns
+weekly_pattern <- message %>%
+  mutate(weekday = factor(
+    weekdays(date),
+    levels = c("Monday", "Tuesday", "Wednesday", "Thursday",
+               "Friday", "Saturday", "Sunday")
+  )) %>%
+  group_by(weekday) %>%
+  summarise(count = n(), .groups = "drop")
+
+weekly_pattern %>%
+  plot_ly(
+    x = ~weekday,
+    y = ~count,
+    type = "bar",
+    marker = list(color = chart_colors[10])
+  ) %>%
+  layout(
+    title = "Email Volume by Day of Week",
+    xaxis = list(title = ""),
+    yaxis = list(title = "Total Messages")
+  )
+```
+
+Email activity is concentrated during weekdays, with Tuesday and Wednesday showing the highest volumes. Weekend activity is quite low, which is typical of a corporate environment.
+
+---
+
+# 5. Content Analysis
+
+Looking at email subject lines can give us a sense of what topics were being discussed.
+
+## Subject Line Word Frequency
+
+```{r word-freq}
+# Extract and clean words from subject lines
+
+# Define stopwords to exclude
+stopwords <- c(
+  "the", "a", "an", "to", "for", "of", "and", "in", "on", "is",
+  "-", "", "your", "you", "this", "that", "with", "from",
+  "are", "be", "at", "as", "it", "or", "by", "we", "have", "has",
+  "all", "can", "will", "get", "our", "new", "one", "please", "see",
+  "been", "would", "could", "should", "may", "also", "just", "more"
+)
+
+# Email-specific words to exclude
+email_expressions <- c("re", "fw", "fwd", "fyi", "na", "cc", "bcc")
+
+# Extract words from subjects
+words <- message %>%
+  filter(!is.na(subject), subject != "") %>%
+  pull(subject) %>%
+  tolower() %>%
+  str_replace_all("[^a-z0-9\\s]", " ") %>%
+  str_split("\\s+") %>%
+  unlist()
+
+# Count word frequencies
+word_freq <- data.frame(word = words) %>%
+  filter(
+    nchar(word) > 2,
+    !word %in% stopwords,
+    !word %in% email_expressions,
+    !str_detect(word, "^[0-9]+$")
+  ) %>%
+  count(word, name = "count") %>%
+  arrange(desc(count))
+
+knitr::kable(head(word_freq, 20), caption = "Top 20 most used words in subject")
+```
+
+```{r wordfreq-plot, fig.width=9, fig.height=6}
+# Top subject words bar chart
+word_freq %>%
+  slice_head(n = 20) %>%
+  plot_ly(
+    x = ~count,
+    y = ~reorder(word, count),
+    type = "bar",
+    orientation = "h",
+    marker = list(color = chart_colors[9])
+  ) %>%
+  layout(
+    title = "Frequent Words in Email Subjects",
+    xaxis = list(title = "Frequency"),
+    yaxis = list(title = "", automargin = TRUE),
+    margin = list(l = 100)
+  )
+```
+
+## Word Cloud Visualization
+
+```{r wordcloud, fig.width=9, fig.height=8}
+# Word cloud of subject line words
+
+# Data for word cloud (top 100 words)
+wordcloud_data <- word_freq %>%
+  slice_head(n = 100) %>%
+  select(word, count)
+
+# Generate viridis palette for word cloud (one nuance of color per word)
+wc_colors <- viridisLite::viridis(n = nrow(wordcloud_data), option = "viridis")
+
+# Interactive word cloud with viridis colors
+wordcloud2(wordcloud_data, size = 1, color = wc_colors)
+```
+
+Both the bar chart and word cloud show that "enron", "energy", and "gas" are among the most common terms. Meeting-related words ("meeting", "schedule") also appear often, suggesting coordination was a regular part of communication. Terms like "agreement" and "deal" reflect Enron's trading operations.
+
+## Subject Length Distribution
+
+```{r subject-length, fig.width=8, fig.height=5}
+# Subject line length distribution
+subject_lengths <- message %>%
+  filter(!is.na(subject)) %>%
+  mutate(length = nchar(subject))
+
+subject_lengths %>%
+  filter(length <= 125) %>%
+  plot_ly(
+    x = ~length,
+    type = "histogram",
+    nbinsx = 40,
+    marker = list(
+      color = chart_colors[4],
+      line = list(color = "white", width = 0.5)
+    )
+  ) %>%
+  layout(
+    title = "Distribution of Subject Line Length",
+    xaxis = list(title = "Characters"),
+    yaxis = list(title = "Count")
+  )
+```
+
+Most subject lines fall between 20-60 characters, which is short and to the point. This suggests people kept their subjects concise, likely to make scanning easier when dealing with high email volumes.
+
+## Subject Statistics
+
+```{r subject-empty}
+# Calculate empty vs non-empty subjects
+subject_stats <- message %>%
+  mutate(
+    has_subject = !is.na(subject) & subject != "" & !str_detect(subject, "^\\s*$")
+  ) %>%
+  group_by(has_subject) %>%
+  summarise(count = n(), .groups = "drop") %>%
+  mutate(pct = round(100 * count / sum(count), 1)) %>%
+  rename(
+    `Has Subject` = has_subject,
+    Count = count,
+    Percentage = pct
+  )
+
+knitr::kable(subject_stats, caption = "Email subject line statistics")
+```
+
+The majority of emails have subject lines, which makes sense for a professional environment where filtering and organizing messages is important.
+
+## BCC Patterns
+
+```{r bcc-analysis, fig.width=9, fig.height=7}
+# BCC patterns: emails sent vs proportion of BCC recipients
+bcc_patterns <- message %>%
+  mutate(sender = tolower(as.character(sender)), mid = as.character(mid)) %>%
+  left_join(
+    recipientinfo %>% mutate(mid = as.character(mid)),
+    by = "mid"
+  ) %>%
+  filter(!is.na(rtype)) %>%
+  group_by(sender, mid) %>%
+  summarise(
+    total_recipients = n(),
+    bcc_count = sum(rtype == "BCC"),
+    .groups = "drop"
+  ) %>%
+  group_by(sender) %>%
+  summarise(
+    total_messages = n_distinct(mid),
+    total_recipients = sum(total_recipients),
+    total_bcc = sum(bcc_count),
+    bcc_proportion = ifelse(
+      total_recipients > 0, total_bcc / total_recipients, 0
+    ),
+    .groups = "drop"
+  ) %>%
+  filter(total_messages >= 10) %>%  # Focus on senders with at least 10 messages
+  inner_join(employee_emails, by = c("sender" = "email")) %>%
+  mutate(name = paste(firstName, lastName))
+
+# BCC patterns scatter plot
+bcc_patterns %>%
+  plot_ly(
+    x = ~total_messages,
+    y = ~bcc_proportion * 100,
+    color = ~status,
+    colors = chart_colors,
+    type = "scatter",
+    mode = "markers",
+    text = ~name,
+    hovertemplate = paste0(
+      "<b>%{text}</b><br>Messages: %{x}<br>BCC: %{y:.1f}%<extra></extra>"
+    ),
+    marker = list(size = 9, opacity = 0.7)
+  ) %>%
+  layout(
+    title = "Email Volume vs. BCC Proportion",
+    xaxis = list(title = "Number of Messages Sent", type = "log"),
+    yaxis = list(title = "Proportion of BCC Recipients (%)"),
+    legend = list(title = list(text = "Status"))
+  )
+```
+
+This scatter plot focuses on secretive communication patterns by showing the relationship between email volume and BCC use. Employees with higher BCC proportions may have been conducting more confidential communications. Points in the upper parts show senders who frequently used BCC, potentially for sensitive or strategic communications that they didn't want all recipients to be aware of.
+
+---
+
+# Conclusion
+
+This analysis of the Enron email corpus reveals several patterns in how the organization communicated during a period of uncertainty:
+
+1. **Communication was concentrated among a small group.** A handful of employees sent and received the majority of messages, which could suggest that they functioned as information hubs. Some people received far more than they sent, which could indicate they were decision makers who aggregated information from multiple sources.
+
+2. **Role influenced communication patterns.** Traders had the highest average email activity, likely due to the fast-paced nature of their work. Directors and managers also showed high activity, but employees as a group had lower averages despite being the largest part of the workforce.
+
+3. **Activity shifted during key events.** Email volume built up through 2000-2001, peaked around the time of the main events, and declined after the bankruptcy filing. The trend suggests communication increased during periods of uncertainty and coordination needs were high.
+
+4. **Content reflected core business.** Subject lines focused on energy trading, gas markets, and deal-making. Meeting-related words appeared frequently, and most subjects were concise—likely to help people scan messages quickly when dealing with high volumes.
+
+5. **Standard corporate patterns.** Email activity was mainly on weekdays, particularly mid-week. Nearly all messages had subject lines. Weekend activity was minimal, as expected in a corporate environment.
+
+This dataset offers a view of how a large organization communicated during a crisis. The patterns showed a reliance on a few central individuals, differences by role, and shifts linked to major events that also showed how communication changes under pressure. While Enron's situation was unusual, some of these behaviors may also appear in other organizations facing similar challenges.
