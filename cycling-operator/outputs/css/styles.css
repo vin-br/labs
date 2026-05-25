@@ -1,0 +1,463 @@
+/* Remove default margin and padding from body and html */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 100%; /* base font size */
+}
+
+.page-header {
+  background-color: #000;  /* black background */
+  color: white;
+  padding: 6vh 5%;         /* vertical padding as viewport height, horizontal as percent */
+  text-align: center;
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.25); /* rem units for shadow */
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  border-radius: 0;
+  min-height: 10vh;        /* flexible min height relative to viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.page-header h1 {
+  font-size: 3rem;         /* rem for scalable font */
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-shadow: 0.06rem 0.06rem 0.2rem rgba(0,0,0,0.5);
+}
+
+.cards-container {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(min(30vw, 100%), 1fr));
+ gap: 2vw;
+ /* responsive gap */
+ padding: 1vw;
+ box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  max-width: 40rem; /* max width in rem for readability */
+  min-width: min-content; /* ensures card can grow to fit content */
+  border-radius: 0.4rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* height: var(--card-height, 40rem); increased height to avoid internal scroll */
+  /* background: #fff; */
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+/* Closed badge styling */
+.card .closed-overlay {
+  display: none;
+}
+
+.card.closed .upper-text h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card.closed .upper-text h2::after {
+  content: 'CLOSED';
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: #565656;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* preserves ratio without fixed height */
+  overflow: hidden;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1.25rem;
+  flex-grow: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.upper-text h2 {
+  margin-bottom: 0.5em;
+  font-size: 1.5rem;
+}
+
+.lower-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* equal height */
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.left-col {
+  flex: 1 1 min-content;
+  min-width: 0;
+  word-wrap: break-word;
+}
+
+.right-col {
+  flex: 0 1 min-content;
+  min-width: 10rem; /* ensures enough room for price/difficulty */
+  text-align: right;
+  white-space: nowrap; /* keep price and difficulty on one line */
+}
+
+.left-col > *:first-child,
+.right-col > *:first-child {
+  margin-top: 0;
+}
+
+.left-col p, .right-col p {
+  margin: 0.25em 0;
+}
+
+.left-col h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between elements */
+  margin: 2vh 5% 1vh 5%;
+  font-family: Arial, sans-serif;
+}
+
+.filter-container label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.filter-container input[type="date"] {
+  padding: 0.4em 0.6em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.filter-container button {
+  padding: 0.4em 1em;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Filter button: black background, white text */
+.filter-container #filterBtn {
+  background-color: black;
+  color: white;
+}
+
+.filter-container #filterBtn:hover {
+  background-color: #222;
+}
+
+/* Reset button: white background, black text, border */
+.filter-container #resetBtn {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.filter-container #resetBtn:hover {
+  background-color: #eee;
+}
+
+/* Guides specific CSS */
+.guide-card {
+  max-width: 28rem;
+  height: var(--card-height, 40rem);
+}
+
+.guides-grid {
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  align-items: start;
+  align-content: start;
+  grid-auto-rows: auto;
+}
+
+.guide-card .right-col {
+  text-align: left;
+  white-space: normal;
+  min-width: 12rem;
+}
+
+.guide-card .right-col ul {
+  list-style: disc;
+  margin: 0.25em 1.2em;
+  padding: 0;
+}
+
+.guide-card .right-col .languages, .guide-card .right-col .qualifications {
+  margin-bottom: 0.5em;
+}
+
+.no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg,#f7f7f7,#e2e2e2);
+  font-style: italic;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Responsive cards height */
+@media (max-width: 1200px) {
+  :root { --card-height: 42rem; }
+}
+@media (max-width: 900px) {
+  :root { --card-height: 44rem; }
+}
+@media (max-width: 600px) {
+  :root { --card-height: 46rem; }
+  .cards-container, .guides-grid { grid-template-columns: 1fr; }
+}
+
+/* Dashboard tables (emergency & bikes) */
+.emergency-dashboard,
+.bike-inventory-dashboard {
+  background: #f5f5f5;
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.bike-inventory-dashboard .page-header {
+  padding: 6vh 5% 4vh 5%;
+}
+
+.bike-inventory-dashboard .inventory-content {
+  background: #f5f5f5;
+  padding: 3rem 5% 4rem;
+  box-sizing: border-box;
+}
+
+.emergency-dashboard .table-wrapper,
+.bike-inventory-dashboard .table-wrapper {
+  padding: 2rem 5%;
+  box-sizing: border-box;
+}
+
+.bike-inventory-dashboard .inventory-content .table-wrapper {
+  padding: 2rem 0 0;
+}
+
+.emergency-dashboard .contact-table,
+.bike-inventory-dashboard .bike-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.12);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.emergency-dashboard .contact-table caption,
+.bike-inventory-dashboard .bike-table caption {
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem;
+  background: #111;
+  color: #fff;
+  caption-side: top;
+  box-sizing: border-box;
+  display: table-caption;
+}
+
+.bike-inventory-dashboard .bike-table .caption-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.bike-inventory-dashboard .bike-table .filter-controls form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #fff;
+}
+
+.bike-inventory-dashboard .bike-table .caption-content .filter-controls label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.bike-inventory-dashboard .bike-table .caption-content .filter-controls select {
+  min-width: 11rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.bike-inventory-dashboard .bike-table .caption-content .filter-controls select:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.18);
+}
+
+.bike-inventory-dashboard .bike-table .caption-content .filter-controls option {
+  color: #111;
+}
+
+.emergency-dashboard .contact-table caption .caption-meta,
+.bike-inventory-dashboard .bike-table caption .caption-meta {
+  flex-basis: 100%;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+  color: #d9d9d9;
+}
+
+.emergency-dashboard .contact-table thead,
+.bike-inventory-dashboard .bike-table thead {
+  background: #fafafa;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: #555;
+}
+
+.emergency-dashboard .contact-table th,
+.emergency-dashboard .contact-table td,
+.bike-inventory-dashboard .bike-table th,
+.bike-inventory-dashboard .bike-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #ececec;
+  text-align: left;
+  vertical-align: top;
+}
+
+.emergency-dashboard .contact-table tbody tr:last-child td,
+.bike-inventory-dashboard .bike-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.emergency-dashboard .contact-table strong,
+.bike-inventory-dashboard .bike-table strong {
+  display: inline-block;
+}
+
+.emergency-dashboard .contact-meta,
+.bike-inventory-dashboard .contact-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.bike-inventory-dashboard .bike-ref {
+  font-size: 0.8rem;
+  color: #8a8a8a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 0.15rem;
+}
+
+.bike-inventory-dashboard .bike-autonomy {
+  font-size: 0.8rem;
+  color: #8a8a8a;
+  margin-top: 0.15rem;
+}
+
+.bike-inventory-dashboard .booking-entry {
+  margin-bottom: 0.85rem;
+}
+
+.bike-inventory-dashboard .booking-entry:last-child {
+  margin-bottom: 0;
+}
+
+.bike-inventory-dashboard .booking-client {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.bike-inventory-dashboard td hr {
+  border: none;
+  border-top: 1px dashed #ddd;
+  margin: 0.75rem 0;
+}
+
+.bike-inventory-dashboard .bike-table .rate-cell {
+  white-space: nowrap;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.bike-inventory-dashboard .rate-value {
+  font-weight: 600;
+}
+
+.bike-inventory-dashboard .rate-unit {
+  color: #777;
+  margin-left: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.emergency-dashboard .tag,
+.bike-inventory-dashboard .tag {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #f2f2f2;
+  color: #444;
+}
+
+@media (max-width: 900px) {
+  .emergency-dashboard .contact-table,
+  .bike-inventory-dashboard .bike-table {
+    font-size: 0.9rem;
+  }
+
+  .emergency-dashboard .contact-table caption,
+  .bike-inventory-dashboard .bike-table caption {
+    font-size: 1.1rem;
+  }
+
+  .emergency-dashboard .contact-table thead,
+  .bike-inventory-dashboard .bike-table thead {
+    font-size: 0.7rem;
+  }
+}

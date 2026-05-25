@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://city-tour-operator.org/cto"
+  xmlns="http://city-tour-operator.org/cto"
+  elementFormDefault="qualified">
+
+  <!-- Root element -->
+  <xs:element name="data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="tours" type="tours_type" minOccurs="1" maxOccurs="1" />
+        <xs:element name="guides" type="guides_type" minOccurs="1" maxOccurs="1" />
+        <xs:element name="packages" type="packages_type" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="tours_type">
+    <xs:sequence>
+      <xs:element name="tour" type="tour_type" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Tour Definition -->
+  <xs:complexType name="tour_type">
+    <xs:sequence>
+      <xs:element name="tour_name" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="company" type="company_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="short_description" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="long_description" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="category" type="category_type" />
+      <xs:element name="distance" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="duration" type="duration_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="price" type="price_type" minOccurs="1" maxOccurs="1" /> <!-- this is not the total price paid by
+      the client but the -->
+      <xs:element name="guide" type="guide_ref_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="tour_availability" type="availability_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="starting_point" type="location_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="final_destination" type="location_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="tour_steps" type="tourSteps_type" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="bikes" type="bikes_type" minOccurs="1" maxOccurs="unbounded" /> <!-- list of bikes available for
+      the tour-->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Company -->
+  <xs:complexType name="company_type">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="contact" type="contact_type" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="address" type="address_type" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Category -->
+  <xs:simpleType name="category_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="easy" />
+      <xs:enumeration value="moderate" />
+      <xs:enumeration value="challenging" />
+      <xs:enumeration value="difficult" />
+      <xs:enumeration value="expert" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Contact -->
+  <xs:complexType name="contact_type">
+    <xs:sequence>
+      <xs:element name="email" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="phone_number" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Address -->
+  <xs:complexType name="address_type">
+    <xs:sequence>
+      <xs:element name="street" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="city" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="code" type="xs:string" minOccurs="0" maxOccurs="1" /> <!-- no code in certain countries -->
+      <xs:element name="country" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Coordinates -->
+  <xs:complexType name="coordinates_type">
+    <xs:sequence>
+      <xs:element name="longitude" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="latitude" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Duration -->
+  <xs:complexType name="duration_type">
+    <xs:sequence>
+      <xs:element name="duration_days" type="xs:integer" minOccurs="1" maxOccurs="1" />
+      <xs:element name="start_date" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="end_date" type="xs:date" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Price -->
+  <xs:complexType name="price_type">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="currency" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Guide reference -->
+  <xs:complexType name="guide_ref_type">
+    <xs:attribute name="idref" type="xs:IDREF" use="required" />
+  </xs:complexType>
+
+  <!-- Tour availability -->
+  <xs:complexType name="availability_type">
+    <xs:sequence>
+      <xs:element name="capacity" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="current_number_of_participants" type="xs:decimal" minOccurs="0" maxOccurs="1" /> <!-- I don't
+      know if it's not redundant => we can find it through the length of the list of clients for the tour-->
+      <xs:element name="availability" type="xs:string" minOccurs="0" maxOccurs="1" /> <!-- this too -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Location -->
+  <xs:complexType name="location_type">
+    <xs:sequence>
+      <xs:element name="coordinates" type="coordinates_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="address" type="address_type" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Tour steps -->
+  <xs:complexType name="tourSteps_type">
+    <xs:sequence>
+      <xs:element name="step" type="stop_type" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Stop -->
+  <xs:complexType name="stop_type">
+    <xs:sequence>
+      <xs:element name="location" type="location_type" minOccurs="1" maxOccurs="1" /> <!-- modified to use the conplex
+      type already defined -->
+      <xs:element name="distance_from_previous_point" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="surface_type" type="surface_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="terrain_elevation" type="xs:decimal" minOccurs="0" maxOccurs="1" />
+      <xs:element name="category" type="category_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="activity" type="activity_type" minOccurs="0" maxOccurs="unbounded" /> <!-- a step can have no
+      activities or multiple activities -->
+      <xs:element name="accomodations" type="accomodation_type" minOccurs="0" maxOccurs="1" /> <!-- a step can have
+      accomodations for the night or not, for simplification purposes we don't offer different accomodations to choose
+      from for a tour -->
+    </xs:sequence>
+    <xs:attribute name="order" type="xs:positiveInteger" use="required" />
+  </xs:complexType>
+
+  <!-- Surface type -->
+  <xs:simpleType name="surface_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="asphalt" />
+      <xs:enumeration value="gravel" />
+      <xs:enumeration value="dirt" />
+      <xs:enumeration value="cobblestone" />
+      <xs:enumeration value="sand" />
+      <xs:enumeration value="trail" />
+      <xs:enumeration value="mixed" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Activity -->
+  <xs:complexType name="activity_type">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="activity_type" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="address" type="address_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="duration" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="price" type="price_type" minOccurs="0" maxOccurs="1" /> <!-- an activity can be free -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Accomodations --> <!--
+  removed one node "acccomodations_type" -->
+  <xs:complexType name="accomodation_type">
+    <xs:sequence>
+      <xs:element name="type_of_accomodation" type="xs:string" minOccurs="1" maxOccurs="1" /> <!-- changed name -->
+      <xs:element name="address" type="address_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="price" type="price_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="included" type="amenities_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="excluded" type="amenities_type" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Included/Excluded services --> <!--
+  to be completed ? -->
+  <xs:complexType name="amenities_type"> <!-- it's a set price so there is only one possibility of each -->
+    <xs:sequence>
+      <xs:element name="breakfast" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="lunch" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="dinner" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="bedding" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="wifi" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Bikes -->
+  <xs:complexType name="bikes_type">
+    <xs:sequence>
+      <xs:element name="bike" type="bike_type" minOccurs="1" maxOccurs="unbounded" /> <!-- detail for one specific
+      bike-->
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bike_type"> <!-- when a bike is unavailable we don't need all the details -->
+    <xs:sequence>
+      <xs:element name="model" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="bike_type" type="bike_type_type" minOccurs="0" maxOccurs="1" />
+      <xs:element name="gear_count" type="xs:integer" minOccurs="0" maxOccurs="1" />
+      <xs:element name="size" type="xs:string" minOccurs="0" maxOccurs="1" />
+      <xs:element name="weight" type="xs:decimal" minOccurs="0" maxOccurs="1" />
+      <xs:element name="rental_price_per_day" type="price_type" minOccurs="0" maxOccurs="1" />
+      <xs:element name="availability" type="bike_availability_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="booking" type="booking_type" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+  </xs:complexType>
+
+  <!-- Bike _type -->
+  <xs:complexType name="bike_type_type">
+    <xs:sequence>
+      <xs:element name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="road" />
+            <xs:enumeration value="mountain" />
+            <xs:enumeration value="hybrid" />
+            <xs:enumeration value="touring" />
+            <xs:enumeration value="electric" />
+            <xs:enumeration value="gravel" />
+            <xs:enumeration value="city" />
+            <xs:enumeration value="folding" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="electric_autonomy" type="xs:decimal" minOccurs="0" /> <!-- Only necessary when it's an hybrid or
+      eletric bike -->
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!-- Bike availability -->
+  <xs:simpleType name="bike_availability_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="available" />
+      <xs:enumeration value="reserved" />
+      <xs:enumeration value="maintenance" />
+      <xs:enumeration value="unavailable" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Booking -->
+  <xs:complexType name="booking_type">
+    <xs:sequence>
+      <xs:element name="booking_date" type="xs:date" minOccurs="1" maxOccurs="1" />
+      <xs:element name="package" type="package_ref_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="client" type="client_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="payment" type="payment_type" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="package_ref_type">
+    <xs:attribute name="idref" type="xs:IDREF" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="identity_type">
+    <xs:sequence>
+      <xs:element name="firstname" type="xs:string" minOccurs="1" maxOccurs="unbounded" /> <!-- people can have second
+      firstnames -->
+      <xs:element name="lastname" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Client -->
+  <xs:complexType name="client_type">
+    <xs:sequence>
+      <xs:element name="identity" type="identity_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="contact" type="contact_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="address" type="address_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="nationality" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="emergency_contact" type="emergency_contact_type" minOccurs="1" maxOccurs="2" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="emergency_contact_type">
+    <xs:sequence>
+      <xs:element name="identity" type="identity_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="phone_number" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="relation" type="xs:string" minOccurs="0" maxOccurs="1" /> <!-- can be considered private data -->
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Payment -->
+  <xs:complexType name="payment_type">
+    <xs:sequence>
+      <xs:element name="amount_paid" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="left_to_be_paid" type="xs:decimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="currency" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="method" type="method_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="payment_status" type="payment_status_type" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Payment method -->
+  <xs:simpleType name="method_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="credit_card" />
+      <xs:enumeration value="paypal" />
+      <xs:enumeration value="bank_transfer" />
+      <xs:enumeration value="cash" />
+      <xs:enumeration value="qr_code" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- Payment Status -->
+  <xs:simpleType name="payment_status_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pending" />
+      <xs:enumeration value="deposit_paid" />
+      <xs:enumeration value="partial" />
+      <xs:enumeration value="fully_paid" />
+      <xs:enumeration value="overdue" />
+      <xs:enumeration value="cancelled" />
+      <xs:enumeration value="refunded" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <!-- GUIDES SECTION -->
+  <xs:complexType name="guides_type">
+    <xs:sequence>
+      <xs:element name="guide" type="guide_type" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="guide_type">
+    <xs:sequence>
+      <xs:element name="identity" type="identity_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="picture" type="picture_type" minOccurs="0" maxOccurs="1" />
+      <xs:element name="contact" type="contact_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="address" type="address_type" minOccurs="0" maxOccurs="1" />
+      <xs:element name="nationality" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="spoken_languages" type="spoken_languages_type" minOccurs="1" maxOccurs="1" />
+      <xs:element name="qualifications" type="qualifications_type" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="picture_type">
+    <xs:sequence>
+      <xs:element name="picture_name" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="picture_description" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="spoken_languages_type">
+    <xs:sequence>
+      <xs:element name="language" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="qualifications_type">
+    <xs:sequence>
+      <xs:element name="qualification" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- PACKAGES SECTION -->
+  <xs:complexType name="packages_type">
+    <xs:sequence>
+      <xs:element name="package" type="package_type" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="package_type">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="reduction" type="xs:decimal" minOccurs="1" maxOccurs="1" /> <!-- this is a pourcentage to be
+      applied to the full price of the tour -->
+      <xs:element name="code" type="xs:string" minOccurs="1" maxOccurs="1" />
+      <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required" />
+  </xs:complexType>
+
+</xs:schema>

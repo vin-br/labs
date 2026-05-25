@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://city-tour-operator.org/cto"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://city-tour-operator.org/cto ../../schema/schema.xsd">
+
+  <!-- TOURS -->
+  <tours>
+    <!-- TOUR 1: IRELAND, CORK -->
+    <tour>
+      <tour_name>Cork Coastal Discovery</tour_name>
+      <company>
+        <name>Cork Coastal Tours</name>
+        <contact>
+          <email>info@corkcoastaltours.ie</email>
+          <phone_number>+353-21-4000000</phone_number>
+        </contact>
+        <address>
+          <street>Pier Road</street>
+          <city>Cork</city>
+          <country>Ireland</country>
+        </address>
+      </company>
+      <short_description>Coastal and countryside ride around Cork Harbour.</short_description>
+      <long_description>Enjoy a scenic multi-day tour exploring Cork's coastline, historic towns, and quiet country lanes. Suitable for intermediate riders with daily stages and local food stops.</long_description>
+      <category>moderate</category>
+      <distance>125.0</distance>
+      <duration>
+        <duration_days>3</duration_days>
+        <start_date>2026-06-10</start_date>
+        <end_date>2026-06-13</end_date>
+      </duration>
+      <price>
+        <amount>520.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g1" />
+      <tour_availability>
+        <capacity>14</capacity>
+        <current_number_of_participants>6</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>-8.4863</longitude>
+          <latitude>51.8979</latitude>
+        </coordinates>
+        <address>
+          <street>North Main Street Pier</street>
+          <city>Cork</city>
+          <country>Ireland</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>-8.5290</longitude>
+          <latitude>51.7069</latitude>
+        </coordinates>
+        <address>
+          <street>Main Quay</street>
+          <city>Kinsale</city>
+          <country>Ireland</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b1">
+          <model>Raleigh Strada</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>18</gear_count>
+          <size>M</size>
+          <weight>9.5</weight>
+          <rental_price_per_day>
+            <amount>30.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-05-20</booking_date>
+            <package idref="p1" />
+            <client>
+              <identity>
+                <firstname>Harry</firstname>
+                <lastname>Connor</lastname>
+              </identity>
+              <contact>
+                <email>harry.connor@example.ie</email>
+                <phone_number>+353-87-1234567</phone_number>
+              </contact>
+              <address>
+                <street>7 Bandon Road</street>
+                <city>Cork</city>
+                <country>Ireland</country>
+              </address>
+              <nationality>Irish</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Lea</firstname>
+                  <lastname>Connor</lastname>
+                </identity>
+                <phone_number>+353-21-7654321</phone_number>
+                <relation>Sister</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>100.00</amount_paid>
+              <left_to_be_paid>420.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>bank_transfer</method>
+              <payment_status>partial</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b1b">
+          <model>Giant Escape 3</model>
+          <bike_type>
+            <type>hybrid</type>
+          </bike_type>
+          <gear_count>8</gear_count>
+          <size>L</size>
+          <weight>12.0</weight>
+          <rental_price_per_day>
+            <amount>25.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b1c">
+          <model>Lapierre Sensium 500</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>8.3</weight>
+          <rental_price_per_day>
+            <amount>48.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+        <bike id="b1d">
+          <model>Peugeot eC01 D9</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>85</electric_autonomy>
+          </bike_type>
+          <gear_count>10</gear_count>
+          <size>L</size>
+          <weight>24.5</weight>
+          <rental_price_per_day>
+            <amount>55.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 2: NORWAY, OSLO -->
+    <tour>
+      <tour_name>Oslo Fjord Ride</tour_name>
+      <company>
+        <name>Oslo Fjord Cycles</name>
+        <contact>
+          <email>info@oslofjordcycles.no</email>
+          <phone_number>+47-22-100000</phone_number>
+        </contact>
+        <address>
+          <street>Strandgata 15</street>
+          <city>Oslo</city>
+          <country>Norway</country>
+        </address>
+      </company>
+      <short_description>Scenic ride along the Oslofjord and city highlights.</short_description>
+      <long_description>Two-day ride combining coastal roads, fjord views and cultural stops in Oslo.</long_description>
+      <category>moderate</category>
+      <distance>95.0</distance>
+      <duration>
+        <duration_days>2</duration_days>
+        <start_date>2026-07-20</start_date>
+        <end_date>2026-07-22</end_date>
+      </duration>
+      <price>
+        <amount>2500.00</amount>
+        <currency>NOK</currency>
+      </price>
+      <guide idref="g2" />
+      <tour_availability>
+        <capacity>20</capacity>
+        <current_number_of_participants>5</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>10.7522</longitude>
+          <latitude>59.9139</latitude>
+        </coordinates>
+        <address>
+          <street>Aker Brygge</street>
+          <city>Oslo</city>
+          <country>Norway</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>10.6340</longitude>
+          <latitude>59.6663</latitude>
+        </coordinates>
+        <address>
+          <street>Drøbak Harbour</street>
+          <city>Drøbak</city>
+          <country>Norway</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b11">
+          <model>Scott Addict</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>8.6</weight>
+          <rental_price_per_day>
+            <amount>300.00</amount>
+            <currency>NOK</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-06-28</booking_date>
+            <package idref="p2" />
+            <client>
+              <identity>
+                <firstname>Halima</firstname>
+                <lastname>Olsen</lastname>
+              </identity>
+              <contact>
+                <email>halima.olsen@example.no</email>
+                <phone_number>+47-92-445566</phone_number>
+              </contact>
+              <address>
+                <street>Storgata 3</street>
+                <city>Oslo</city>
+                <country>Norway</country>
+              </address>
+              <nationality>Norwegian</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Sylvia</firstname>
+                  <lastname>Olsen</lastname>
+                </identity>
+                <phone_number>+47-22-889900</phone_number>
+                <relation>Mother</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>2500.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>NOK</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b12">
+          <model>Trek Verve+ 2</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>70</electric_autonomy>
+          </bike_type>
+          <gear_count>9</gear_count>
+          <size>L</size>
+          <weight>21.5</weight>
+          <rental_price_per_day>
+            <amount>450.00</amount>
+            <currency>NOK</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b12a">
+          <model>Look 785 Huez RS</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>7.8</weight>
+          <rental_price_per_day>
+            <amount>520.00</amount>
+            <currency>NOK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+        <bike id="b12b">
+          <model>Gitane e-Verso Performance</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>90</electric_autonomy>
+          </bike_type>
+          <gear_count>10</gear_count>
+          <size>L</size>
+          <weight>23.2</weight>
+          <rental_price_per_day>
+            <amount>480.00</amount>
+            <currency>NOK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 3: SWEDEN, STOCKHOLM -->
+    <tour>
+      <tour_name>Stockholm Seaside Loop</tour_name>
+      <company>
+        <name>Stockholm Sea Routes</name>
+        <contact>
+          <email>info@stockholmsearoutes.se</email>
+          <phone_number>+46-8-400000</phone_number>
+        </contact>
+        <address>
+          <street>Strömgatan 6</street>
+          <city>Stockholm</city>
+          <country>Sweden</country>
+        </address>
+      </company>
+      <short_description>Loop through Stockholm and nearby archipelago islands.</short_description>
+      <long_description>Three-day experience mixing city cycling with short ferry hops to scenic islands in the archipelago.</long_description>
+      <category>moderate</category>
+      <distance>140.0</distance>
+      <duration>
+        <duration_days>3</duration_days>
+        <start_date>2026-08-05</start_date>
+        <end_date>2026-08-08</end_date>
+      </duration>
+      <price>
+        <amount>3200.00</amount>
+        <currency>SEK</currency>
+      </price>
+      <guide idref="g3" />
+      <tour_availability>
+        <capacity>16</capacity>
+        <current_number_of_participants>4</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>18.0686</longitude>
+          <latitude>59.3293</latitude>
+        </coordinates>
+        <address>
+          <street>Gamla Stan Ferry</street>
+          <city>Stockholm</city>
+          <country>Sweden</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>18.3530</longitude>
+          <latitude>59.4012</latitude>
+        </coordinates>
+        <address>
+          <street>Vaxholm Quay</street>
+          <city>Vaxholm</city>
+          <country>Sweden</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b13">
+          <model>Orbea Avant</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>8.7</weight>
+          <rental_price_per_day>
+            <amount>350.00</amount>
+            <currency>SEK</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-07-15</booking_date>
+            <package idref="p4" />
+            <client>
+              <identity>
+                <firstname>Morgane</firstname>
+                <lastname>Larsson</lastname>
+              </identity>
+              <contact>
+                <email>morgane.larsson@example.se</email>
+                <phone_number>+46-70-7788990</phone_number>
+              </contact>
+              <address>
+                <street>Erstagatan 20</street>
+                <city>Stockholm</city>
+                <country>Sweden</country>
+              </address>
+              <nationality>Swedish</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Martin</firstname>
+                  <lastname>Larsson</lastname>
+                </identity>
+                <phone_number>+46-31-2233445</phone_number>
+                <relation>Brother</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>1200.00</amount_paid>
+              <left_to_be_paid>2000.00</left_to_be_paid>
+              <currency>SEK</currency>
+              <method>bank_transfer</method>
+              <payment_status>partial</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b14">
+          <model>Prophete City E</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>60</electric_autonomy>
+          </bike_type>
+          <gear_count>8</gear_count>
+          <size>L</size>
+          <weight>22.0</weight>
+          <rental_price_per_day>
+            <amount>400.00</amount>
+            <currency>SEK</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b14a">
+          <model>Time Alpe d'Huez 01</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>7.6</weight>
+          <rental_price_per_day>
+            <amount>500.00</amount>
+            <currency>SEK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+        <bike id="b14b">
+          <model>Motobecane Gravel X3</model>
+          <bike_type>
+            <type>gravel</type>
+          </bike_type>
+          <gear_count>20</gear_count>
+          <size>L</size>
+          <weight>10.2</weight>
+          <rental_price_per_day>
+            <amount>460.00</amount>
+            <currency>SEK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 4: DENMARK, COPENHAGEN -->
+    <tour>
+      <tour_name>Copenhagen City Ride</tour_name>
+      <company>
+        <name>City Pedal Denmark</name>
+        <contact>
+          <email>booking@city-pedal.dk</email>
+          <phone_number>+45-33-210000</phone_number>
+        </contact>
+        <address>
+          <street>Nyhavn 12</street>
+          <city>Copenhagen</city>
+          <country>Denmark</country>
+        </address>
+      </company>
+      <short_description>Urban cycling through Copenhagen’s canals and neighborhoods.</short_description>
+      <long_description>A relaxed two-day tour visiting Copenhagen’s top neighborhoods, waterfronts and bike-friendly
+      paths with local food stops and a canal-side picnic.</long_description>
+      <category>easy</category>
+      <distance>60.0</distance>
+      <duration>
+        <duration_days>2</duration_days>
+        <start_date>2026-06-18</start_date>
+        <end_date>2026-06-20</end_date>
+      </duration>
+      <price>
+        <amount>1800.00</amount>
+        <currency>DKK</currency>
+      </price>
+      <guide idref="g4" />
+      <tour_availability>
+        <capacity>18</capacity>
+        <current_number_of_participants>3</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>12.5683</longitude>
+          <latitude>55.6761</latitude>
+        </coordinates>
+        <address>
+          <street>Nyhavn Pier</street>
+          <city>Copenhagen</city>
+          <country>Denmark</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>12.5797</longitude>
+          <latitude>55.6867</latitude>
+        </coordinates>
+        <address>
+          <street>Christianshavn Quay</street>
+          <city>Copenhagen</city>
+          <country>Denmark</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b15">
+          <model>Biomega Copenhagen</model>
+          <bike_type>
+            <type>city</type>
+          </bike_type>
+          <gear_count>7</gear_count>
+          <size>M</size>
+          <weight>14.0</weight>
+          <rental_price_per_day>
+            <amount>150.00</amount>
+            <currency>DKK</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b16">
+          <model>Gazelle CityZen</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>50</electric_autonomy>
+          </bike_type>
+          <gear_count>8</gear_count>
+          <size>L</size>
+          <weight>22.0</weight>
+          <rental_price_per_day>
+            <amount>250.00</amount>
+            <currency>DKK</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b16a">
+          <model>Origine Trail Evo</model>
+          <bike_type>
+            <type>hybrid</type>
+          </bike_type>
+          <gear_count>11</gear_count>
+          <size>M</size>
+          <weight>11.4</weight>
+          <rental_price_per_day>
+            <amount>210.00</amount>
+            <currency>DKK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+        <bike id="b16b">
+          <model>Sunn Flash S1</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>65</electric_autonomy>
+          </bike_type>
+          <gear_count>9</gear_count>
+          <size>L</size>
+          <weight>23.0</weight>
+          <rental_price_per_day>
+            <amount>280.00</amount>
+            <currency>DKK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 5: SCOTLAND, INVERNESS -->
+    <tour>
+      <tour_name>Inverness Highlands Loop</tour_name>
+      <company>
+        <name>Highland Trails Scotland</name>
+        <contact>
+          <email>info@highlandtrails.scot</email>
+          <phone_number>+44-1463-400000</phone_number>
+        </contact>
+        <address>
+          <street>Castle St</street>
+          <city>Inverness</city>
+          <country>Scotland</country>
+        </address>
+      </company>
+      <short_description>Explore the northern Highlands, lochs and gentle climbs around Inverness.</short_description>
+      <long_description>Three-day ride through scenic Highland routes, including loch-side roads, castles and coastal
+      stretches. Well-suited to intermediate riders comfortable on mixed surfaces.</long_description>
+      <category>moderate</category>
+      <distance>170.0</distance>
+      <duration>
+        <duration_days>3</duration_days>
+        <start_date>2026-07-10</start_date>
+        <end_date>2026-07-13</end_date>
+      </duration>
+      <price>
+        <amount>420.00</amount>
+        <currency>GBP</currency>
+      </price>
+      <guide idref="g5" />
+      <tour_availability>
+        <capacity>12</capacity>
+        <current_number_of_participants>2</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>-4.2247</longitude>
+          <latitude>57.4778</latitude>
+        </coordinates>
+        <address>
+          <street>Inverness Castle Forecourt</street>
+          <city>Inverness</city>
+          <country>Scotland</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>-4.1546</longitude>
+          <latitude>57.4794</latitude>
+        </coordinates>
+        <address>
+          <street>Loch Ness Shore</street>
+          <city>Drumnadrochit</city>
+          <country>Scotland</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b17">
+          <model>Scott Sub Cross</model>
+          <bike_type>
+            <type>gravel</type>
+          </bike_type>
+          <gear_count>20</gear_count>
+          <size>M</size>
+          <weight>10.8</weight>
+          <rental_price_per_day>
+            <amount>45.00</amount>
+            <currency>GBP</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-05-30</booking_date>
+            <package idref="p5" />
+            <client>
+              <identity>
+                <firstname>James</firstname>
+                <lastname>Cameron</lastname>
+              </identity>
+              <contact>
+                <email>james.cameron@example.uk</email>
+                <phone_number>+44-7711-889900</phone_number>
+              </contact>
+              <address>
+                <street>12 Ness Walk</street>
+                <city>Inverness</city>
+                <country>Scotland</country>
+              </address>
+              <nationality>Scottish</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Andrew</firstname>
+                  <lastname>Cameron</lastname>
+                </identity>
+                <phone_number>+44-1463-445566</phone_number>
+                <relation>Father</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>120.00</amount_paid>
+              <left_to_be_paid>300.00</left_to_be_paid>
+              <currency>GBP</currency>
+              <method>credit_card</method>
+              <payment_status>deposit_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b18">
+          <model>Ribble CGR</model>
+          <bike_type>
+            <type>gravel</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>L</size>
+          <weight>9.9</weight>
+          <rental_price_per_day>
+            <amount>50.00</amount>
+            <currency>GBP</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b18a">
+          <model>Mercier Classic Randonneur</model>
+          <bike_type>
+            <type>touring</type>
+          </bike_type>
+          <gear_count>18</gear_count>
+          <size>M</size>
+          <weight>11.8</weight>
+          <rental_price_per_day>
+            <amount>55.00</amount>
+            <currency>GBP</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+        <bike id="b18b">
+          <model>Moustache Samedi 27 Xroad 5</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>75</electric_autonomy>
+          </bike_type>
+          <gear_count>11</gear_count>
+          <size>L</size>
+          <weight>24.2</weight>
+          <rental_price_per_day>
+            <amount>65.00</amount>
+            <currency>GBP</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 6: ICELAND, REYKJAVIK -->
+    <tour>
+      <tour_name>Reykjavik City Ride</tour_name>
+      <company>
+        <name>Iceland Cycle Ride</name>
+        <contact>
+          <email>hello@iceland-cycle.is</email>
+          <phone_number>+354-540-0000</phone_number>
+        </contact>
+        <address>
+          <street>Skolavordustigur 20</street>
+          <city>Reykjavik</city>
+          <country>Iceland</country>
+        </address>
+      </company>
+      <short_description>Evening and midnight ride around Reykjavik under long summer light.</short_description>
+      <long_description>Enjoy a unique evening ride exploring Reykjavik’s coastline, geothermal landmarks and lava fields
+      with the benefit of extended daylight during summer months.</long_description>
+      <category>easy</category>
+      <distance>55.0</distance>
+      <duration>
+        <duration_days>1</duration_days>
+        <start_date>2026-06-21</start_date>
+        <end_date>2026-06-21</end_date>
+      </duration>
+      <price>
+        <amount>9500.00</amount>
+        <currency>ISK</currency>
+      </price>
+      <guide idref="g6" />
+      <tour_availability>
+        <capacity>14</capacity>
+        <current_number_of_participants>1</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>-21.9426</longitude>
+          <latitude>64.1466</latitude>
+        </coordinates>
+        <address>
+          <street>Harpa Concert Hall</street>
+          <city>Reykjavik</city>
+          <country>Iceland</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>-21.8277</longitude>
+          <latitude>64.1265</latitude>
+        </coordinates>
+        <address>
+          <street>Grotta Lighthouse</street>
+          <city>Reykjavik</city>
+          <country>Iceland</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b19">
+          <model>Specialized Sirrus</model>
+          <bike_type>
+            <type>hybrid</type>
+          </bike_type>
+          <gear_count>8</gear_count>
+          <size>M</size>
+          <weight>12.5</weight>
+          <rental_price_per_day>
+            <amount>2500.00</amount>
+            <currency>ISK</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-05-18</booking_date>
+            <package idref="p3" />
+            <client>
+              <identity>
+                <firstname>Arthur</firstname>
+                <lastname>Sunny</lastname>
+              </identity>
+              <contact>
+                <email>arthur.sunny@example.is</email>
+                <phone_number>+354-780-2211</phone_number>
+              </contact>
+              <address>
+                <street>Hverfisgata 90</street>
+                <city>Reykjavik</city>
+                <country>Iceland</country>
+              </address>
+              <nationality>Icelandic</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Rose</firstname>
+                  <lastname>Sunny</lastname>
+                </identity>
+                <phone_number>+354-520-7788</phone_number>
+                <relation>Mother</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>9500.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>ISK</currency>
+              <method>qr_code</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b20">
+          <model>Cube Touring</model>
+          <bike_type>
+            <type>touring</type>
+          </bike_type>
+          <gear_count>21</gear_count>
+          <size>L</size>
+          <weight>13.0</weight>
+          <rental_price_per_day>
+            <amount>2700.00</amount>
+            <currency>ISK</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b20a">
+          <model>Matra i-Flow Active</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>80</electric_autonomy>
+          </bike_type>
+          <gear_count>9</gear_count>
+          <size>M</size>
+          <weight>25.3</weight>
+          <rental_price_per_day>
+            <amount>2950.00</amount>
+            <currency>ISK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+        <bike id="b20b">
+          <model>Cavalerie Anakin TRP</model>
+          <bike_type>
+            <type>mountain</type>
+          </bike_type>
+          <gear_count>12</gear_count>
+          <size>L</size>
+          <weight>14.2</weight>
+          <rental_price_per_day>
+            <amount>3100.00</amount>
+            <currency>ISK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+      </bikes>
+    </tour>
+  </tours>
+
+  <!-- GUIDES -->
+  <guides>
+
+    <!-- GUIDE 1 -->
+    <guide id="g1">
+      <identity>
+        <firstname>Vince</firstname>
+        <lastname>Bowers</lastname>
+      </identity>
+      <picture>
+        <picture_name>vince_bowers.jpg</picture_name>
+        <picture_description>Portrait of Vince Bowers Irish guide</picture_description>
+      </picture>
+      <contact>
+        <email>vince@irish-trails.ie</email>
+        <phone_number>+353-21-111-1234</phone_number>
+      </contact>
+      <address>
+        <street>20 Lavitt's Quay</street>
+        <city>Cork</city>
+        <country>Ireland</country>
+      </address>
+      <nationality>Irish</nationality>
+      <spoken_languages>
+        <language>English</language>
+        <language>French</language>
+        <language>Irish</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Tour Guide License</qualification>
+        <qualification>First Aid Certificate</qualification>
+      </qualifications>
+    </guide>
+
+    <!-- GUIDE 2 -->
+    <guide id="g2">
+      <identity>
+        <firstname>Ben</firstname>
+        <lastname>Wilks</lastname>
+      </identity>
+      <picture>
+        <picture_name>ben_wilks.jpg</picture_name>
+        <picture_description>Portrait of Ben Wilks Norwegian mountain guide</picture_description>
+      </picture>
+      <contact>
+        <email>ben@norse-cycle.no</email>
+        <phone_number>+47-55-123456</phone_number>
+      </contact>
+      <nationality>Norwegian</nationality>
+      <spoken_languages>
+        <language>Norwegian</language>
+        <language>English</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Mountain Guide License</qualification>
+      </qualifications>
+    </guide>
+
+    <!-- GUIDE 3 -->
+    <guide id="g3">
+      <identity>
+        <firstname>Aud</firstname>
+        <lastname>Anders</lastname>
+      </identity>
+      <picture>
+        <picture_name>aud_anders.jpg</picture_name>
+        <picture_description>Portrait of Aud Anders Swedish guide</picture_description>
+      </picture>
+      <contact>
+        <email>aud@swede-cycle.se</email>
+        <phone_number>+46-31-1112345</phone_number>
+      </contact>
+      <nationality>Swedish</nationality>
+      <spoken_languages>
+        <language>Swedish</language>
+        <language>English</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Tour Guide License</qualification>
+      </qualifications>
+    </guide>
+
+    <!-- GUIDE 4 -->
+    <guide id="g4">
+      <identity>
+        <firstname>Steven</firstname>
+        <lastname>Dorn</lastname>
+      </identity>
+      <picture>
+        <picture_name>steven_dorn.jpg</picture_name>
+        <picture_description>Portrait of Steven Dorn Danish guide</picture_description>
+      </picture>
+      <contact>
+        <email>steven@dane-cycle.dk</email>
+        <phone_number>+45-11-112345</phone_number>
+      </contact>
+      <nationality>Danish</nationality>
+      <spoken_languages>
+        <language>Danish</language>
+        <language>Norwegian</language>
+        <language>Swedish</language>
+        <language>English</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Tour Guide License</qualification>
+        <qualification>First Aid Certificate</qualification>
+      </qualifications>
+    </guide>
+
+    <!-- GUIDE 5 -->
+    <guide id="g5">
+      <identity>
+        <firstname>Lina</firstname>
+        <lastname>Leon</lastname>
+      </identity>
+      <picture>
+        <picture_name>lina_leon.jpg</picture_name>
+        <picture_description>Portrait of Lina Leon Scottish guide</picture_description>
+      </picture>
+      <contact>
+        <email>lina@highland-trails.uk</email>
+        <phone_number>+44-111-5556789</phone_number>
+      </contact>
+      <nationality>Scottish</nationality>
+      <spoken_languages>
+        <language>English</language>
+        <language>Scottish Gaelic</language>
+        <language>French</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Outdoor Leadership Diploma</qualification>
+      </qualifications>
+    </guide>
+
+    <!-- GUIDE 6 -->
+    <guide id="g6">
+      <identity>
+        <firstname>Jon</firstname>
+        <lastname>Eriksson</lastname>
+      </identity>
+      <picture>
+        <picture_name>jon_eriksson.jpg</picture_name>
+        <picture_description>Portrait of Jon Eriksson Icelandic guide</picture_description>
+      </picture>
+      <contact>
+        <email>jon.eriksson@icy-trails.is</email>
+        <phone_number>+354-5559876</phone_number>
+      </contact>
+      <nationality>Icelandic</nationality>
+      <spoken_languages>
+        <language>Icelandic</language>
+        <language>English</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Tour Guide License</qualification>
+      </qualifications>
+    </guide>
+
+  </guides>
+
+  <!-- PACKAGES -->
+  <packages>
+
+    <!-- PACKAGE 1 -->
+    <package id="p1">
+      <name>Fall Discount</name>
+      <reduction>15</reduction>
+      <code>FALL15</code>
+      <description>15% off all tours booked during the fall season.</description>
+    </package>
+
+    <!-- PACKAGE 2 -->
+    <package id="p2">
+      <name>Couple Special</name>
+      <reduction>10</reduction>
+      <code>COUPLE10</code>
+      <description>Special discount for couples booking together.</description>
+    </package>
+
+    <!-- PACKAGE 3 -->
+    <package id="p3">
+      <name>Honeymoon Special</name>
+      <reduction>20</reduction>
+      <code>HONEY20</code>
+      <description>Honeymoon tours at discounted rates.</description>
+    </package>
+
+    <!-- PACKAGE 4 -->
+    <package id="p4">
+      <name>Tour Tester Discount</name>
+      <reduction>10</reduction>
+      <code>BETA10</code>
+      <description>Be one of the first to try a new tour and get 10% off.</description>
+    </package>
+
+    <!-- PACKAGE 5 -->
+    <package id="p5">
+      <name>Retirement Special</name>
+      <reduction>5</reduction>
+      <code>RETIRE5</code>
+      <description>Discount for retirees booking tours (over 60 years old).</description>
+    </package>
+
+  </packages>
+</data>

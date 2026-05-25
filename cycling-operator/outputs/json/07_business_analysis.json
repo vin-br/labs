@@ -1,0 +1,1170 @@
+{
+  "business_intelligence": {
+    "market_analysis": {
+      "tours_by_category": [
+        {
+          "category": "moderate",
+          "count": 16,
+          "avg_distance_km": 160.07,
+          "avg_price_eur": 943.12,
+          "avg_duration_days": 3.56,
+          "total_capacity": 217,
+          "total_participants": 136,
+          "market_share_percent": 44.44
+        },
+        {
+          "category": "easy",
+          "count": 8,
+          "avg_distance_km": 128.24,
+          "avg_price_eur": 1870.00,
+          "avg_duration_days": 3.12,
+          "total_capacity": 157,
+          "total_participants": 84,
+          "market_share_percent": 22.22
+        },
+        {
+          "category": "challenging",
+          "count": 8,
+          "avg_distance_km": 330.06,
+          "avg_price_eur": 1652.50,
+          "avg_duration_days": 7.12,
+          "total_capacity": 105,
+          "total_participants": 74,
+          "market_share_percent": 22.22
+        },
+        {
+          "category": "difficult",
+          "count": 4,
+          "avg_distance_km": 210.12,
+          "avg_price_eur": 872.50,
+          "avg_duration_days": 4.00,
+          "total_capacity": 41,
+          "total_participants": 28,
+          "market_share_percent": 11.11
+        }
+      ],
+      "tours_popularity": [
+        {
+          "tour_name": "Alpine Discovery Ride",
+          "category": "difficult",
+          "total_bookings": 3,
+          "capacity": 15,
+          "occupancy_rate_percent": 100.00,
+          "price_eur": 650.00,
+          "distance_km": 120.5,
+          "start_date": "2024-07-10"
+        },
+        {
+          "tour_name": "Coastal Breeze Journey",
+          "category": "easy",
+          "total_bookings": 3,
+          "capacity": 20,
+          "occupancy_rate_percent": 70.00,
+          "price_eur": 350.00,
+          "distance_km": 95.2,
+          "start_date": "2026-07-01"
+        },
+        {
+          "tour_name": "Tuscany Vineyard Circuit",
+          "category": "moderate",
+          "total_bookings": 3,
+          "capacity": 10,
+          "occupancy_rate_percent": 100.00,
+          "price_eur": 670.00,
+          "distance_km": 160,
+          "start_date": "2026-09-20"
+        },
+        {
+          "tour_name": "Loire Valley Discovery",
+          "category": "easy",
+          "total_bookings": 3,
+          "capacity": 10,
+          "occupancy_rate_percent": 30.00,
+          "price_eur": 450.00,
+          "distance_km": 120.5,
+          "start_date": "2026-05-01"
+        },
+        {
+          "tour_name": "Alpine Discovery Ride",
+          "category": "challenging",
+          "total_bookings": 2,
+          "capacity": 15,
+          "occupancy_rate_percent": 53.33,
+          "price_eur": 890.00,
+          "distance_km": 220.5,
+          "start_date": "2026-06-10"
+        },
+        {
+          "tour_name": "Coastal Breeze Journey",
+          "category": "easy",
+          "total_bookings": 2,
+          "capacity": 20,
+          "occupancy_rate_percent": 30.00,
+          "price_eur": 350.00,
+          "distance_km": 95.2,
+          "start_date": "2026-09-15"
+        },
+        {
+          "tour_name": "Tokyo Urban Explorer",
+          "category": "moderate",
+          "total_bookings": 2,
+          "capacity": 15,
+          "occupancy_rate_percent": 100.00,
+          "price_eur": 120.00,
+          "distance_km": 45.3,
+          "start_date": "2026-05-10"
+        },
+        {
+          "tour_name": "Tokyo Urban Explorer",
+          "category": "moderate",
+          "total_bookings": 2,
+          "capacity": 15,
+          "occupancy_rate_percent": 100.00,
+          "price_eur": 120.00,
+          "distance_km": 45.3,
+          "start_date": "2024-03-20"
+        },
+        {
+          "tour_name": "Alps Challenge",
+          "category": "difficult",
+          "total_bookings": 2,
+          "capacity": 8,
+          "occupancy_rate_percent": 25.00,
+          "price_eur": 890.00,
+          "distance_km": 200.0,
+          "start_date": "2026-05-05"
+        },
+        {
+          "tour_name": "Cork Coastal Discovery",
+          "category": "moderate",
+          "total_bookings": 1,
+          "capacity": 14,
+          "occupancy_rate_percent": 42.86,
+          "price_eur": 520.00,
+          "distance_km": 125.0,
+          "start_date": "2026-06-10"
+        },
+        {
+          "tour_name": "Oslo Fjord Ride",
+          "category": "moderate",
+          "total_bookings": 1,
+          "capacity": 20,
+          "occupancy_rate_percent": 25.00,
+          "price_eur": 2500.00,
+          "distance_km": 95.0,
+          "start_date": "2026-07-20"
+        },
+        {
+          "tour_name": "Stockholm Seaside Loop",
+          "category": "moderate",
+          "total_bookings": 1,
+          "capacity": 16,
+          "occupancy_rate_percent": 25.00,
+          "price_eur": 3200.00,
+          "distance_km": 140.0,
+          "start_date": "2026-08-05"
+        },
+        {
+          "tour_name": "Inverness Highlands Loop",
+          "category": "moderate",
+          "total_bookings": 1,
+          "capacity": 12,
+          "occupancy_rate_percent": 16.67,
+          "price_eur": 420.00,
+          "distance_km": 170.0,
+          "start_date": "2026-07-10"
+        },
+        {
+          "tour_name": "Reykjavik City Ride",
+          "category": "easy",
+          "total_bookings": 1,
+          "capacity": 14,
+          "occupancy_rate_percent": 7.14,
+          "price_eur": 9500.00,
+          "distance_km": 55.0,
+          "start_date": "2026-06-21"
+        },
+        {
+          "tour_name": "Tuscany Vineyard Circuit",
+          "category": "moderate",
+          "total_bookings": 1,
+          "capacity": 10,
+          "occupancy_rate_percent": 30.00,
+          "price_eur": 670.00,
+          "distance_km": 160,
+          "start_date": "2026-05-15"
+        },
+        {
+          "tour_name": "Sahara Desert Expedition",
+          "category": "difficult",
+          "total_bookings": 1,
+          "capacity": 10,
+          "occupancy_rate_percent": 50.00,
+          "price_eur": 750.00,
+          "distance_km": 180,
+          "start_date": "2026-10-15"
+        },
+        {
+          "tour_name": "Ancient Paths of Greece",
+          "category": "moderate",
+          "total_bookings": 1,
+          "capacity": 10,
+          "occupancy_rate_percent": 100.00,
+          "price_eur": 640.00,
+          "distance_km": 210,
+          "start_date": "2025-04-10"
+        },
+        {
+          "tour_name": "Corsica Coastal Ride",
+          "category": "moderate",
+          "total_bookings": 1,
+          "capacity": 6,
+          "occupancy_rate_percent": 83.33,
+          "price_eur": 620.00,
+          "distance_km": 150.0,
+          "start_date": "2026-05-12"
+        },
+        {
+          "tour_name": "Swiss Alpine Adventure",
+          "category": "challenging",
+          "total_bookings": 1,
+          "capacity": 7,
+          "occupancy_rate_percent": 71.43,
+          "price_eur": 980.00,
+          "distance_km": 220.0,
+          "start_date": "2026-05-18"
+        },
+        {
+          "tour_name": "Andalusia Explorer",
+          "category": "moderate",
+          "total_bookings": 1,
+          "capacity": 6,
+          "occupancy_rate_percent": 66.67,
+          "price_eur": 750.00,
+          "distance_km": 180.0,
+          "start_date": "2026-05-25"
+        },
+        {
+          "tour_name": "Copenhagen City Ride",
+          "category": "easy",
+          "total_bookings": 0,
+          "capacity": 18,
+          "occupancy_rate_percent": 16.67,
+          "price_eur": 1800.00,
+          "distance_km": 60.0,
+          "start_date": "2026-06-18"
+        },
+        {
+          "tour_name": "Canadian Rockies Expedition",
+          "category": "difficult",
+          "total_bookings": 0,
+          "capacity": 8,
+          "occupancy_rate_percent": 75.00,
+          "price_eur": 1200.00,
+          "distance_km": 340,
+          "start_date": "2024-08-05"
+        },
+        {
+          "tour_name": "Black Forest Trail",
+          "category": "moderate",
+          "total_bookings": 0,
+          "capacity": 15,
+          "occupancy_rate_percent": 100.00,
+          "price_eur": 580.00,
+          "distance_km": 120,
+          "start_date": "2025-05-20"
+        },
+        {
+          "tour_name": "Bali Island Loop",
+          "category": "moderate",
+          "total_bookings": 0,
+          "capacity": 12,
+          "occupancy_rate_percent": 25.00,
+          "price_eur": 980.00,
+          "distance_km": 260,
+          "start_date": "2025-12-05"
+        },
+        {
+          "tour_name": "Nordic Fjord Route",
+          "category": "challenging",
+          "total_bookings": 0,
+          "capacity": 10,
+          "occupancy_rate_percent": 90.00,
+          "price_eur": 1400.00,
+          "distance_km": 300,
+          "start_date": "2024-07-10"
+        },
+        {
+          "tour_name": "Loire Valley Castles Ride",
+          "category": "moderate",
+          "total_bookings": 0,
+          "capacity": 20,
+          "occupancy_rate_percent": 60.00,
+          "price_eur": 850.00,
+          "distance_km": 150.5,
+          "start_date": "2027-05-10"
+        },
+        {
+          "tour_name": "Tuscany Wine Hills",
+          "category": "challenging",
+          "total_bookings": 0,
+          "capacity": 15,
+          "occupancy_rate_percent": 66.67,
+          "price_eur": 1250.00,
+          "distance_km": 210.0,
+          "start_date": "2027-06-01"
+        },
+        {
+          "tour_name": "Coastal Catalonia Ride",
+          "category": "easy",
+          "total_bookings": 0,
+          "capacity": 25,
+          "occupancy_rate_percent": 72.00,
+          "price_eur": 650.00,
+          "distance_km": 130.0,
+          "start_date": "2027-09-03"
+        },
+        {
+          "tour_name": "Swiss Alpine Challenge",
+          "category": "challenging",
+          "total_bookings": 0,
+          "capacity": 12,
+          "occupancy_rate_percent": 75.00,
+          "price_eur": 1850.00,
+          "distance_km": 320.0,
+          "start_date": "2027-07-12"
+        },
+        {
+          "tour_name": "Danube River Path",
+          "category": "easy",
+          "total_bookings": 0,
+          "capacity": 30,
+          "occupancy_rate_percent": 73.33,
+          "price_eur": 970.00,
+          "distance_km": 290.0,
+          "start_date": "2027-08-05"
+        },
+        {
+          "tour_name": "Scottish Highlands Explorer",
+          "category": "moderate",
+          "total_bookings": 0,
+          "capacity": 20,
+          "occupancy_rate_percent": 70.00,
+          "price_eur": 1150.00,
+          "distance_km": 260.0,
+          "start_date": "2027-07-05"
+        },
+        {
+          "tour_name": "California Coast Classic",
+          "category": "challenging",
+          "total_bookings": 0,
+          "capacity": 18,
+          "occupancy_rate_percent": 66.67,
+          "price_eur": 2100.00,
+          "distance_km": 550.0,
+          "start_date": "2027-09-01"
+        },
+        {
+          "tour_name": "Patagonia Wilderness Ride",
+          "category": "challenging",
+          "total_bookings": 0,
+          "capacity": 14,
+          "occupancy_rate_percent": 78.57,
+          "price_eur": 2450.00,
+          "distance_km": 400.0,
+          "start_date": "2027-11-05"
+        },
+        {
+          "tour_name": "Great Ocean Road Escape",
+          "category": "moderate",
+          "total_bookings": 0,
+          "capacity": 16,
+          "occupancy_rate_percent": 81.25,
+          "price_eur": 1300.00,
+          "distance_km": 290.0,
+          "start_date": "2027-10-12"
+        },
+        {
+          "tour_name": "Vietnam Mekong Delta Discovery",
+          "category": "easy",
+          "total_bookings": 0,
+          "capacity": 20,
+          "occupancy_rate_percent": 85.00,
+          "price_eur": 890.00,
+          "distance_km": 180.0,
+          "start_date": "2027-12-01"
+        },
+        {
+          "tour_name": "Canadian Rockies Adventure",
+          "category": "challenging",
+          "total_bookings": 0,
+          "capacity": 14,
+          "occupancy_rate_percent": 71.43,
+          "price_eur": 2300.00,
+          "distance_km": 420.0,
+          "start_date": "2027-07-25"
+        }
+      ]
+    },
+    "revenue_analytics": {
+      "total_revenue_eur": 27276.20,
+      "average_booking_value_eur": 826.55,
+      "revenue_by_tour": [
+        {
+          "tour_name": "Cork Coastal Discovery",
+          "category": "moderate",
+          "revenue_eur": 100.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 100.00
+        },
+        {
+          "tour_name": "Oslo Fjord Ride",
+          "category": "moderate",
+          "revenue_eur": 2500.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 2500.00
+        },
+        {
+          "tour_name": "Stockholm Seaside Loop",
+          "category": "moderate",
+          "revenue_eur": 1200.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 1200.00
+        },
+        {
+          "tour_name": "Copenhagen City Ride",
+          "category": "easy",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Inverness Highlands Loop",
+          "category": "moderate",
+          "revenue_eur": 120.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 120.00
+        },
+        {
+          "tour_name": "Reykjavik City Ride",
+          "category": "easy",
+          "revenue_eur": 9500.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 9500.00
+        },
+        {
+          "tour_name": "Alpine Discovery Ride",
+          "category": "challenging",
+          "revenue_eur": 1584.20,
+          "bookings_count": 2,
+          "avg_revenue_per_booking_eur": 792.10
+        },
+        {
+          "tour_name": "Alpine Discovery Ride",
+          "category": "difficult",
+          "revenue_eur": 2552.00,
+          "bookings_count": 3,
+          "avg_revenue_per_booking_eur": 850.67
+        },
+        {
+          "tour_name": "Coastal Breeze Journey",
+          "category": "easy",
+          "revenue_eur": 1020.00,
+          "bookings_count": 3,
+          "avg_revenue_per_booking_eur": 340.00
+        },
+        {
+          "tour_name": "Coastal Breeze Journey",
+          "category": "easy",
+          "revenue_eur": 200.00,
+          "bookings_count": 2,
+          "avg_revenue_per_booking_eur": 100.00
+        },
+        {
+          "tour_name": "Tokyo Urban Explorer",
+          "category": "moderate",
+          "revenue_eur": 275.00,
+          "bookings_count": 2,
+          "avg_revenue_per_booking_eur": 137.50
+        },
+        {
+          "tour_name": "Tokyo Urban Explorer",
+          "category": "moderate",
+          "revenue_eur": 265.00,
+          "bookings_count": 2,
+          "avg_revenue_per_booking_eur": 132.50
+        },
+        {
+          "tour_name": "Tuscany Vineyard Circuit",
+          "category": "moderate",
+          "revenue_eur": 2160.00,
+          "bookings_count": 3,
+          "avg_revenue_per_booking_eur": 720.00
+        },
+        {
+          "tour_name": "Tuscany Vineyard Circuit",
+          "category": "moderate",
+          "revenue_eur": 790.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 790.00
+        },
+        {
+          "tour_name": "Canadian Rockies Expedition",
+          "category": "difficult",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Sahara Desert Expedition",
+          "category": "difficult",
+          "revenue_eur": 300.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 300.00
+        },
+        {
+          "tour_name": "Black Forest Trail",
+          "category": "moderate",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Bali Island Loop",
+          "category": "moderate",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Nordic Fjord Route",
+          "category": "challenging",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Ancient Paths of Greece",
+          "category": "moderate",
+          "revenue_eur": 640.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 640.00
+        },
+        {
+          "tour_name": "Loire Valley Discovery",
+          "category": "easy",
+          "revenue_eur": 1350.00,
+          "bookings_count": 3,
+          "avg_revenue_per_booking_eur": 450.00
+        },
+        {
+          "tour_name": "Alps Challenge",
+          "category": "difficult",
+          "revenue_eur": 850.00,
+          "bookings_count": 2,
+          "avg_revenue_per_booking_eur": 425.00
+        },
+        {
+          "tour_name": "Corsica Coastal Ride",
+          "category": "moderate",
+          "revenue_eur": 620.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 620.00
+        },
+        {
+          "tour_name": "Swiss Alpine Adventure",
+          "category": "challenging",
+          "revenue_eur": 500.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 500.00
+        },
+        {
+          "tour_name": "Andalusia Explorer",
+          "category": "moderate",
+          "revenue_eur": 750.00,
+          "bookings_count": 1,
+          "avg_revenue_per_booking_eur": 750.00
+        },
+        {
+          "tour_name": "Loire Valley Castles Ride",
+          "category": "moderate",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Tuscany Wine Hills",
+          "category": "challenging",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Coastal Catalonia Ride",
+          "category": "easy",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Swiss Alpine Challenge",
+          "category": "challenging",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Danube River Path",
+          "category": "easy",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Scottish Highlands Explorer",
+          "category": "moderate",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "California Coast Classic",
+          "category": "challenging",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Patagonia Wilderness Ride",
+          "category": "challenging",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Great Ocean Road Escape",
+          "category": "moderate",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Vietnam Mekong Delta Discovery",
+          "category": "easy",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        },
+        {
+          "tour_name": "Canadian Rockies Adventure",
+          "category": "challenging",
+          "revenue_eur": 0.00,
+          "bookings_count": 0,
+          "avg_revenue_per_booking_eur": 0
+        }
+      ],
+      "revenue_by_category": [
+        {
+          "category": "moderate",
+          "revenue_eur": 9420.00,
+          "bookings_count": 15
+        },
+        {
+          "category": "easy",
+          "revenue_eur": 12070.00,
+          "bookings_count": 9
+        },
+        {
+          "category": "challenging",
+          "revenue_eur": 2084.20,
+          "bookings_count": 3
+        },
+        {
+          "category": "difficult",
+          "revenue_eur": 3702.00,
+          "bookings_count": 6
+        }
+      ]
+    },
+    "package_roi": [
+      {
+        "package_name": "Fall Discount",
+        "code": "FALL15",
+        "discount_percent": 15,
+        "times_used": 1,
+        "total_discount_given_eur": 15.00,
+        "revenue_with_package_eur": 100.00,
+        "adoption_rate_percent": 3.03
+      },
+      {
+        "package_name": "Couple Special",
+        "code": "COUPLE10",
+        "discount_percent": 10,
+        "times_used": 1,
+        "total_discount_given_eur": 250.00,
+        "revenue_with_package_eur": 2500.00,
+        "adoption_rate_percent": 3.03
+      },
+      {
+        "package_name": "Honeymoon Special",
+        "code": "HONEY20",
+        "discount_percent": 20,
+        "times_used": 1,
+        "total_discount_given_eur": 1900.00,
+        "revenue_with_package_eur": 9500.00,
+        "adoption_rate_percent": 3.03
+      },
+      {
+        "package_name": "Tour Tester Discount",
+        "code": "BETA10",
+        "discount_percent": 10,
+        "times_used": 1,
+        "total_discount_given_eur": 120.00,
+        "revenue_with_package_eur": 1200.00,
+        "adoption_rate_percent": 3.03
+      },
+      {
+        "package_name": "Retirement Special",
+        "code": "RETIRE5",
+        "discount_percent": 5,
+        "times_used": 1,
+        "total_discount_given_eur": 6.00,
+        "revenue_with_package_eur": 120.00,
+        "adoption_rate_percent": 3.03
+      },
+      {
+        "package_name": "Spring Promo",
+        "code": "SPRING10",
+        "discount_percent": 10,
+        "times_used": 5,
+        "total_discount_given_eur": 309.30,
+        "revenue_with_package_eur": 3093.00,
+        "adoption_rate_percent": 15.15
+      },
+      {
+        "package_name": "Family Fun Pack",
+        "code": "FAMILY15",
+        "discount_percent": 15,
+        "times_used": 5,
+        "total_discount_given_eur": 444.00,
+        "revenue_with_package_eur": 2960.00,
+        "adoption_rate_percent": 15.15
+      },
+      {
+        "package_name": "Weekend Escape",
+        "code": "WEEKEND8",
+        "discount_percent": 8,
+        "times_used": 5,
+        "total_discount_given_eur": 72.80,
+        "revenue_with_package_eur": 910.00,
+        "adoption_rate_percent": 15.15
+      },
+      {
+        "package_name": "Early Bird",
+        "code": "EARLY12",
+        "discount_percent": 12,
+        "times_used": 3,
+        "total_discount_given_eur": 269.18,
+        "revenue_with_package_eur": 2243.20,
+        "adoption_rate_percent": 9.09
+      },
+      {
+        "package_name": "VIP Experience",
+        "code": "VIP20",
+        "discount_percent": 20,
+        "times_used": 2,
+        "total_discount_given_eur": 116.00,
+        "revenue_with_package_eur": 580.00,
+        "adoption_rate_percent": 6.06
+      },
+      {
+        "package_name": "Spring Discount",
+        "code": "SPRING25",
+        "discount_percent": 10.0,
+        "times_used": 4,
+        "total_discount_given_eur": 210.00,
+        "revenue_with_package_eur": 2100.00,
+        "adoption_rate_percent": 12.12
+      },
+      {
+        "package_name": "Adventure Bonus",
+        "code": "ADVENTURE15",
+        "discount_percent": 15.0,
+        "times_used": 4,
+        "total_discount_given_eur": 295.50,
+        "revenue_with_package_eur": 1970.00,
+        "adoption_rate_percent": 12.12
+      },
+      {
+        "package_name": "Spring Special",
+        "code": "SPRING10",
+        "discount_percent": 10.0,
+        "times_used": 0,
+        "total_discount_given_eur": 0.00,
+        "revenue_with_package_eur": 0.00,
+        "adoption_rate_percent": 0.00
+      },
+      {
+        "package_name": "Tuscany Gourmet",
+        "code": "TUSCAN15",
+        "discount_percent": 15.0,
+        "times_used": 0,
+        "total_discount_given_eur": 0.00,
+        "revenue_with_package_eur": 0.00,
+        "adoption_rate_percent": 0.00
+      },
+      {
+        "package_name": "Family Summer Deal",
+        "code": "FAMILY12",
+        "discount_percent": 12.0,
+        "times_used": 0,
+        "total_discount_given_eur": 0.00,
+        "revenue_with_package_eur": 0.00,
+        "adoption_rate_percent": 0.00
+      }
+    ],
+    "pricing_strategy": {
+      "price_per_km_analysis": [
+        {
+          "tour_name": "Reykjavik City Ride",
+          "category": "easy",
+          "price_eur": 9500.00,
+          "distance_km": 55.0,
+          "price_per_km_eur": 172.73,
+          "occupancy_rate_percent": 7.14
+        },
+        {
+          "tour_name": "Copenhagen City Ride",
+          "category": "easy",
+          "price_eur": 1800.00,
+          "distance_km": 60.0,
+          "price_per_km_eur": 30.00,
+          "occupancy_rate_percent": 16.67
+        },
+        {
+          "tour_name": "Oslo Fjord Ride",
+          "category": "moderate",
+          "price_eur": 2500.00,
+          "distance_km": 95.0,
+          "price_per_km_eur": 26.32,
+          "occupancy_rate_percent": 25.00
+        },
+        {
+          "tour_name": "Stockholm Seaside Loop",
+          "category": "moderate",
+          "price_eur": 3200.00,
+          "distance_km": 140.0,
+          "price_per_km_eur": 22.86,
+          "occupancy_rate_percent": 25.00
+        },
+        {
+          "tour_name": "Patagonia Wilderness Ride",
+          "category": "challenging",
+          "price_eur": 2450.00,
+          "distance_km": 400.0,
+          "price_per_km_eur": 6.12,
+          "occupancy_rate_percent": 78.57
+        },
+        {
+          "tour_name": "Tuscany Wine Hills",
+          "category": "challenging",
+          "price_eur": 1250.00,
+          "distance_km": 210.0,
+          "price_per_km_eur": 5.95,
+          "occupancy_rate_percent": 66.67
+        },
+        {
+          "tour_name": "Swiss Alpine Challenge",
+          "category": "challenging",
+          "price_eur": 1850.00,
+          "distance_km": 320.0,
+          "price_per_km_eur": 5.78,
+          "occupancy_rate_percent": 75.00
+        },
+        {
+          "tour_name": "Loire Valley Castles Ride",
+          "category": "moderate",
+          "price_eur": 850.00,
+          "distance_km": 150.5,
+          "price_per_km_eur": 5.65,
+          "occupancy_rate_percent": 60.00
+        },
+        {
+          "tour_name": "Canadian Rockies Adventure",
+          "category": "challenging",
+          "price_eur": 2300.00,
+          "distance_km": 420.0,
+          "price_per_km_eur": 5.48,
+          "occupancy_rate_percent": 71.43
+        },
+        {
+          "tour_name": "Alpine Discovery Ride",
+          "category": "difficult",
+          "price_eur": 650.00,
+          "distance_km": 120.5,
+          "price_per_km_eur": 5.39,
+          "occupancy_rate_percent": 100.00
+        },
+        {
+          "tour_name": "Coastal Catalonia Ride",
+          "category": "easy",
+          "price_eur": 650.00,
+          "distance_km": 130.0,
+          "price_per_km_eur": 5.00,
+          "occupancy_rate_percent": 72.00
+        },
+        {
+          "tour_name": "Vietnam Mekong Delta Discovery",
+          "category": "easy",
+          "price_eur": 890.00,
+          "distance_km": 180.0,
+          "price_per_km_eur": 4.94,
+          "occupancy_rate_percent": 85.00
+        },
+        {
+          "tour_name": "Black Forest Trail",
+          "category": "moderate",
+          "price_eur": 580.00,
+          "distance_km": 120,
+          "price_per_km_eur": 4.83,
+          "occupancy_rate_percent": 100.00
+        },
+        {
+          "tour_name": "Nordic Fjord Route",
+          "category": "challenging",
+          "price_eur": 1400.00,
+          "distance_km": 300,
+          "price_per_km_eur": 4.67,
+          "occupancy_rate_percent": 90.00
+        },
+        {
+          "tour_name": "Great Ocean Road Escape",
+          "category": "moderate",
+          "price_eur": 1300.00,
+          "distance_km": 290.0,
+          "price_per_km_eur": 4.48,
+          "occupancy_rate_percent": 81.25
+        },
+        {
+          "tour_name": "Swiss Alpine Adventure",
+          "category": "challenging",
+          "price_eur": 980.00,
+          "distance_km": 220.0,
+          "price_per_km_eur": 4.45,
+          "occupancy_rate_percent": 71.43
+        },
+        {
+          "tour_name": "Alps Challenge",
+          "category": "difficult",
+          "price_eur": 890.00,
+          "distance_km": 200.0,
+          "price_per_km_eur": 4.45,
+          "occupancy_rate_percent": 25.00
+        },
+        {
+          "tour_name": "Scottish Highlands Explorer",
+          "category": "moderate",
+          "price_eur": 1150.00,
+          "distance_km": 260.0,
+          "price_per_km_eur": 4.42,
+          "occupancy_rate_percent": 70.00
+        },
+        {
+          "tour_name": "Tuscany Vineyard Circuit",
+          "category": "moderate",
+          "price_eur": 670.00,
+          "distance_km": 160,
+          "price_per_km_eur": 4.19,
+          "occupancy_rate_percent": 100.00
+        },
+        {
+          "tour_name": "Tuscany Vineyard Circuit",
+          "category": "moderate",
+          "price_eur": 670.00,
+          "distance_km": 160,
+          "price_per_km_eur": 4.19,
+          "occupancy_rate_percent": 30.00
+        },
+        {
+          "tour_name": "Sahara Desert Expedition",
+          "category": "difficult",
+          "price_eur": 750.00,
+          "distance_km": 180,
+          "price_per_km_eur": 4.17,
+          "occupancy_rate_percent": 50.00
+        },
+        {
+          "tour_name": "Andalusia Explorer",
+          "category": "moderate",
+          "price_eur": 750.00,
+          "distance_km": 180.0,
+          "price_per_km_eur": 4.17,
+          "occupancy_rate_percent": 66.67
+        },
+        {
+          "tour_name": "Cork Coastal Discovery",
+          "category": "moderate",
+          "price_eur": 520.00,
+          "distance_km": 125.0,
+          "price_per_km_eur": 4.16,
+          "occupancy_rate_percent": 42.86
+        },
+        {
+          "tour_name": "Corsica Coastal Ride",
+          "category": "moderate",
+          "price_eur": 620.00,
+          "distance_km": 150.0,
+          "price_per_km_eur": 4.13,
+          "occupancy_rate_percent": 83.33
+        },
+        {
+          "tour_name": "Alpine Discovery Ride",
+          "category": "challenging",
+          "price_eur": 890.00,
+          "distance_km": 220.5,
+          "price_per_km_eur": 4.04,
+          "occupancy_rate_percent": 53.33
+        },
+        {
+          "tour_name": "California Coast Classic",
+          "category": "challenging",
+          "price_eur": 2100.00,
+          "distance_km": 550.0,
+          "price_per_km_eur": 3.82,
+          "occupancy_rate_percent": 66.67
+        },
+        {
+          "tour_name": "Bali Island Loop",
+          "category": "moderate",
+          "price_eur": 980.00,
+          "distance_km": 260,
+          "price_per_km_eur": 3.77,
+          "occupancy_rate_percent": 25.00
+        },
+        {
+          "tour_name": "Loire Valley Discovery",
+          "category": "easy",
+          "price_eur": 450.00,
+          "distance_km": 120.5,
+          "price_per_km_eur": 3.73,
+          "occupancy_rate_percent": 30.00
+        },
+        {
+          "tour_name": "Coastal Breeze Journey",
+          "category": "easy",
+          "price_eur": 350.00,
+          "distance_km": 95.2,
+          "price_per_km_eur": 3.68,
+          "occupancy_rate_percent": 70.00
+        },
+        {
+          "tour_name": "Coastal Breeze Journey",
+          "category": "easy",
+          "price_eur": 350.00,
+          "distance_km": 95.2,
+          "price_per_km_eur": 3.68,
+          "occupancy_rate_percent": 30.00
+        },
+        {
+          "tour_name": "Canadian Rockies Expedition",
+          "category": "difficult",
+          "price_eur": 1200.00,
+          "distance_km": 340,
+          "price_per_km_eur": 3.53,
+          "occupancy_rate_percent": 75.00
+        },
+        {
+          "tour_name": "Danube River Path",
+          "category": "easy",
+          "price_eur": 970.00,
+          "distance_km": 290.0,
+          "price_per_km_eur": 3.34,
+          "occupancy_rate_percent": 73.33
+        },
+        {
+          "tour_name": "Ancient Paths of Greece",
+          "category": "moderate",
+          "price_eur": 640.00,
+          "distance_km": 210,
+          "price_per_km_eur": 3.05,
+          "occupancy_rate_percent": 100.00
+        },
+        {
+          "tour_name": "Tokyo Urban Explorer",
+          "category": "moderate",
+          "price_eur": 120.00,
+          "distance_km": 45.3,
+          "price_per_km_eur": 2.65,
+          "occupancy_rate_percent": 100.00
+        },
+        {
+          "tour_name": "Tokyo Urban Explorer",
+          "category": "moderate",
+          "price_eur": 120.00,
+          "distance_km": 45.3,
+          "price_per_km_eur": 2.65,
+          "occupancy_rate_percent": 100.00
+        },
+        {
+          "tour_name": "Inverness Highlands Loop",
+          "category": "moderate",
+          "price_eur": 420.00,
+          "distance_km": 170.0,
+          "price_per_km_eur": 2.47,
+          "occupancy_rate_percent": 16.67
+        }
+      ],
+      "bike_rental_profitability": [
+        {
+          "bike_type": "road",
+          "avg_rental_price_eur": 102.38,
+          "rental_frequency_percent": 62.50,
+          "estimated_revenue_eur": 1164.00
+        },
+        {
+          "bike_type": "hybrid",
+          "avg_rental_price_eur": 245.67,
+          "rental_frequency_percent": 50.00,
+          "estimated_revenue_eur": 2615.00
+        },
+        {
+          "bike_type": "electric",
+          "avg_rental_price_eur": 241.83,
+          "rental_frequency_percent": 34.78,
+          "estimated_revenue_eur": 326.00
+        },
+        {
+          "bike_type": "gravel",
+          "avg_rental_price_eur": 112.50,
+          "rental_frequency_percent": 16.67,
+          "estimated_revenue_eur": 45.00
+        },
+        {
+          "bike_type": "city",
+          "avg_rental_price_eur": 43.40,
+          "rental_frequency_percent": 40.00,
+          "estimated_revenue_eur": 30.00
+        },
+        {
+          "bike_type": "touring",
+          "avg_rental_price_eur": 1377.50,
+          "rental_frequency_percent": 0.00,
+          "estimated_revenue_eur": 0.00
+        },
+        {
+          "bike_type": "mountain",
+          "avg_rental_price_eur": 474.86,
+          "rental_frequency_percent": 14.29,
+          "estimated_revenue_eur": 40.00
+        }
+      ]
+    },
+    "performance_summary": {
+      "total_revenue_eur": 27276.20,
+      "total_bookings": 33,
+      "avg_revenue_per_booking_eur": 826.55,
+      "overall_occupancy_rate_percent": 61.92,
+      "best_performing_category": "moderate",
+      "package_adoption_rate_percent": 100.00
+    }  }
+}

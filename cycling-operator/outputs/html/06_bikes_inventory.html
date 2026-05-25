@@ -1,0 +1,1477 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Bike Inventory Dashboard</title>
+      <meta name="author" content="Audrey Costes, Halima Lemmouchi, Lina Marcela Diaz Bejarano, Vincent Boettcher">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../css/styles.css">
+   </head>
+   <body class="bike-inventory-dashboard">
+      <header class="page-header">
+         <h1>Bike Inventory Management</h1>
+      </header>
+      <main class="inventory-content">
+         <div class="table-wrapper">
+            <table class="bike-table">
+               <caption>
+                  <div class="caption-content"><span class="caption-title">Fleet overview</span><div class="filter-controls">
+                        <form><label for="filter-type">Filter by type</label><select id="filter-type" name="filter-type">
+                              <option value="all">All</option>
+                              <option value="city">city</option>
+                              <option value="electric">electric</option>
+                              <option value="gravel">gravel</option>
+                              <option value="hybrid">hybrid</option>
+                              <option value="mountain">mountain</option>
+                              <option value="road">road</option>
+                              <option value="touring">touring</option></select><label for="filter-availability">Filter by availability</label><select id="filter-availability" name="filter-availability">
+                              <option value="all">All</option>
+                              <option value="available">available</option>
+                              <option value="maintenance">maintenance</option>
+                              <option value="reserved">reserved</option></select></form>
+                     </div>
+                  </div><span class="caption-meta">Bikes: 79 · Available: 29 · Reserved: 37 · Maintenance: 13</span></caption>
+               <thead>
+                  <tr>
+                     <th>Bike</th>
+                     <th>Type &amp; size</th>
+                     <th>Availability</th>
+                     <th>Tour assignment</th>
+                     <th>Booking</th>
+                     <th>Rate</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Cube Attain GTC</strong><div class="bike-ref">Ref: src2_b1</div>
+                        <div class="contact-meta">Weight: 8.9 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Alpine Discovery Ride</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 220.5 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Anna Keller</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-01</div>
+                           <div class="contact-meta">Tour dates: 2026-06-10 → 2026-06-14</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">35.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Specialized Tarmac SL7</strong><div class="bike-ref">Ref: src2_b1b</div>
+                        <div class="contact-meta">Weight: 7.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Alpine Discovery Ride</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 220.5 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Thomas Dubois</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-15</div>
+                           <div class="contact-meta">Tour dates: 2026-06-10 → 2026-06-14</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">42.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="available">
+                     <td><strong>Trek Domane SL 5</strong><div class="bike-ref">Ref: src2_b1c</div>
+                        <div class="contact-meta">Weight: 8.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Alpine Discovery Ride</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 220.5 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">38.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="available">
+                     <td><strong>Canyon Endurace CF</strong><div class="bike-ref">Ref: src2_b1d</div>
+                        <div class="contact-meta">Weight: 7.9 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Alpine Discovery Ride</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 220.5 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">40.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Cube Attain GTC</strong><div class="bike-ref">Ref: src2_b1_2024_a</div>
+                        <div class="contact-meta">Weight: 8.9 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Alpine Discovery Ride</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 120.5 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Sophie Laurent</strong></div>
+                           <div class="contact-meta">Booking date: 2024-06-15</div>
+                           <div class="contact-meta">Tour dates: 2024-07-10 → 2024-07-13</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">35.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Specialized Tarmac SL7</strong><div class="bike-ref">Ref: src2_b1_2024_b</div>
+                        <div class="contact-meta">Weight: 7.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Alpine Discovery Ride</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 120.5 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Luca Romano</strong></div>
+                           <div class="contact-meta">Booking date: 2024-06-20</div>
+                           <div class="contact-meta">Tour dates: 2024-07-10 → 2024-07-13</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">42.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Trek Domane SL 5</strong><div class="bike-ref">Ref: src2_b1_2024_c</div>
+                        <div class="contact-meta">Weight: 8.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Alpine Discovery Ride</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 120.5 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Hans Mueller</strong></div>
+                           <div class="contact-meta">Booking date: 2024-06-18</div>
+                           <div class="contact-meta">Tour dates: 2024-07-10 → 2024-07-13</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">38.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Trek Emonda SL6</strong><div class="bike-ref">Ref: src3_b4</div>
+                        <div class="contact-meta">Weight: 7.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Alps Challenge</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 200.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Zoro Roronoa</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-20</div>
+                           <div class="contact-meta">Tour dates: 2026-05-05 → 2026-05-08</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">40.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Trek Emonda SL6</strong><div class="bike-ref">Ref: src3_b5</div>
+                        <div class="contact-meta">Weight: 7.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Alps Challenge</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 200.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Chopper Tony</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-21</div>
+                           <div class="contact-meta">Tour dates: 2026-05-05 → 2026-05-08</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">40.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Cannondale Synapse Carbon</strong><div class="bike-ref">Ref: src2_b10a</div>
+                        <div class="contact-meta">Weight: 8.4 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Ancient Paths of Greece</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 210 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Elena Papadopoulos</strong></div>
+                           <div class="contact-meta">Booking date: 2025-02-25</div>
+                           <div class="contact-meta">Tour dates: 2025-04-10 → 2025-04-14</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">37.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="available">
+                     <td><strong>Cube Kathmandu Hybrid</strong><div class="bike-ref">Ref: src2_b10b</div>
+                        <div class="contact-meta">Weight: 23.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">120 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Ancient Paths of Greece</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 210 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">48.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="reserved">
+                     <td><strong>Cannondale Quick</strong><div class="bike-ref">Ref: src3_b8</div>
+                        <div class="contact-meta">Weight: 13.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Andalusia Explorer</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 180.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Usopp Sogeking</strong></div>
+                           <div class="contact-meta">Booking date: 2026-05-05</div>
+                           <div class="contact-meta">Tour dates: 2026-05-25 → 2026-05-28</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">30.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="available">
+                     <td><strong>Polygon Heist X7</strong><div class="bike-ref">Ref: src2_b8a</div>
+                        <div class="contact-meta">Weight: 11.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Bali Island Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 260 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">25.00 IDR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="mountain" data-availability="available">
+                     <td><strong>United Detroit 2</strong><div class="bike-ref">Ref: src2_b8b</div>
+                        <div class="contact-meta">Weight: 13.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Mountain</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Bali Island Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 260 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">28.00 IDR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Haibike Trekking 5</strong><div class="bike-ref">Ref: src2_b7a</div>
+                        <div class="contact-meta">Weight: 24.1 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">100 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Black Forest Trail</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 120 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">45.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="reserved">
+                     <td><strong>Canyon Pathlite</strong><div class="bike-ref">Ref: src2_b7b</div>
+                        <div class="contact-meta">Weight: 12.3 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Black Forest Trail</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 120 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">30.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="available">
+                     <td><strong>Specialized Roubaix</strong><div class="bike-ref">Ref: src4_bikeUS1</div>
+                        <div class="contact-meta">Weight: 8.9 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>California Coast Classic</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 550.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">45.00 USD</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="gravel" data-availability="available">
+                     <td><strong>Cannondale Topstone 2</strong><div class="bike-ref">Ref: src4_bikeCA1</div>
+                        <div class="contact-meta">Weight: 10.3 kg</div>
+                     </td>
+                     <td>
+                        <div>Gravel</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Canadian Rockies Adventure</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 420.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">42.00 CAD</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="mountain" data-availability="reserved">
+                     <td><strong>Trek Marlin 7</strong><div class="bike-ref">Ref: src2_b5a</div>
+                        <div class="contact-meta">Weight: 13.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Mountain</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Canadian Rockies Expedition</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 340 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">38.00 CAD</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="mountain" data-availability="available">
+                     <td><strong>Rocky Mountain Altitude</strong><div class="bike-ref">Ref: src2_b5b</div>
+                        <div class="contact-meta">Weight: 14.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Mountain</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Canadian Rockies Expedition</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 340 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">45.00 CAD</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Gazelle Easyflow</strong><div class="bike-ref">Ref: src2_b2a</div>
+                        <div class="contact-meta">Weight: 23.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">80 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Coastal Breeze Journey</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 95.2 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Elena Rodriguez</strong></div>
+                           <div class="contact-meta">Booking date: 2026-06-01</div>
+                           <div class="contact-meta">Tour dates: 2026-07-01 → 2026-07-03</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">45.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Orbea Gain F25</strong><div class="bike-ref">Ref: src2_b2b</div>
+                        <div class="contact-meta">Weight: 19.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">100 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Coastal Breeze Journey</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 95.2 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Marta Garcia</strong></div>
+                           <div class="contact-meta">Booking date: 2026-06-05</div>
+                           <div class="contact-meta">Tour dates: 2026-07-01 → 2026-07-03</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">48.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Riese &amp; Müller Supercharger</strong><div class="bike-ref">Ref: src2_b2c</div>
+                        <div class="contact-meta">Weight: 24.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">120 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Coastal Breeze Journey</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 95.2 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>David Smith</strong></div>
+                           <div class="contact-meta">Booking date: 2026-05-28</div>
+                           <div class="contact-meta">Tour dates: 2026-07-01 → 2026-07-03</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">50.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="available">
+                     <td><strong>Haibike Trekking 8</strong><div class="bike-ref">Ref: src2_b2d</div>
+                        <div class="contact-meta">Weight: 22.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">90 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Coastal Breeze Journey</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 95.2 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">46.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Gazelle Easyflow</strong><div class="bike-ref">Ref: src2_b2_2026_a</div>
+                        <div class="contact-meta">Weight: 23.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">80 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Coastal Breeze Journey</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 95.2 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Isabella Ferreira</strong></div>
+                           <div class="contact-meta">Booking date: 2026-08-10</div>
+                           <div class="contact-meta">Tour dates: 2026-09-15 → 2026-09-17</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">45.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Orbea Gain F25</strong><div class="bike-ref">Ref: src2_b2_2026_b</div>
+                        <div class="contact-meta">Weight: 19.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">100 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Coastal Breeze Journey</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 95.2 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Nikolaos Papadopoulos</strong></div>
+                           <div class="contact-meta">Booking date: 2026-08-12</div>
+                           <div class="contact-meta">Tour dates: 2026-09-15 → 2026-09-17</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">48.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="city" data-availability="available">
+                     <td><strong>Giant Escape 2</strong><div class="bike-ref">Ref: src4_bikeS1</div>
+                        <div class="contact-meta">Weight: 14.0 kg</div>
+                     </td>
+                     <td>
+                        <div>City</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Coastal Catalonia Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 130.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">20.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="city" data-availability="available">
+                     <td><strong>Biomega Copenhagen</strong><div class="bike-ref">Ref: src1_b15</div>
+                        <div class="contact-meta">Weight: 14.0 kg</div>
+                     </td>
+                     <td>
+                        <div>City</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Copenhagen City Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 60.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">150.00 DKK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="available">
+                     <td><strong>Gazelle CityZen</strong><div class="bike-ref">Ref: src1_b16</div>
+                        <div class="contact-meta">Weight: 22.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">50 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Copenhagen City Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 60.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">250.00 DKK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="maintenance">
+                     <td><strong>Origine Trail Evo</strong><div class="bike-ref">Ref: src1_b16a</div>
+                        <div class="contact-meta">Weight: 11.4 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Copenhagen City Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 60.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">210.00 DKK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="maintenance">
+                     <td><strong>Sunn Flash S1</strong><div class="bike-ref">Ref: src1_b16b</div>
+                        <div class="contact-meta">Weight: 23.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">65 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Copenhagen City Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 60.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">280.00 DKK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Raleigh Strada</strong><div class="bike-ref">Ref: src1_b1</div>
+                        <div class="contact-meta">Weight: 9.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Cork Coastal Discovery</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 125.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Harry Connor</strong></div>
+                           <div class="contact-meta">Booking date: 2026-05-20</div>
+                           <div class="contact-meta">Tour dates: 2026-06-10 → 2026-06-13</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">30.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="available">
+                     <td><strong>Giant Escape 3</strong><div class="bike-ref">Ref: src1_b1b</div>
+                        <div class="contact-meta">Weight: 12.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Cork Coastal Discovery</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 125.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">25.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="maintenance">
+                     <td><strong>Lapierre Sensium 500</strong><div class="bike-ref">Ref: src1_b1c</div>
+                        <div class="contact-meta">Weight: 8.3 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Cork Coastal Discovery</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 125.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">48.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="maintenance">
+                     <td><strong>Peugeot eC01 D9</strong><div class="bike-ref">Ref: src1_b1d</div>
+                        <div class="contact-meta">Weight: 24.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">85 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Cork Coastal Discovery</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 125.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">55.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="reserved">
+                     <td><strong>Specialized Sirrus</strong><div class="bike-ref">Ref: src3_b6</div>
+                        <div class="contact-meta">Weight: 13.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Corsica Coastal Ride</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 150.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Nami Swan</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-25</div>
+                           <div class="contact-meta">Tour dates: 2026-05-12 → 2026-05-15</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">25.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="available">
+                     <td><strong>Kalkhoff Endeavour 3.B</strong><div class="bike-ref">Ref: src4_bikeA1</div>
+                        <div class="contact-meta">Weight: 24.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Danube River Path</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 290.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">35.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="available">
+                     <td><strong>Giant Contend AR</strong><div class="bike-ref">Ref: src4_bikeAU1</div>
+                        <div class="contact-meta">Weight: 9.9 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Great Ocean Road Escape</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 290.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">32.00 AUD</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="gravel" data-availability="reserved">
+                     <td><strong>Scott Sub Cross</strong><div class="bike-ref">Ref: src1_b17</div>
+                        <div class="contact-meta">Weight: 10.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Gravel</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Inverness Highlands Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 170.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>James Cameron</strong></div>
+                           <div class="contact-meta">Booking date: 2026-05-30</div>
+                           <div class="contact-meta">Tour dates: 2026-07-10 → 2026-07-13</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">45.00 GBP</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="gravel" data-availability="available">
+                     <td><strong>Ribble CGR</strong><div class="bike-ref">Ref: src1_b18</div>
+                        <div class="contact-meta">Weight: 9.9 kg</div>
+                     </td>
+                     <td>
+                        <div>Gravel</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Inverness Highlands Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 170.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">50.00 GBP</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="touring" data-availability="maintenance">
+                     <td><strong>Mercier Classic Randonneur</strong><div class="bike-ref">Ref: src1_b18a</div>
+                        <div class="contact-meta">Weight: 11.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Touring</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Inverness Highlands Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 170.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">55.00 GBP</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="maintenance">
+                     <td><strong>Moustache Samedi 27 Xroad 5</strong><div class="bike-ref">Ref: src1_b18b</div>
+                        <div class="contact-meta">Weight: 24.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">75 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Inverness Highlands Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 170.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">65.00 GBP</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="available">
+                     <td><strong>Trek FX 3</strong><div class="bike-ref">Ref: src4_bikeF1</div>
+                        <div class="contact-meta">Weight: 13.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Loire Valley Castles Ride</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 150.5 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">25.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="reserved">
+                     <td><strong>Giant Escape 3</strong><div class="bike-ref">Ref: src3_b1</div>
+                        <div class="contact-meta">Weight: 14.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="bike-autonomy">0 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Loire Valley Discovery</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 120.5 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Luffy MonkeyD</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-10</div>
+                           <div class="contact-meta">Tour dates: 2026-05-01 → 2026-05-03</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">20.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="reserved">
+                     <td><strong>Giant Escape 3</strong><div class="bike-ref">Ref: src3_b2</div>
+                        <div class="contact-meta">Weight: 14.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="bike-autonomy">0 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Loire Valley Discovery</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 120.5 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Ace PortgasD</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-10</div>
+                           <div class="contact-meta">Tour dates: 2026-05-01 → 2026-05-03</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">20.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="reserved">
+                     <td><strong>Giant Escape 3</strong><div class="bike-ref">Ref: src3_b3</div>
+                        <div class="contact-meta">Weight: 14.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="bike-autonomy">0 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Loire Valley Discovery</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 120.5 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Sabo Goa</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-10</div>
+                           <div class="contact-meta">Tour dates: 2026-05-01 → 2026-05-03</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">20.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="gravel" data-availability="reserved">
+                     <td><strong>Merida Silex 400</strong><div class="bike-ref">Ref: src2_b9a</div>
+                        <div class="contact-meta">Weight: 9.6 kg</div>
+                     </td>
+                     <td>
+                        <div>Gravel</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Nordic Fjord Route</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 300 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">50.00 NOK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="maintenance">
+                     <td><strong>Bergamont E-Grandurance</strong><div class="bike-ref">Ref: src2_b9b</div>
+                        <div class="contact-meta">Weight: 18.9 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">110 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Nordic Fjord Route</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 300 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">60.00 NOK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Scott Addict</strong><div class="bike-ref">Ref: src1_b11</div>
+                        <div class="contact-meta">Weight: 8.6 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Oslo Fjord Ride</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 95.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Halima Olsen</strong></div>
+                           <div class="contact-meta">Booking date: 2026-06-28</div>
+                           <div class="contact-meta">Tour dates: 2026-07-20 → 2026-07-22</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">300.00 NOK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="available">
+                     <td><strong>Trek Verve+ 2</strong><div class="bike-ref">Ref: src1_b12</div>
+                        <div class="contact-meta">Weight: 21.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">70 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Oslo Fjord Ride</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 95.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">450.00 NOK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="maintenance">
+                     <td><strong>Look 785 Huez RS</strong><div class="bike-ref">Ref: src1_b12a</div>
+                        <div class="contact-meta">Weight: 7.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Oslo Fjord Ride</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 95.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">520.00 NOK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="maintenance">
+                     <td><strong>Gitane e-Verso Performance</strong><div class="bike-ref">Ref: src1_b12b</div>
+                        <div class="contact-meta">Weight: 23.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">90 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Oslo Fjord Ride</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 95.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">480.00 NOK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="mountain" data-availability="available">
+                     <td><strong>Trek Marlin 7</strong><div class="bike-ref">Ref: src4_bikeCL1</div>
+                        <div class="contact-meta">Weight: 14.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Mountain</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Patagonia Wilderness Ride</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 400.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">38.00 USD</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="reserved">
+                     <td><strong>Specialized Sirrus</strong><div class="bike-ref">Ref: src1_b19</div>
+                        <div class="contact-meta">Weight: 12.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Reykjavik City Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 55.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Arthur Sunny</strong></div>
+                           <div class="contact-meta">Booking date: 2026-05-18</div>
+                           <div class="contact-meta">Tour dates: 2026-06-21 → 2026-06-21</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">2500.00 ISK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="touring" data-availability="available">
+                     <td><strong>Cube Touring</strong><div class="bike-ref">Ref: src1_b20</div>
+                        <div class="contact-meta">Weight: 13.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Touring</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Reykjavik City Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 55.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">2700.00 ISK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="maintenance">
+                     <td><strong>Matra i-Flow Active</strong><div class="bike-ref">Ref: src1_b20a</div>
+                        <div class="contact-meta">Weight: 25.3 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">80 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Reykjavik City Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 55.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">2950.00 ISK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="mountain" data-availability="maintenance">
+                     <td><strong>Cavalerie Anakin TRP</strong><div class="bike-ref">Ref: src1_b20b</div>
+                        <div class="contact-meta">Weight: 14.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Mountain</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Reykjavik City Ride</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 55.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">3100.00 ISK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="mountain" data-availability="available">
+                     <td><strong>Giant Talon 1</strong><div class="bike-ref">Ref: src2_b6a</div>
+                        <div class="contact-meta">Weight: 13.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Mountain</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Sahara Desert Expedition</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 180 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">35.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="mountain" data-availability="reserved">
+                     <td><strong>Cannondale Trail SE</strong><div class="bike-ref">Ref: src2_b6b</div>
+                        <div class="contact-meta">Weight: 12.9 kg</div>
+                     </td>
+                     <td>
+                        <div>Mountain</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Sahara Desert Expedition</strong><div class="contact-meta">Category: difficult</div>
+                        <div class="contact-meta">Distance: 180 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Omar Benali</strong></div>
+                           <div class="contact-meta">Booking date: 2026-08-01</div>
+                           <div class="contact-meta">Tour dates: 2026-10-15 → 2026-10-18</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">40.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="gravel" data-availability="available">
+                     <td><strong>Ribble CGR AL</strong><div class="bike-ref">Ref: src4_bikeUK1</div>
+                        <div class="contact-meta">Weight: 10.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Gravel</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Scottish Highlands Explorer</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 260.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">28.00 GBP</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Orbea Avant</strong><div class="bike-ref">Ref: src1_b13</div>
+                        <div class="contact-meta">Weight: 8.7 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Stockholm Seaside Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 140.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Morgane Larsson</strong></div>
+                           <div class="contact-meta">Booking date: 2026-07-15</div>
+                           <div class="contact-meta">Tour dates: 2026-08-05 → 2026-08-08</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">350.00 SEK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="available">
+                     <td><strong>Prophete City E</strong><div class="bike-ref">Ref: src1_b14</div>
+                        <div class="contact-meta">Weight: 22.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">60 km autonomy</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Stockholm Seaside Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 140.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">400.00 SEK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="maintenance">
+                     <td><strong>Time Alpe d'Huez 01</strong><div class="bike-ref">Ref: src1_b14a</div>
+                        <div class="contact-meta">Weight: 7.6 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Stockholm Seaside Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 140.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">500.00 SEK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="gravel" data-availability="maintenance">
+                     <td><strong>Motobecane Gravel X3</strong><div class="bike-ref">Ref: src1_b14b</div>
+                        <div class="contact-meta">Weight: 10.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Gravel</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">maintenance</span></td>
+                     <td><strong>Stockholm Seaside Loop</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 140.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">460.00 SEK</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Giant Defy Advanced</strong><div class="bike-ref">Ref: src3_b7</div>
+                        <div class="contact-meta">Weight: 8.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Swiss Alpine Adventure</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 220.0 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Sanji Vinsmoke</strong></div>
+                           <div class="contact-meta">Booking date: 2026-05-01</div>
+                           <div class="contact-meta">Tour dates: 2026-05-18 → 2026-05-22</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">50.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="available">
+                     <td><strong>Cannondale Synapse Carbon</strong><div class="bike-ref">Ref: src4_bikeCH1</div>
+                        <div class="contact-meta">Weight: 8.8 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Swiss Alpine Challenge</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 320.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">40.00 CHF</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="city" data-availability="reserved">
+                     <td><strong>Giant Escape</strong><div class="bike-ref">Ref: src2_b3a</div>
+                        <div class="contact-meta">Weight: 11.5 kg</div>
+                     </td>
+                     <td>
+                        <div>City</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Tokyo Urban Explorer</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 45.3 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Yuki Nakamura</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-20</div>
+                           <div class="contact-meta">Tour dates: 2026-05-10 → 2026-05-10</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">15 JPY</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Panasonic Vivi DX</strong><div class="bike-ref">Ref: src2_b3b</div>
+                        <div class="contact-meta">Weight: 24.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">50 km autonomy</div>
+                        <div class="contact-meta">Size: S</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Tokyo Urban Explorer</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 45.3 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Emily Johnson</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-22</div>
+                           <div class="contact-meta">Tour dates: 2026-05-10 → 2026-05-10</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">20 JPY</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="city" data-availability="available">
+                     <td><strong>Bridgestone Markrosa</strong><div class="bike-ref">Ref: src2_b3c</div>
+                        <div class="contact-meta">Weight: 13.0 kg</div>
+                     </td>
+                     <td>
+                        <div>City</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Tokyo Urban Explorer</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 45.3 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">17 JPY</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="available">
+                     <td><strong>Yamaha PAS City-C</strong><div class="bike-ref">Ref: src2_b3d</div>
+                        <div class="contact-meta">Weight: 23.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">55 km autonomy</div>
+                        <div class="contact-meta">Size: S</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Tokyo Urban Explorer</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 45.3 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">22 JPY</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="city" data-availability="reserved">
+                     <td><strong>Giant Escape</strong><div class="bike-ref">Ref: src2_b3_2024_a</div>
+                        <div class="contact-meta">Weight: 11.5 kg</div>
+                     </td>
+                     <td>
+                        <div>City</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Tokyo Urban Explorer</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 45.3 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Kenji Sato</strong></div>
+                           <div class="contact-meta">Booking date: 2024-02-15</div>
+                           <div class="contact-meta">Tour dates: 2024-03-20 → 2024-03-20</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">15 JPY</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Panasonic Vivi DX</strong><div class="bike-ref">Ref: src2_b3_2024_b</div>
+                        <div class="contact-meta">Weight: 24.0 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">50 km autonomy</div>
+                        <div class="contact-meta">Size: S</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Tokyo Urban Explorer</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 45.3 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Rachel Brown</strong></div>
+                           <div class="contact-meta">Booking date: 2024-02-20</div>
+                           <div class="contact-meta">Tour dates: 2024-03-20 → 2024-03-20</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">20 JPY</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Pinarello Paris</strong><div class="bike-ref">Ref: src2_b4a</div>
+                        <div class="contact-meta">Weight: 7.6 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Tuscany Vineyard Circuit</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 160 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Alessandro Conti</strong></div>
+                           <div class="contact-meta">Booking date: 2026-08-01</div>
+                           <div class="contact-meta">Tour dates: 2026-09-20 → 2026-09-23</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">40.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="reserved">
+                     <td><strong>Bianchi Aria E-Road</strong><div class="bike-ref">Ref: src2_b4b</div>
+                        <div class="contact-meta">Weight: 12.4 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">90 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Tuscany Vineyard Circuit</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 160 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Claire Martin</strong></div>
+                           <div class="contact-meta">Booking date: 2026-08-05</div>
+                           <div class="contact-meta">Tour dates: 2026-09-20 → 2026-09-23</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">50.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Colnago C64</strong><div class="bike-ref">Ref: src2_b4c</div>
+                        <div class="contact-meta">Weight: 7.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Tuscany Vineyard Circuit</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 160 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>William Anderson</strong></div>
+                           <div class="contact-meta">Booking date: 2026-08-03</div>
+                           <div class="contact-meta">Tour dates: 2026-09-20 → 2026-09-23</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">45.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="reserved">
+                     <td><strong>Pinarello Paris</strong><div class="bike-ref">Ref: src2_b4_2026_a</div>
+                        <div class="contact-meta">Weight: 7.6 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">reserved</span></td>
+                     <td><strong>Tuscany Vineyard Circuit</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 160 km</div>
+                     </td>
+                     <td>
+                        <div class="booking-entry">
+                           <div class="booking-client"><strong>Oliver Schmidt</strong></div>
+                           <div class="contact-meta">Booking date: 2026-04-10</div>
+                           <div class="contact-meta">Tour dates: 2026-05-15 → 2026-05-18</div>
+                        </div>
+                     </td>
+                     <td class="rate-cell"><span class="rate-value">40.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="electric" data-availability="available">
+                     <td><strong>Bianchi Aria E-Road</strong><div class="bike-ref">Ref: src2_b4_2026_b</div>
+                        <div class="contact-meta">Weight: 12.4 kg</div>
+                     </td>
+                     <td>
+                        <div>Electric</div>
+                        <div class="bike-autonomy">90 km autonomy</div>
+                        <div class="contact-meta">Size: M</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Tuscany Vineyard Circuit</strong><div class="contact-meta">Category: moderate</div>
+                        <div class="contact-meta">Distance: 160 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">50.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="road" data-availability="available">
+                     <td><strong>Specialized Allez</strong><div class="bike-ref">Ref: src4_bikeI1</div>
+                        <div class="contact-meta">Weight: 9.5 kg</div>
+                     </td>
+                     <td>
+                        <div>Road</div>
+                        <div class="contact-meta">Size: L</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Tuscany Wine Hills</strong><div class="contact-meta">Category: challenging</div>
+                        <div class="contact-meta">Distance: 210.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">30.00 EUR</span><span class="rate-unit">/day</span></td>
+                  </tr>
+                  <tr data-type="hybrid" data-availability="available">
+                     <td><strong>Merida Crossway 100</strong><div class="bike-ref">Ref: src4_bikeVN1</div>
+                        <div class="contact-meta">Weight: 13.2 kg</div>
+                     </td>
+                     <td>
+                        <div>Hybrid</div>
+                        <div class="contact-meta">Size: S</div>
+                     </td>
+                     <td><span class="tag">available</span></td>
+                     <td><strong>Vietnam Mekong Delta Discovery</strong><div class="contact-meta">Category: easy</div>
+                        <div class="contact-meta">Distance: 180.0 km</div>
+                     </td>
+                     <td>—</td>
+                     <td class="rate-cell"><span class="rate-value">18.00 USD</span><span class="rate-unit">/day</span></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </main><script>
+(function () {
+  var typeSelect = document.getElementById('filter-type');
+  var availabilitySelect = document.getElementById('filter-availability');
+  if (!typeSelect || !availabilitySelect) {
+	return;
+  }
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.bike-table tbody tr'));
+  function applyFilters() {
+	var typeValue = typeSelect.value;
+	var availabilityValue = availabilitySelect.value;
+	rows.forEach(function (row) {
+	  var matchesType = typeValue === 'all' || row.getAttribute('data-type') === typeValue;
+	  var matchesAvailability = availabilityValue === 'all' || row.getAttribute('data-availability') === availabilityValue;
+	  row.style.display = (matchesType && matchesAvailability) ? '' : 'none';
+	});
+  }
+  typeSelect.addEventListener('change', applyFilters);
+  availabilitySelect.addEventListener('change', applyFilters);
+})();
+				</script></body>
+</html>

@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://city-tour-operator.org/cto"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://city-tour-operator.org/cto ../../schema/schema.xsd">
+
+	<!-- ======================= TOUR 1 ======================= -->
+	<tours>
+		<tour>
+			<tour_name>Loire Valley Castles Ride</tour_name>
+			<company>
+				<name>Cycle France Adventures</name>
+				<contact>
+					<email>info@cyclefrance.com</email>
+					<phone_number>+33 1 23 45 67 89</phone_number>
+				</contact>
+				<address>
+					<street>12 Rue de la Loire</street>
+					<city>Tours</city>
+					<code>37000</code>
+					<country>France</country>
+				</address>
+			</company>
+			<short_description>Explore the famous castles of the Loire Valley by bike.</short_description>
+			<long_description>This moderate cycling tour takes you through the heart of the Loire Valley, visiting
+				châteaux, vineyards, and picturesque villages.</long_description>
+			<category>moderate</category>
+			<distance>150.5</distance>
+			<duration>
+				<duration_days>5</duration_days>
+				<start_date>2027-05-10</start_date>
+				<end_date>2027-05-15</end_date>
+			</duration>
+			<price>
+				<amount>850.00</amount>
+				<currency>EUR</currency>
+			</price>
+			<guide idref="g1" />
+			<tour_availability>
+				<capacity>20</capacity>
+				<current_number_of_participants>12</current_number_of_participants>
+				<availability>open</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>0.6889</longitude>
+					<latitude>47.3941</latitude>
+				</coordinates>
+				<address>
+					<street>Place Jean Jaurès</street>
+					<city>Tours</city>
+					<code>37000</code>
+					<country>France</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>1.5167</longitude>
+					<latitude>47.5833</latitude>
+				</coordinates>
+				<address>
+					<street>Rue Royale</street>
+					<city>Blois</city>
+					<code>41000</code>
+					<country>France</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeF1">
+					<model>Trek FX 3</model>
+					<bike_type>
+						<type>hybrid</type>
+					</bike_type>
+					<gear_count>21</gear_count>
+					<size>M</size>
+					<weight>13.5</weight>
+					<rental_price_per_day>
+						<amount>25.00</amount>
+						<currency>EUR</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 2 ======================= -->
+		<tour>
+			<tour_name>Tuscany Wine Hills</tour_name>
+			<company>
+				<name>Italia Bike Tours</name>
+				<contact>
+					<email>contact@italiabike.it</email>
+					<phone_number>+39 055 678901</phone_number>
+				</contact>
+				<address>
+					<street>Via Roma 22</street>
+					<city>Florence</city>
+					<code>50123</code>
+					<country>Italy</country>
+				</address>
+			</company>
+			<short_description>Cycle through Tuscany's rolling hills and vineyards.</short_description>
+			<long_description>This scenic route offers challenging climbs, breathtaking views, and authentic Italian
+				cuisine experiences along the way.</long_description>
+			<category>challenging</category>
+			<distance>210.0</distance>
+			<duration>
+				<duration_days>7</duration_days>
+				<start_date>2027-06-01</start_date>
+				<end_date>2027-06-07</end_date>
+			</duration>
+			<price>
+				<amount>1250.00</amount>
+				<currency>EUR</currency>
+			</price>
+			<guide idref="g2" />
+			<tour_availability>
+				<capacity>15</capacity>
+				<current_number_of_participants>10</current_number_of_participants>
+				<availability>limited</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>11.2558</longitude>
+					<latitude>43.7696</latitude>
+				</coordinates>
+				<address>
+					<street>Piazza della Repubblica</street>
+					<city>Florence</city>
+					<code>50123</code>
+					<country>Italy</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>11.3307</longitude>
+					<latitude>43.3188</latitude>
+				</coordinates>
+				<address>
+					<street>Via di Fontebranda</street>
+					<city>Siena</city>
+					<code>53100</code>
+					<country>Italy</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeI1">
+					<model>Specialized Allez</model>
+					<bike_type>
+						<type>road</type>
+					</bike_type>
+					<gear_count>22</gear_count>
+					<size>L</size>
+					<weight>9.5</weight>
+					<rental_price_per_day>
+						<amount>30.00</amount>
+						<currency>EUR</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 3 ======================= -->
+		<tour>
+			<tour_name>Coastal Catalonia Ride</tour_name>
+			<company>
+				<name>Cycling Spain Co.</name>
+				<contact>
+					<email>info@cyclingspain.es</email>
+					<phone_number>+34 933 224 567</phone_number>
+				</contact>
+				<address>
+					<street>Gran Via de les Corts Catalanes 112</street>
+					<city>Barcelona</city>
+					<code>08010</code>
+					<country>Spain</country>
+				</address>
+			</company>
+			<short_description>Enjoy the Mediterranean coast from Barcelona to Girona.</short_description>
+			<long_description>A relaxed coastal tour with daily swims, seaside meals, and cultural stops in small
+				Catalan towns.</long_description>
+			<category>easy</category>
+			<distance>130.0</distance>
+			<duration>
+				<duration_days>4</duration_days>
+				<start_date>2027-09-03</start_date>
+				<end_date>2027-09-07</end_date>
+			</duration>
+			<price>
+				<amount>650.00</amount>
+				<currency>EUR</currency>
+			</price>
+			<guide idref="g3" />
+			<tour_availability>
+				<capacity>25</capacity>
+				<current_number_of_participants>18</current_number_of_participants>
+				<availability>open</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>2.1734</longitude>
+					<latitude>41.3851</latitude>
+				</coordinates>
+				<address>
+					<street>Plaza Catalunya</street>
+					<city>Barcelona</city>
+					<code>08002</code>
+					<country>Spain</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>2.8196</longitude>
+					<latitude>41.9794</latitude>
+				</coordinates>
+				<address>
+					<street>Carrer de la Força</street>
+					<city>Girona</city>
+					<code>17004</code>
+					<country>Spain</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeS1">
+					<model>Giant Escape 2</model>
+					<bike_type>
+						<type>city</type>
+					</bike_type>
+					<gear_count>18</gear_count>
+					<size>M</size>
+					<weight>14.0</weight>
+					<rental_price_per_day>
+						<amount>20.00</amount>
+						<currency>EUR</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 4 ======================= -->
+		<tour>
+			<tour_name>Swiss Alpine Challenge</tour_name>
+			<company>
+				<name>Alpine Cycle Expeditions</name>
+				<contact>
+					<email>info@alpinecycle.ch</email>
+					<phone_number>+41 44 567 8900</phone_number>
+				</contact>
+				<address>
+					<street>Bahnstrasse 15</street>
+					<city>Zurich</city>
+					<code>8001</code>
+					<country>Switzerland</country>
+				</address>
+			</company>
+			<short_description>Conquer the mountain passes of the Swiss Alps.</short_description>
+			<long_description>This demanding tour features iconic climbs such as Grimsel and Furka passes, ideal for
+				experienced cyclists seeking a true alpine challenge.</long_description>
+			<category>challenging</category>
+			<distance>320.0</distance>
+			<duration>
+				<duration_days>8</duration_days>
+				<start_date>2027-07-12</start_date>
+				<end_date>2027-07-20</end_date>
+			</duration>
+			<price>
+				<amount>1850.00</amount>
+				<currency>CHF</currency>
+			</price>
+			<guide idref="g4" />
+			<tour_availability>
+				<capacity>12</capacity>
+				<current_number_of_participants>9</current_number_of_participants>
+				<availability>limited</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>8.5417</longitude>
+					<latitude>47.3769</latitude>
+				</coordinates>
+				<address>
+					<street>Bahnhofstrasse 10</street>
+					<city>Zurich</city>
+					<code>8001</code>
+					<country>Switzerland</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>8.3059</longitude>
+					<latitude>46.9470</latitude>
+				</coordinates>
+				<address>
+					<street>Bundesplatz</street>
+					<city>Bern</city>
+					<code>3001</code>
+					<country>Switzerland</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeCH1">
+					<model>Cannondale Synapse Carbon</model>
+					<bike_type>
+						<type>road</type>
+					</bike_type>
+					<gear_count>22</gear_count>
+					<size>M</size>
+					<weight>8.8</weight>
+					<rental_price_per_day>
+						<amount>40.00</amount>
+						<currency>CHF</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 5 ======================= -->
+		<tour>
+			<tour_name>Danube River Path</tour_name>
+			<company>
+				<name>EuroCycle Adventures</name>
+				<contact>
+					<email>info@eurocycle.at</email>
+					<phone_number>+43 1 234 5678</phone_number>
+				</contact>
+				<address>
+					<street>Ringstrasse 50</street>
+					<city>Vienna</city>
+					<code>1010</code>
+					<country>Austria</country>
+				</address>
+			</company>
+			<short_description>Ride along the scenic Danube River from Vienna to Budapest.</short_description>
+			<long_description>A classic European route following the Danube through picturesque villages, castles, and
+				nature reserves with flat terrain perfect for all levels.</long_description>
+			<category>easy</category>
+			<distance>290.0</distance>
+			<duration>
+				<duration_days>6</duration_days>
+				<start_date>2027-08-05</start_date>
+				<end_date>2027-08-11</end_date>
+			</duration>
+			<price>
+				<amount>970.00</amount>
+				<currency>EUR</currency>
+			</price>
+			<guide idref="g5" />
+			<tour_availability>
+				<capacity>30</capacity>
+				<current_number_of_participants>22</current_number_of_participants>
+				<availability>open</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>16.3738</longitude>
+					<latitude>48.2082</latitude>
+				</coordinates>
+				<address>
+					<street>Stephansplatz</street>
+					<city>Vienna</city>
+					<code>1010</code>
+					<country>Austria</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>19.0402</longitude>
+					<latitude>47.4979</latitude>
+				</coordinates>
+				<address>
+					<street>Chain Bridge</street>
+					<city>Budapest</city>
+					<code>1011</code>
+					<country>Hungary</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeA1">
+					<model>Kalkhoff Endeavour 3.B</model>
+					<bike_type>
+						<type>electric</type>
+					</bike_type>
+					<gear_count>10</gear_count>
+					<size>L</size>
+					<weight>24.5</weight>
+					<rental_price_per_day>
+						<amount>35.00</amount>
+						<currency>EUR</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 6 ======================= -->
+		<tour>
+			<tour_name>Scottish Highlands Explorer</tour_name>
+			<company>
+				<name>UK Trail Rides</name>
+				<contact>
+					<email>hello@uktrails.co.uk</email>
+					<phone_number>+44 131 222 3344</phone_number>
+				</contact>
+				<address>
+					<street>Prince Street 42</street>
+					<city>Edinburgh</city>
+					<country>Scotland</country>
+				</address>
+			</company>
+			<short_description>Discover rugged landscapes and lochs of the Scottish Highlands.</short_description>
+			<long_description>This adventurous ride combines coastal routes, glens, and highlands with cultural visits
+				to castles and whisky distilleries.</long_description>
+			<category>moderate</category>
+			<distance>260.0</distance>
+			<duration>
+				<duration_days>7</duration_days>
+				<start_date>2027-07-05</start_date>
+				<end_date>2027-07-12</end_date>
+			</duration>
+			<price>
+				<amount>1150.00</amount>
+				<currency>GBP</currency>
+			</price>
+			<guide idref="g6" />
+			<tour_availability>
+				<capacity>20</capacity>
+				<current_number_of_participants>14</current_number_of_participants>
+				<availability>open</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>-3.1883</longitude>
+					<latitude>55.9533</latitude>
+				</coordinates>
+				<address>
+					<street>Royal Mile</street>
+					<city>Edinburgh</city>
+					<country>Scotland</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>-4.2916</longitude>
+					<latitude>57.4778</latitude>
+				</coordinates>
+				<address>
+					<street>High Street</street>
+					<city>Inverness</city>
+					<country>Scotland</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeUK1">
+					<model>Ribble CGR AL</model>
+					<bike_type>
+						<type>gravel</type>
+					</bike_type>
+					<gear_count>22</gear_count>
+					<size>M</size>
+					<weight>10.5</weight>
+					<rental_price_per_day>
+						<amount>28.00</amount>
+						<currency>GBP</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 7 ======================= -->
+		<tour>
+			<tour_name>California Coast Classic</tour_name>
+			<company>
+				<name>Pacific Cycle Tours</name>
+				<contact>
+					<email>info@pacificcycle.com</email>
+					<phone_number>+1 415 777 9988</phone_number>
+				</contact>
+				<address>
+					<street>Monterey Bay 1</street>
+					<city>Monterey</city>
+					<code>93940</code>
+					<country>USA</country>
+				</address>
+			</company>
+			<short_description>Cycle along the iconic Pacific Coast Highway from San Francisco to Santa Barbara.</short_description>
+			<long_description>An epic coastal adventure with ocean views, redwood forests, and charming seaside towns.
+				Ideal for intermediate to advanced cyclists.</long_description>
+			<category>challenging</category>
+			<distance>550.0</distance>
+			<duration>
+				<duration_days>9</duration_days>
+				<start_date>2027-09-01</start_date>
+				<end_date>2027-09-10</end_date>
+			</duration>
+			<price>
+				<amount>2100.00</amount>
+				<currency>USD</currency>
+			</price>
+			<guide idref="g7" />
+			<tour_availability>
+				<capacity>18</capacity>
+				<current_number_of_participants>12</current_number_of_participants>
+				<availability>open</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>-121.8947</longitude>
+					<latitude>36.6002</latitude>
+				</coordinates>
+				<address>
+					<street>Cannery Row</street>
+					<city>Monterey</city>
+					<code>93940</code>
+					<country>USA</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>-119.6982</longitude>
+					<latitude>34.4208</latitude>
+				</coordinates>
+				<address>
+					<street>State Street</street>
+					<city>Santa Barbara</city>
+					<code>93101</code>
+					<country>USA</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeUS1">
+					<model>Specialized Roubaix</model>
+					<bike_type>
+						<type>road</type>
+					</bike_type>
+					<gear_count>22</gear_count>
+					<size>L</size>
+					<weight>8.9</weight>
+					<rental_price_per_day>
+						<amount>45.00</amount>
+						<currency>USD</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 8 ======================= -->
+		<tour>
+			<tour_name>Patagonia Wilderness Ride</tour_name>
+			<company>
+				<name>Andes Adventure Tours</name>
+				<contact>
+					<email>info@andesadventures.cl</email>
+					<phone_number>+56 2 2555 8811</phone_number>
+				</contact>
+				<address>
+					<street>Avenida Libertador 2500</street>
+					<city>Santiago</city>
+					<code>8320000</code>
+					<country>Chile</country>
+				</address>
+			</company>
+			<short_description>Cycle through the lakes and glaciers of Chilean Patagonia.</short_description>
+			<long_description>An unforgettable expedition through Torres del Paine, glacial valleys, and remote
+				Patagonian trails.</long_description>
+			<category>challenging</category>
+			<distance>400.0</distance>
+			<duration>
+				<duration_days>10</duration_days>
+				<start_date>2027-11-05</start_date>
+				<end_date>2027-11-15</end_date>
+			</duration>
+			<price>
+				<amount>2450.00</amount>
+				<currency>USD</currency>
+			</price>
+			<guide idref="g8" />
+			<tour_availability>
+				<capacity>14</capacity>
+				<current_number_of_participants>11</current_number_of_participants>
+				<availability>limited</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>-70.6693</longitude>
+					<latitude>-33.4489</latitude>
+				</coordinates>
+				<address>
+					<street>Plaza de Armas</street>
+					<city>Santiago</city>
+					<code>8320000</code>
+					<country>Chile</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>-72.6851</longitude>
+					<latitude>-51.7298</latitude>
+				</coordinates>
+				<address>
+					<street>Avenida Bulnes</street>
+					<city>Punta Arenas</city>
+					<code>6200000</code>
+					<country>Chile</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeCL1">
+					<model>Trek Marlin 7</model>
+					<bike_type>
+						<type>mountain</type>
+					</bike_type>
+					<gear_count>21</gear_count>
+					<size>M</size>
+					<weight>14.5</weight>
+					<rental_price_per_day>
+						<amount>38.00</amount>
+						<currency>USD</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 9 ======================= -->
+		<tour>
+			<tour_name>Great Ocean Road Escape</tour_name>
+			<company>
+				<name>Down Under Cycling</name>
+				<contact>
+					<email>contact@downundercycling.au</email>
+					<phone_number>+61 3 9650 8899</phone_number>
+				</contact>
+				<address>
+					<street>Flinders Lane 88</street>
+					<city>Melbourne</city>
+					<code>3000</code>
+					<country>Australia</country>
+				</address>
+			</company>
+			<short_description>Ride Australia’s most scenic coastal highway from Melbourne to Warrnambool.</short_description>
+			<long_description>This moderately challenging route features ocean cliffs, the Twelve Apostles, and wildlife
+				encounters along the Great Ocean Road.</long_description>
+			<category>moderate</category>
+			<distance>290.0</distance>
+			<duration>
+				<duration_days>6</duration_days>
+				<start_date>2027-10-12</start_date>
+				<end_date>2027-10-18</end_date>
+			</duration>
+			<price>
+				<amount>1300.00</amount>
+				<currency>AUD</currency>
+			</price>
+			<guide idref="g9" />
+			<tour_availability>
+				<capacity>16</capacity>
+				<current_number_of_participants>13</current_number_of_participants>
+				<availability>open</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>144.9631</longitude>
+					<latitude>-37.8136</latitude>
+				</coordinates>
+				<address>
+					<street>Federation Square</street>
+					<city>Melbourne</city>
+					<code>3000</code>
+					<country>Australia</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>142.4846</longitude>
+					<latitude>-38.3833</latitude>
+				</coordinates>
+				<address>
+					<street>Raglan Parade</street>
+					<city>Warrnambool</city>
+					<code>3280</code>
+					<country>Australia</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeAU1">
+					<model>Giant Contend AR</model>
+					<bike_type>
+						<type>road</type>
+					</bike_type>
+					<gear_count>20</gear_count>
+					<size>M</size>
+					<weight>9.9</weight>
+					<rental_price_per_day>
+						<amount>32.00</amount>
+						<currency>AUD</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 10 ======================= -->
+		<tour>
+			<tour_name>Vietnam Mekong Delta Discovery</tour_name>
+			<company>
+				<name>Indochina Cycle Tours</name>
+				<contact>
+					<email>info@indocycling.vn</email>
+					<phone_number>+84 28 3920 1234</phone_number>
+				</contact>
+				<address>
+					<street>Pham Ngu Lao 20</street>
+					<city>Saigon</city>
+					<code>700000</code>
+					<country>Vietnam</country>
+				</address>
+			</company>
+			<short_description>Cycle through floating markets and rice paddies in southern Vietnam.</short_description>
+			<long_description>An easy, immersive cultural experience through small villages, tropical fruit farms, and
+				the waterways of the Mekong Delta.</long_description>
+			<category>easy</category>
+			<distance>180.0</distance>
+			<duration>
+				<duration_days>5</duration_days>
+				<start_date>2027-12-01</start_date>
+				<end_date>2027-12-06</end_date>
+			</duration>
+			<price>
+				<amount>890.00</amount>
+				<currency>USD</currency>
+			</price>
+			<guide idref="g10" />
+			<tour_availability>
+				<capacity>20</capacity>
+				<current_number_of_participants>17</current_number_of_participants>
+				<availability>open</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>106.7000</longitude>
+					<latitude>10.7700</latitude>
+				</coordinates>
+				<address>
+					<street>Pham Ngu Lao 20</street>
+					<city>Saigon</city>
+					<code>700000</code>
+					<country>Vietnam</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>105.7680</longitude>
+					<latitude>10.0452</latitude>
+				</coordinates>
+				<address>
+					<street>Hoa Binh Boulevard</street>
+					<city>Can Tho</city>
+					<code>900000</code>
+					<country>Vietnam</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeVN1">
+					<model>Merida Crossway 100</model>
+					<bike_type>
+						<type>hybrid</type>
+					</bike_type>
+					<gear_count>21</gear_count>
+					<size>S</size>
+					<weight>13.2</weight>
+					<rental_price_per_day>
+						<amount>18.00</amount>
+						<currency>USD</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+		<!-- ======================= TOUR 11 ======================= -->
+		<tour>
+			<tour_name>Canadian Rockies Adventure</tour_name>
+			<company>
+				<name>Maple Trails Cycling</name>
+				<contact>
+					<email>info@mapletrails.ca</email>
+					<phone_number>+1 403 555 2211</phone_number>
+				</contact>
+				<address>
+					<street>Banff Avenue 125</street>
+					<city>Banff</city>
+					<code>T1L 1A1</code>
+					<country>Canada</country>
+				</address>
+			</company>
+			<short_description>Ride through Canada’s spectacular Rocky Mountains.</short_description>
+			<long_description>This challenging route crosses national parks, turquoise lakes, and alpine passes from
+				Banff to Jasper. Perfect for adventure seekers and nature enthusiasts.</long_description>
+			<category>challenging</category>
+			<distance>420.0</distance>
+			<duration>
+				<duration_days>8</duration_days>
+				<start_date>2027-07-25</start_date>
+				<end_date>2027-08-02</end_date>
+			</duration>
+			<price>
+				<amount>2300.00</amount>
+				<currency>CAD</currency>
+			</price>
+			<guide idref="g11" />
+			<tour_availability>
+				<capacity>14</capacity>
+				<current_number_of_participants>10</current_number_of_participants>
+				<availability>limited</availability>
+			</tour_availability>
+			<starting_point>
+				<coordinates>
+					<longitude>-115.5708</longitude>
+					<latitude>51.1784</latitude>
+				</coordinates>
+				<address>
+					<street>Banff Avenue</street>
+					<city>Banff</city>
+					<code>T1L 1A1</code>
+					<country>Canada</country>
+				</address>
+			</starting_point>
+			<final_destination>
+				<coordinates>
+					<longitude>-118.0820</longitude>
+					<latitude>52.8734</latitude>
+				</coordinates>
+				<address>
+					<street>Connaught Drive</street>
+					<city>Jasper</city>
+					<code>T0E 1E0</code>
+					<country>Canada</country>
+				</address>
+			</final_destination>
+			<bikes>
+				<bike id="bikeCA1">
+					<model>Cannondale Topstone 2</model>
+					<bike_type>
+						<type>gravel</type>
+					</bike_type>
+					<gear_count>22</gear_count>
+					<size>L</size>
+					<weight>10.3</weight>
+					<rental_price_per_day>
+						<amount>42.00</amount>
+						<currency>CAD</currency>
+					</rental_price_per_day>
+					<availability>available</availability>
+				</bike>
+			</bikes>
+		</tour>
+	</tours>
+	<guides>
+		<guide id="g1">
+			<identity>
+				<firstname>Claire</firstname>
+				<lastname>Oderoche</lastname>
+			</identity>
+			<picture>
+				<picture_name>claire_oderoche.jpg</picture_name>
+				<picture_description>Guide cycling through Loire vineyards</picture_description>
+			</picture>
+			<contact>
+				<email>claire@cyclefrance.fr</email>
+				<phone_number>+33 6 44 55 88 99</phone_number>
+			</contact>
+			<address>
+				<street>10 Rue des Vignes</street>
+				<city>Amboise</city>
+				<code>37400</code>
+				<country>France</country>
+			</address>
+			<nationality>French</nationality>
+			<spoken_languages>
+				<language>French</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>Certified Cycling Tour Leader</qualification>
+				<qualification>First Aid Level 2</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g2">
+			<identity>
+				<firstname>Tom</firstname>
+				<lastname>Cato</lastname>
+			</identity>
+			<picture>
+				<picture_name>tom_cato.jpg</picture_name>
+				<picture_description>Guide leading group through Tuscan hills</picture_description>
+			</picture>
+			<contact>
+				<email>tom@italiabike.it</email>
+				<phone_number>+39 333 5566778</phone_number>
+			</contact>
+			<address>
+				<street>Via del Chianti 15</street>
+				<city>Siena</city>
+				<code>53100</code>
+				<country>Italy</country>
+			</address>
+			<nationality>Italian</nationality>
+			<spoken_languages>
+				<language>Italian</language>
+				<language>English</language>
+				<language>German</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>Mountain Guide Certificate</qualification>
+				<qualification>Sommelier Course</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g3">
+			<identity>
+				<firstname>Elle</firstname>
+				<lastname>Martinez</lastname>
+			</identity>
+			<picture>
+				<picture_name>elle_martinez.jpg</picture_name>
+				<picture_description>Guide in coastal Catalonia route</picture_description>
+			</picture>
+			<contact>
+				<email>elle@cyclingspain.es</email>
+				<phone_number>+34 612 334 998</phone_number>
+			</contact>
+			<address>
+				<street>Carrer del Mar 40</street>
+				<city>Barcelona</city>
+				<code>08002</code>
+				<country>Spain</country>
+			</address>
+			<nationality>Spanish</nationality>
+			<spoken_languages>
+				<language>Spanish</language>
+				<language>French</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>Licensed Tour Guide</qualification>
+				<qualification>Outdoor First Aid</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g4">
+			<identity>
+				<firstname>Marin</firstname>
+				<lastname>Montant</lastname>
+			</identity>
+			<picture>
+				<picture_name>marin_montant.jpg</picture_name>
+				<picture_description>Guide at Grimsel Pass in the Swiss Alps</picture_description>
+			</picture>
+			<contact>
+				<email>marin@alpinecycle.ch</email>
+				<phone_number>+41 79 555 2244</phone_number>
+			</contact>
+			<address>
+				<street>Seestrasse 45</street>
+				<city>Lucerne</city>
+				<code>6006</code>
+				<country>Switzerland</country>
+			</address>
+			<nationality>Swiss</nationality>
+			<spoken_languages>
+				<language>German</language>
+				<language>English</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>Certified Mountain Cycling Guide</qualification>
+				<qualification>Wilderness First Responder</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g5">
+			<identity>
+				<firstname>Sia</firstname>
+				<lastname>Vienna</lastname>
+			</identity>
+			<picture>
+				<picture_name>sia_vienna.jpg</picture_name>
+				<picture_description>Guide leading group along the Danube River</picture_description>
+			</picture>
+			<contact>
+				<email>sia.vienna@eurocycle.at</email>
+				<phone_number>+43 660 889 1133</phone_number>
+			</contact>
+			<address>
+				<street>Landstrasser Hauptstrasse 78</street>
+				<city>Vienna</city>
+				<code>1030</code>
+				<country>Austria</country>
+			</address>
+			<nationality>Austrian</nationality>
+			<spoken_languages>
+				<language>German</language>
+				<language>English</language>
+				<language>Hungarian</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>European Cycling Guide Certification</qualification>
+				<qualification>River Tourism Specialist</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g6">
+			<identity>
+				<firstname>Virginia</firstname>
+				<lastname>Wolf</lastname>
+			</identity>
+			<picture>
+				<picture_name>virginia_wolf.jpg</picture_name>
+				<picture_description>Guide cycling near Loch Ness, Scotland</picture_description>
+			</picture>
+			<contact>
+				<email>virginia@uktrails.co.uk</email>
+				<phone_number>+44 770 445 6677</phone_number>
+			</contact>
+			<address>
+				<street>High Street 10</street>
+				<city>Inverness</city>
+				<code>IV1 1SG</code>
+				<country>Scotland</country>
+			</address>
+			<nationality>Scottish</nationality>
+			<spoken_languages>
+				<language>English</language>
+				<language>Scottish Gaelic</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>National Mountain Bike Leader Level 3</qualification>
+				<qualification>Emergency Outdoor First Aid</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g7">
+			<identity>
+				<firstname>Lana</firstname>
+				<lastname>Nguyen</lastname>
+			</identity>
+			<picture>
+				<picture_name>lana_nguyen.jpg</picture_name>
+				<picture_description>Guide on the Pacific Coast Highway</picture_description>
+			</picture>
+			<contact>
+				<email>lana@pacificcycle.com</email>
+				<phone_number>+1 310 777 5566</phone_number>
+			</contact>
+			<address>
+				<street>Ocean Avenue 210</street>
+				<city>Santa Monica</city>
+				<code>90401</code>
+				<country>USA</country>
+			</address>
+			<nationality>American</nationality>
+			<spoken_languages>
+				<language>English</language>
+				<language>Spanish</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>USA Cycling Certified Coach</qualification>
+				<qualification>Nutrition &amp; Endurance Specialist</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g8">
+			<identity>
+				<firstname>Rocco</firstname>
+				<lastname>Roz</lastname>
+			</identity>
+			<picture>
+				<picture_name>rocco_roz.jpg</picture_name>
+				<picture_description>Guide cycling through Torres del Paine</picture_description>
+			</picture>
+			<contact>
+				<email>rocco@andesadventures.cl</email>
+				<phone_number>+56 9 7722 3344</phone_number>
+			</contact>
+			<address>
+				<street>Avenida Providencia 950</street>
+				<city>Santiago</city>
+				<code>8320000</code>
+				<country>Chile</country>
+			</address>
+			<nationality>Chilean</nationality>
+			<spoken_languages>
+				<language>Spanish</language>
+				<language>Portuguese</language>
+				<language>Italian</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>Adventure Tourism Guide License</qualification>
+				<qualification>Wilderness Survival Training</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g9">
+			<identity>
+				<firstname>Belle</firstname>
+				<lastname>Sommer</lastname>
+			</identity>
+			<picture>
+				<picture_name>belle_sommer.jpg</picture_name>
+				<picture_description>Guide overlooking Twelve Apostles on the Great Ocean Road</picture_description>
+			</picture>
+			<contact>
+				<email>belle@downundercycling.au</email>
+				<phone_number>+61 420 889 773</phone_number>
+			</contact>
+			<address>
+				<street>Collins Street 15</street>
+				<city>Melbourne</city>
+				<code>3000</code>
+				<country>Australia</country>
+			</address>
+			<nationality>Australian</nationality>
+			<spoken_languages>
+				<language>English</language>
+				<language>French</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>Outdoor Education Diploma</qualification>
+				<qualification>First Aid Level 3</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g10">
+			<identity>
+				<firstname>Alex</firstname>
+				<lastname>Minh</lastname>
+			</identity>
+			<picture>
+				<picture_name>alex_minh.jpg</picture_name>
+				<picture_description>Guide cycling through Mekong Delta canals</picture_description>
+			</picture>
+			<contact>
+				<email>alex@indocycling.vn</email>
+				<phone_number>+84 93 445 5566</phone_number>
+			</contact>
+			<address>
+				<street>Nguyen Hue 88</street>
+				<city>Can Tho</city>
+				<code>900000</code>
+				<country>Vietnam</country>
+			</address>
+			<nationality>Vietnamese</nationality>
+			<spoken_languages>
+				<language>Vietnamese</language>
+				<language>English</language>
+				<language>French</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>Vietnam Tourism Board Certified Guide</qualification>
+				<qualification>Eco-tourism &amp; Sustainability Certificate</qualification>
+			</qualifications>
+		</guide>
+		<guide id="g11">
+			<identity>
+				<firstname>Chance</firstname>
+				<lastname>Berry</lastname>
+			</identity>
+			<picture>
+				<picture_name>chance_berry.jpg</picture_name>
+				<picture_description>Guide at Lake Louise during Rockies adventure</picture_description>
+			</picture>
+			<contact>
+				<email>chance@mapletrails.ca</email>
+				<phone_number>+1 587 332 7788</phone_number>
+			</contact>
+			<address>
+				<street>Mountain Road 22</street>
+				<city>Canmore</city>
+				<code>T1W 2V8</code>
+				<country>Canada</country>
+			</address>
+			<nationality>Canadian</nationality>
+			<spoken_languages>
+				<language>English</language>
+				<language>French</language>
+			</spoken_languages>
+			<qualifications>
+				<qualification>Canadian Adventure Guide License</qualification>
+				<qualification>Wilderness First Aid</qualification>
+			</qualifications>
+		</guide>
+
+	</guides>
+	<packages>
+		<package id="pack1">
+			<name>Spring Special</name>
+			<reduction>10.0</reduction>
+			<code>SPRING10</code>
+			<description>10% off all Loire Valley tours booked before March 2027.</description>
+		</package>
+		<package id="pack2">
+			<name>Tuscany Gourmet</name>
+			<reduction>15.0</reduction>
+			<code>TUSCAN15</code>
+			<description>Includes one complimentary wine tasting session.</description>
+		</package>
+		<package id="pack3">
+			<name>Family Summer Deal</name>
+			<reduction>12.0</reduction>
+			<code>FAMILY12</code>
+			<description>Reduced price for families with two or more participants.</description>
+		</package>
+	</packages>
+</data>

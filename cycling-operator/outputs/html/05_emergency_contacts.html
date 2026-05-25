@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Emergency Contact Dashboard</title>
+      <meta name="author" content="Audrey Costes, Halima Lemmouchi, Lina Marcela Diaz Bejarano, Vincent Boettcher">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../css/styles.css">
+   </head>
+   <body class="emergency-dashboard">
+      <header class="page-header">
+         <h1>Emergency Contact Dashboard</h1>
+      </header>
+      <main class="table-wrapper">
+         <table class="contact-table">
+            <caption><span>Emergency contacts on file</span><span class="caption-meta">Tours: 20 · Clients: 33 · Contacts: 33</span></caption>
+            <thead>
+               <tr>
+                  <th>Tour</th>
+                  <th>Client</th>
+                  <th>Client contact</th>
+                  <th>Emergency contact</th>
+                  <th>Emergency phone</th>
+                  <th>Relation</th>
+                  <th>Bike / booking</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><strong>Alpine Discovery Ride</strong></td>
+                  <td><strong>Anna Keller</strong></td>
+                  <td>
+                     <div>+49-30-555-6789</div>
+                     <div class="contact-meta">anna.keller@example.com</div>
+                  </td>
+                  <td><strong>Markus Keller</strong></td>
+                  <td>+49-30-777-1234</td>
+                  <td><span class="tag">Brother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Cube Attain GTC</strong></div>
+                     <div class="contact-meta">2026-04-01</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Alpine Discovery Ride</strong></td>
+                  <td><strong>Thomas Dubois</strong></td>
+                  <td>
+                     <div>+33-1-4555-7788</div>
+                     <div class="contact-meta">t.dubois@example.fr</div>
+                  </td>
+                  <td><strong>Marie Dubois</strong></td>
+                  <td>+33-1-4555-9900</td>
+                  <td><span class="tag">Wife</span></td>
+                  <td>
+                     <div>Bike model: <strong>Specialized Tarmac SL7</strong></div>
+                     <div class="contact-meta">2026-04-15</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Alpine Discovery Ride</strong></td>
+                  <td><strong>Sophie Laurent</strong></td>
+                  <td>
+                     <div>+33-6-1234-5678</div>
+                     <div class="contact-meta">sophie.laurent@example.fr</div>
+                  </td>
+                  <td><strong>Pierre Laurent</strong></td>
+                  <td>+33-6-9876-5432</td>
+                  <td><span class="tag">Husband</span></td>
+                  <td>
+                     <div>Bike model: <strong>Cube Attain GTC</strong></div>
+                     <div class="contact-meta">2024-06-15</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Alpine Discovery Ride</strong></td>
+                  <td><strong>Luca Romano</strong></td>
+                  <td>
+                     <div>+39-02-5555-1234</div>
+                     <div class="contact-meta">luca.romano@example.it</div>
+                  </td>
+                  <td><strong>Giulia Romano</strong></td>
+                  <td>+39-02-5555-5678</td>
+                  <td><span class="tag">Sister</span></td>
+                  <td>
+                     <div>Bike model: <strong>Specialized Tarmac SL7</strong></div>
+                     <div class="contact-meta">2024-06-20</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Alpine Discovery Ride</strong></td>
+                  <td><strong>Hans Mueller</strong></td>
+                  <td>
+                     <div>+49-89-1234-5678</div>
+                     <div class="contact-meta">hans.mueller@example.de</div>
+                  </td>
+                  <td><strong>Petra Mueller</strong></td>
+                  <td>+49-89-8765-4321</td>
+                  <td><span class="tag">Wife</span></td>
+                  <td>
+                     <div>Bike model: <strong>Trek Domane SL 5</strong></div>
+                     <div class="contact-meta">2024-06-18</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Alps Challenge</strong></td>
+                  <td><strong>Zoro Roronoa</strong></td>
+                  <td>
+                     <div>+8115123456789</div>
+                     <div class="contact-meta">zoro.roronoa@email.com</div>
+                  </td>
+                  <td><strong>Kuina Shimotsuki</strong></td>
+                  <td>+811512345000</td>
+                  <td><span class="tag">Sister</span></td>
+                  <td>
+                     <div>Bike model: <strong>Trek Emonda SL6</strong></div>
+                     <div class="contact-meta">2026-04-20</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Alps Challenge</strong></td>
+                  <td><strong>Chopper Tony</strong></td>
+                  <td>
+                     <div>+811515556677</div>
+                     <div class="contact-meta">chopper.tony@email.com</div>
+                  </td>
+                  <td><strong>Kureha Doc</strong></td>
+                  <td>+811515556600</td>
+                  <td><span class="tag">Grandmother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Trek Emonda SL6</strong></div>
+                     <div class="contact-meta">2026-04-21</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Ancient Paths of Greece</strong></td>
+                  <td><strong>Elena Papadopoulos</strong></td>
+                  <td>
+                     <div>+30-21-111-4444</div>
+                     <div class="contact-meta">elena.papadopoulos@example.com</div>
+                  </td>
+                  <td><strong>Nikos Papadopoulos</strong></td>
+                  <td>+30-21-222-5555</td>
+                  <td><span class="tag">Father</span></td>
+                  <td>
+                     <div>Bike model: <strong>Cannondale Synapse Carbon</strong></div>
+                     <div class="contact-meta">2025-02-25</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Andalusia Explorer</strong></td>
+                  <td><strong>Usopp Sogeking</strong></td>
+                  <td>
+                     <div>+27611223344</div>
+                     <div class="contact-meta">usopp.sogeking@email.com</div>
+                  </td>
+                  <td><strong>Kaya Smith</strong></td>
+                  <td>+27615556677</td>
+                  <td><span class="tag">Friend</span></td>
+                  <td>
+                     <div>Bike model: <strong>Cannondale Quick</strong></div>
+                     <div class="contact-meta">2026-05-05</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Coastal Breeze Journey</strong></td>
+                  <td><strong>Elena Rodriguez</strong></td>
+                  <td>
+                     <div>+34-93-222-3344</div>
+                     <div class="contact-meta">elena.rodriguez@example.es</div>
+                  </td>
+                  <td><strong>Carlos Rodriguez</strong></td>
+                  <td>+34-93-222-5566</td>
+                  <td><span class="tag">Brother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Gazelle Easyflow</strong></div>
+                     <div class="contact-meta">2026-06-01</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Coastal Breeze Journey</strong></td>
+                  <td><strong>Marta Garcia</strong></td>
+                  <td>
+                     <div>+34-91-777-8899</div>
+                     <div class="contact-meta">marta.garcia@example.es</div>
+                  </td>
+                  <td><strong>Juan Garcia</strong></td>
+                  <td>+34-91-777-9988</td>
+                  <td><span class="tag">Husband</span></td>
+                  <td>
+                     <div>Bike model: <strong>Orbea Gain F25</strong></div>
+                     <div class="contact-meta">2026-06-05</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Coastal Breeze Journey</strong></td>
+                  <td><strong>David Smith</strong></td>
+                  <td>
+                     <div>+1-212-555-7788</div>
+                     <div class="contact-meta">david.smith@example.com</div>
+                  </td>
+                  <td><strong>Sarah Smith</strong></td>
+                  <td>+1-212-555-9988</td>
+                  <td><span class="tag">Wife</span></td>
+                  <td>
+                     <div>Bike model: <strong>Riese &amp; Müller Supercharger</strong></div>
+                     <div class="contact-meta">2026-05-28</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Coastal Breeze Journey</strong></td>
+                  <td><strong>Isabella Ferreira</strong></td>
+                  <td>
+                     <div>+351-21-333-4455</div>
+                     <div class="contact-meta">isabella.ferreira@example.pt</div>
+                  </td>
+                  <td><strong>Miguel Ferreira</strong></td>
+                  <td>+351-21-333-6677</td>
+                  <td><span class="tag">Father</span></td>
+                  <td>
+                     <div>Bike model: <strong>Gazelle Easyflow</strong></div>
+                     <div class="contact-meta">2026-08-10</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Coastal Breeze Journey</strong></td>
+                  <td><strong>Nikolaos Papadopoulos</strong></td>
+                  <td>
+                     <div>+30-21-444-5566</div>
+                     <div class="contact-meta">nikos.papadopoulos@example.gr</div>
+                  </td>
+                  <td><strong>Maria Papadopoulos</strong></td>
+                  <td>+30-21-444-7788</td>
+                  <td><span class="tag">Sister</span></td>
+                  <td>
+                     <div>Bike model: <strong>Orbea Gain F25</strong></div>
+                     <div class="contact-meta">2026-08-12</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Cork Coastal Discovery</strong></td>
+                  <td><strong>Harry Connor</strong></td>
+                  <td>
+                     <div>+353-87-1234567</div>
+                     <div class="contact-meta">harry.connor@example.ie</div>
+                  </td>
+                  <td><strong>Lea Connor</strong></td>
+                  <td>+353-21-7654321</td>
+                  <td><span class="tag">Sister</span></td>
+                  <td>
+                     <div>Bike model: <strong>Raleigh Strada</strong></div>
+                     <div class="contact-meta">2026-05-20</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Corsica Coastal Ride</strong></td>
+                  <td><strong>Nami Swan</strong></td>
+                  <td>
+                     <div>+34911223344</div>
+                     <div class="contact-meta">nami.swan@email.com</div>
+                  </td>
+                  <td><strong>Robin Nico</strong></td>
+                  <td>+34955667788</td>
+                  <td><span class="tag">Friend</span></td>
+                  <td>
+                     <div>Bike model: <strong>Specialized Sirrus</strong></div>
+                     <div class="contact-meta">2026-04-25</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Inverness Highlands Loop</strong></td>
+                  <td><strong>James Cameron</strong></td>
+                  <td>
+                     <div>+44-7711-889900</div>
+                     <div class="contact-meta">james.cameron@example.uk</div>
+                  </td>
+                  <td><strong>Andrew Cameron</strong></td>
+                  <td>+44-1463-445566</td>
+                  <td><span class="tag">Father</span></td>
+                  <td>
+                     <div>Bike model: <strong>Scott Sub Cross</strong></div>
+                     <div class="contact-meta">2026-05-30</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Loire Valley Discovery</strong></td>
+                  <td><strong>Luffy MonkeyD</strong></td>
+                  <td>
+                     <div>+33655667788</div>
+                     <div class="contact-meta">luffy.monkeyd@email.com</div>
+                  </td>
+                  <td><strong>Dandan Bandit</strong></td>
+                  <td>+33622334455</td>
+                  <td><span class="tag">Mother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Giant Escape 3</strong></div>
+                     <div class="contact-meta">2026-04-10</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Loire Valley Discovery</strong></td>
+                  <td><strong>Ace PortgasD</strong></td>
+                  <td>
+                     <div>+33655667799</div>
+                     <div class="contact-meta">ace.portgasd@email.com</div>
+                  </td>
+                  <td><strong>Dandan Bandit</strong></td>
+                  <td>+33622334455</td>
+                  <td><span class="tag">Mother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Giant Escape 3</strong></div>
+                     <div class="contact-meta">2026-04-10</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Loire Valley Discovery</strong></td>
+                  <td><strong>Sabo Goa</strong></td>
+                  <td>
+                     <div>+33655612345</div>
+                     <div class="contact-meta">sabo.goa@email.com</div>
+                  </td>
+                  <td><strong>Dandan Bandit</strong></td>
+                  <td>+33622334455</td>
+                  <td><span class="tag">Mother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Giant Escape 3</strong></div>
+                     <div class="contact-meta">2026-04-10</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Oslo Fjord Ride</strong></td>
+                  <td><strong>Halima Olsen</strong></td>
+                  <td>
+                     <div>+47-92-445566</div>
+                     <div class="contact-meta">halima.olsen@example.no</div>
+                  </td>
+                  <td><strong>Sylvia Olsen</strong></td>
+                  <td>+47-22-889900</td>
+                  <td><span class="tag">Mother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Scott Addict</strong></div>
+                     <div class="contact-meta">2026-06-28</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Reykjavik City Ride</strong></td>
+                  <td><strong>Arthur Sunny</strong></td>
+                  <td>
+                     <div>+354-780-2211</div>
+                     <div class="contact-meta">arthur.sunny@example.is</div>
+                  </td>
+                  <td><strong>Rose Sunny</strong></td>
+                  <td>+354-520-7788</td>
+                  <td><span class="tag">Mother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Specialized Sirrus</strong></div>
+                     <div class="contact-meta">2026-05-18</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Sahara Desert Expedition</strong></td>
+                  <td><strong>Omar Benali</strong></td>
+                  <td>
+                     <div>+212-600-234567</div>
+                     <div class="contact-meta">omar.benali@example.com</div>
+                  </td>
+                  <td><strong>Salma Benali</strong></td>
+                  <td>+212-600-998877</td>
+                  <td><span class="tag">Sister</span></td>
+                  <td>
+                     <div>Bike model: <strong>Cannondale Trail SE</strong></div>
+                     <div class="contact-meta">2026-08-01</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Stockholm Seaside Loop</strong></td>
+                  <td><strong>Morgane Larsson</strong></td>
+                  <td>
+                     <div>+46-70-7788990</div>
+                     <div class="contact-meta">morgane.larsson@example.se</div>
+                  </td>
+                  <td><strong>Martin Larsson</strong></td>
+                  <td>+46-31-2233445</td>
+                  <td><span class="tag">Brother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Orbea Avant</strong></div>
+                     <div class="contact-meta">2026-07-15</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Swiss Alpine Adventure</strong></td>
+                  <td><strong>Sanji Vinsmoke</strong></td>
+                  <td>
+                     <div>+33144556677</div>
+                     <div class="contact-meta">sanji.vinsmoke@email.com</div>
+                  </td>
+                  <td><strong>Franky Brook</strong></td>
+                  <td>+33155667788</td>
+                  <td><span class="tag">Friend</span></td>
+                  <td>
+                     <div>Bike model: <strong>Giant Defy Advanced</strong></div>
+                     <div class="contact-meta">2026-05-01</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Tokyo Urban Explorer</strong></td>
+                  <td><strong>Yuki Nakamura</strong></td>
+                  <td>
+                     <div>+81-3-5555-6677</div>
+                     <div class="contact-meta">yuki.nakamura@example.jp</div>
+                  </td>
+                  <td><strong>Hiroshi Nakamura</strong></td>
+                  <td>+81-3-5555-8899</td>
+                  <td><span class="tag">Father</span></td>
+                  <td>
+                     <div>Bike model: <strong>Giant Escape</strong></div>
+                     <div class="contact-meta">2026-04-20</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Tokyo Urban Explorer</strong></td>
+                  <td><strong>Emily Johnson</strong></td>
+                  <td>
+                     <div>+1-415-555-1122</div>
+                     <div class="contact-meta">emily.johnson@example.com</div>
+                  </td>
+                  <td><strong>Michael Johnson</strong></td>
+                  <td>+1-415-555-3344</td>
+                  <td><span class="tag">Brother</span></td>
+                  <td>
+                     <div>Bike model: <strong>Panasonic Vivi DX</strong></div>
+                     <div class="contact-meta">2026-04-22</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Tokyo Urban Explorer</strong></td>
+                  <td><strong>Kenji Sato</strong></td>
+                  <td>
+                     <div>+81-3-6666-7788</div>
+                     <div class="contact-meta">kenji.sato@example.jp</div>
+                  </td>
+                  <td><strong>Aiko Sato</strong></td>
+                  <td>+81-3-6666-9900</td>
+                  <td><span class="tag">Wife</span></td>
+                  <td>
+                     <div>Bike model: <strong>Giant Escape</strong></div>
+                     <div class="contact-meta">2024-02-15</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Tokyo Urban Explorer</strong></td>
+                  <td><strong>Rachel Brown</strong></td>
+                  <td>
+                     <div>+1-555-234-5678</div>
+                     <div class="contact-meta">rachel.brown@example.com</div>
+                  </td>
+                  <td><strong>James Brown</strong></td>
+                  <td>+1-555-876-5432</td>
+                  <td><span class="tag">Husband</span></td>
+                  <td>
+                     <div>Bike model: <strong>Panasonic Vivi DX</strong></div>
+                     <div class="contact-meta">2024-02-20</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Tuscany Vineyard Circuit</strong></td>
+                  <td><strong>Alessandro Conti</strong></td>
+                  <td>
+                     <div>+39-055-123-4567</div>
+                     <div class="contact-meta">alessandro.conti@example.it</div>
+                  </td>
+                  <td><strong>Francesca Conti</strong></td>
+                  <td>+39-055-765-4321</td>
+                  <td><span class="tag">Sister</span></td>
+                  <td>
+                     <div>Bike model: <strong>Pinarello Paris</strong></div>
+                     <div class="contact-meta">2026-08-01</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Tuscany Vineyard Circuit</strong></td>
+                  <td><strong>Claire Martin</strong></td>
+                  <td>
+                     <div>+33-4-7777-8888</div>
+                     <div class="contact-meta">claire.martin@example.fr</div>
+                  </td>
+                  <td><strong>Antoine Martin</strong></td>
+                  <td>+33-4-7777-9999</td>
+                  <td><span class="tag">Husband</span></td>
+                  <td>
+                     <div>Bike model: <strong>Bianchi Aria E-Road</strong></div>
+                     <div class="contact-meta">2026-08-05</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Tuscany Vineyard Circuit</strong></td>
+                  <td><strong>William Anderson</strong></td>
+                  <td>
+                     <div>+44-20-8888-9999</div>
+                     <div class="contact-meta">william.anderson@example.co.uk</div>
+                  </td>
+                  <td><strong>Elizabeth Anderson</strong></td>
+                  <td>+44-20-8888-7777</td>
+                  <td><span class="tag">Wife</span></td>
+                  <td>
+                     <div>Bike model: <strong>Colnago C64</strong></div>
+                     <div class="contact-meta">2026-08-03</div>
+                  </td>
+               </tr>
+               <tr>
+                  <td><strong>Tuscany Vineyard Circuit</strong></td>
+                  <td><strong>Oliver Schmidt</strong></td>
+                  <td>
+                     <div>+49-89-555-6677</div>
+                     <div class="contact-meta">oliver.schmidt@example.de</div>
+                  </td>
+                  <td><strong>Anna Schmidt</strong></td>
+                  <td>+49-89-555-8899</td>
+                  <td><span class="tag">Wife</span></td>
+                  <td>
+                     <div>Bike model: <strong>Pinarello Paris</strong></div>
+                     <div class="contact-meta">2026-04-10</div>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </main>
+   </body>
+</html>

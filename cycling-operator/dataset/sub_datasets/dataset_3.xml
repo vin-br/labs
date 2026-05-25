@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://city-tour-operator.org/cto"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://city-tour-operator.org/cto ../../schema/schema.xsd">
+
+  <!--
+  Complete XML file to visualize a guide's monthly schedule
+  Includes 5 tours for May 2026 with details about:
+  - Guide
+  - Packages (discounts)
+  - Tour information
+  - Participants and bookings
+  - Bikes assigned
+  - Start and end locations with coordinates
+  -->
+
+  <tours>
+
+    <!-- ========================= -->
+    <!-- TOUR 1 -->
+    <!-- Easy tour along the Loire River -->
+    <!-- Dates: May 1st to May 3rd -->
+    <!-- ========================= -->
+    <tour>
+      <!-- Name of the tour -->
+      <tour_name>Loire Valley Discovery</tour_name>
+
+      <!-- Company organizing the tour -->
+      <company>
+        <name>AdmiralBike France</name>
+        <contact>
+          <email>contact@admiralbike.fr</email><!-- Contact email -->
+          <phone_number>+33123456789</phone_number><!-- Contact phone -->
+        </contact>
+        <address>
+          <street>1 place du Martroi</street>
+          <city>Orléans</city>
+          <code>45000</code>
+          <country>France</country>
+        </address>
+      </company>
+
+      <!-- Short description for quick reference -->
+      <short_description>Easy tour along the Loire River</short_description>
+
+      <!-- Detailed description of the tour -->
+      <long_description>Enjoy castles, wine tasting, and scenic cycling paths.</long_description>
+
+      <!-- Difficulty category of the tour: easy -->
+      <category>easy</category>
+
+      <!-- Total distance in kilometers -->
+      <distance>120.5</distance>
+
+      <!-- Duration details -->
+      <duration>
+        <duration_days>3</duration_days><!-- Duration in days -->
+        <start_date>2026-05-01</start_date><!-- Start date -->
+        <end_date>2026-05-03</end_date><!-- End date -->
+      </duration>
+
+      <!-- Tour price -->
+      <price>
+        <amount>450.00</amount>
+        <currency>EUR</currency>
+      </price>
+
+      <!-- Assigned guide -->
+      <guide idref="g1" />
+
+      <!-- Tour availability details -->
+      <tour_availability>
+        <capacity>10</capacity> <!-- Maximum number of participants -->
+        <current_number_of_participants>3</current_number_of_participants> <!-- Currently booked -->
+        <availability>available</availability> <!-- Current availability status -->
+      </tour_availability>
+
+      <!-- Starting point details -->
+      <starting_point>
+        <coordinates>
+          <longitude>1.909</longitude>
+          <latitude>47.902</latitude>
+        </coordinates>
+        <address>
+          <street>1 place du Martroi</street>
+          <city>Orléans</city>
+          <code>45000</code>
+          <country>France</country>
+        </address>
+      </starting_point>
+
+      <!-- Final destination details -->
+      <final_destination>
+        <coordinates>
+          <longitude>0.330</longitude>
+          <latitude>47.394</latitude>
+        </coordinates>
+        <address>
+          <street>5 rue Nationale</street>
+          <city>Tours</city>
+          <code>37000</code>
+          <country>France</country>
+        </address>
+      </final_destination>
+
+      <!-- ========================= -->
+      <!-- BIKES AND BOOKINGS -->
+      <!-- ========================= -->
+      <bikes>
+        <!-- Bike reserved by client Luffy -->
+        <bike id="b1">
+          <model>Giant Escape 3</model><!-- Bike model -->
+          <!-- Type of bike and electric assistance -->
+          <bike_type>
+            <type>hybrid</type>
+            <electric_autonomy>0</electric_autonomy> <!-- 0 = not electric -->
+          </bike_type>
+          <gear_count>21</gear_count> <!-- Number of gears -->
+          <size>M</size> <!-- Bike size -->
+          <weight>14.5</weight> <!-- Bike weight in kg -->
+          <rental_price_per_day>
+            <amount>20.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability> <!-- Bike is booked -->
+
+          <!-- Booking details for the client -->
+          <booking>
+            <booking_date>2026-04-10</booking_date> <!-- Date the bike was booked -->
+
+            <!-- Applied package (discount) -->
+            <package idref="p1" />
+
+            <!-- Client 1: Luffy -->
+            <client>
+              <identity>
+                <firstname>Luffy</firstname>
+                <lastname>MonkeyD</lastname>
+              </identity>
+              <contact>
+                <email>luffy.monkeyd@email.com</email>
+                <phone_number>+33655667788</phone_number>
+              </contact>
+              <address>
+                <street>5 rue de la libération</street>
+                <city>Lyon</city>
+                <code>69002</code>
+                <country>France</country>
+              </address>
+              <nationality>French</nationality>
+
+              <!-- Emergency contact info -->
+              <emergency_contact>
+                <identity>
+                  <firstname>Dandan</firstname>
+                  <lastname>Bandit</lastname>
+                </identity>
+                <phone_number>+33622334455</phone_number>
+                <relation>Mother</relation>
+              </emergency_contact>
+            </client>
+
+            <!-- Payment information -->
+            <payment>
+              <amount_paid>450.00</amount_paid><!-- Amount already paid -->
+              <left_to_be_paid>0.00</left_to_be_paid> <!-- Remaining balance -->
+              <currency>EUR</currency>
+              <method>credit_card</method> <!-- Payment method -->
+              <payment_status>fully_paid</payment_status><!-- Payment status -->
+            </payment>
+          </booking>
+        </bike>
+
+        <!-- Client 2: Ace -->
+        <bike id="b2">
+          <model>Giant Escape 3</model>
+          <bike_type>
+            <type>hybrid</type>
+            <electric_autonomy>0</electric_autonomy>
+          </bike_type>
+          <gear_count>21</gear_count>
+          <size>M</size>
+          <weight>14.5</weight>
+          <rental_price_per_day>
+            <amount>20.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-04-10</booking_date>
+            <package idref="p1" />
+            <client>
+              <identity>
+                <firstname>Ace</firstname>
+                <lastname>PortgasD</lastname>
+              </identity>
+              <contact>
+                <email>ace.portgasd@email.com</email>
+                <phone_number>+33655667799</phone_number>
+              </contact>
+              <address>
+                <street>5 rue de la libération</street>
+                <city>Lyon</city>
+                <code>69002</code>
+                <country>France</country>
+              </address>
+              <nationality>French</nationality>
+
+
+              <!-- Emergency contact info -->
+              <emergency_contact>
+                <identity>
+                  <firstname>Dandan</firstname>
+                  <lastname>Bandit</lastname>
+                </identity>
+                <phone_number>+33622334455</phone_number>
+                <relation>Mother</relation>
+              </emergency_contact>
+            </client>
+
+            <!-- Payment information -->
+            <payment>
+              <amount_paid>450.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+
+        <!-- Client 3: Sabo -->
+        <bike id="b3">
+          <model>Giant Escape 3</model>
+          <bike_type>
+            <type>hybrid</type>
+            <electric_autonomy>0</electric_autonomy>
+          </bike_type>
+          <gear_count>21</gear_count>
+          <size>M</size>
+          <weight>14.5</weight>
+          <rental_price_per_day>
+            <amount>20.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-04-10</booking_date>
+            <package idref="p1" />
+            <client>
+              <identity>
+                <firstname>Sabo</firstname>
+                <lastname>Goa</lastname>
+              </identity>
+              <contact>
+                <email>sabo.goa@email.com</email>
+                <phone_number>+33655612345</phone_number>
+              </contact>
+              <address>
+                <street>5 rue de la libération</street>
+                <city>Lyon</city>
+                <code>69002</code>
+                <country>France</country>
+              </address>
+              <nationality>French</nationality>
+
+              <!-- Emergency contact info -->
+              <emergency_contact>
+                <identity>
+                  <firstname>Dandan</firstname>
+                  <lastname>Bandit</lastname>
+                </identity>
+                <phone_number>+33622334455</phone_number>
+                <relation>Mother</relation>
+              </emergency_contact>
+            </client>
+
+            <!-- Payment information -->
+            <payment>
+              <amount_paid>450.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+
+    <!-- ========================= -->
+    <!-- TOUR 2 -->
+    <!-- Difficult mountain tour in the French Alps -->
+    <!-- Dates: May 5th to May 8th -->
+    <!-- ========================= -->
+    <tour>
+      <!-- Name of the tour -->
+      <tour_name>Alps Challenge</tour_name>
+
+      <!-- Company organizing the tour -->
+      <company>
+        <name>AdmiralBike France</name>
+        <contact>
+          <email>contact@admiralbike.fr</email> <!-- Contact email -->
+          <phone_number>+33123456789</phone_number> <!-- Contact phone -->
+        </contact>
+        <address>
+          <street>10 avenue de Savoie</street>
+          <city>Chambéry</city>
+          <code>73000</code>
+          <country>France</country>
+        </address>
+      </company>
+
+      <!-- Short description for quick reference -->
+      <short_description>Challenging mountain tour in the French Alps</short_description>
+
+      <!-- Detailed description of the tour -->
+      <long_description>Experience steep climbs and breathtaking descents in the Alps.</long_description>
+
+      <!-- Difficulty category of the tour: challenging -->
+      <category>difficult</category>
+
+      <!-- Total distance in kilometers -->
+      <distance>200.0</distance>
+
+      <!-- Duration details -->
+      <duration>
+        <duration_days>4</duration_days> <!-- Number of days -->
+        <start_date>2026-05-05</start_date> <!-- Start date -->
+        <end_date>2026-05-08</end_date> <!-- End date -->
+      </duration>
+
+      <!-- Tour price -->
+      <price>
+        <amount>890.00</amount>
+        <currency>EUR</currency>
+      </price>
+
+      <!-- Assigned guide  -->
+      <guide idref="g2" />
+
+      <!-- Tour availability details -->
+      <tour_availability>
+        <capacity>8</capacity> <!-- Maximum number of participants -->
+        <current_number_of_participants>2</current_number_of_participants> <!-- Currently booked -->
+        <availability>available</availability> <!-- Current availability status -->
+      </tour_availability>
+
+      <!-- Starting point details -->
+      <starting_point>
+        <coordinates>
+          <longitude>6.123</longitude>
+          <latitude>45.899</latitude>
+        </coordinates>
+        <address>
+          <street>10 avenue de Savoie</street>
+          <city>Chambéry</city>
+          <code>73000</code>
+          <country>France</country>
+        </address>
+      </starting_point>
+
+      <!-- Final destination with coordinates and address -->
+      <final_destination>
+        <coordinates>
+          <longitude>6.869</longitude>
+          <latitude>45.923</latitude>
+        </coordinates>
+        <address>
+          <street>5 rue du Mont-Blanc</street>
+          <city>Chamonix</city>
+          <code>74400</code>
+          <country>France</country>
+        </address>
+      </final_destination>
+
+      <!-- ========================= -->
+      <!-- BIKES AND BOOKINGS -->
+      <!-- ========================= -->
+      <bikes>
+
+        <!-- Client 1 booking: Zoro -->
+        <bike id="b4">
+          <model>Trek Emonda SL6</model> <!-- Bike model -->
+          <bike_type>
+            <type>road</type> <!-- Type of bike -->
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>L</size>
+          <weight>7.8</weight>
+          <rental_price_per_day>
+            <amount>40.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability> <!-- Reserved by client -->
+
+          <!-- Booking details -->
+          <booking>
+            <booking_date>2026-04-20</booking_date> <!-- Booking date -->
+            <package idref="p2" /> <!-- Applied discount package -->
+
+            <!-- Client personal information -->
+            <client>
+              <identity>
+                <firstname>Zoro</firstname>
+                <lastname>Roronoa</lastname>
+              </identity>
+              <contact>
+                <email>zoro.roronoa@email.com</email>
+                <phone_number>+8115123456789</phone_number>
+              </contact>
+              <address>
+                <street>6-chōme-31-21 Jingūmae, Shibuya</street>
+                <city>Tokyo</city>
+                <code>150-0001</code>
+                <country>Japan</country>
+              </address>
+              <nationality>Japanese</nationality>
+
+              <!-- Emergency contact -->
+              <emergency_contact>
+                <identity>
+                  <firstname>Kuina</firstname>
+                  <lastname>Shimotsuki</lastname>
+                </identity>
+                <phone_number>+811512345000</phone_number>
+                <relation>Sister</relation>
+              </emergency_contact>
+            </client>
+
+            <!-- Payment information -->
+            <payment>
+              <amount_paid>400.00</amount_paid>
+              <left_to_be_paid>490.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>paypal</method>
+              <payment_status>deposit_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+
+        <!-- Client 2 booking: Chopper -->
+        <bike id="b5">
+          <model>Trek Emonda SL6</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>7.8</weight>
+          <rental_price_per_day>
+            <amount>40.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+
+          <booking>
+            <booking_date>2026-04-21</booking_date>
+            <package idref="p2" />
+
+            <client>
+              <identity>
+                <firstname>Chopper</firstname>
+                <lastname>Tony</lastname>
+              </identity>
+              <contact>
+                <email>chopper.tony@email.com</email>
+                <phone_number>+811515556677</phone_number>
+              </contact>
+              <address>
+                <street>123 Drum Island Road</street>
+                <city>Drum</city>
+                <code>00000</code>
+                <country>Japan</country>
+              </address>
+              <nationality>Japanese</nationality>
+
+              <!-- Emergency contact -->
+              <emergency_contact>
+                <identity>
+                  <firstname>Kureha</firstname>
+                  <lastname>Doc</lastname>
+                </identity>
+                <phone_number>+811515556600</phone_number>
+                <relation>Grandmother</relation>
+              </emergency_contact>
+            </client>
+
+            <!-- Payment information -->
+            <payment>
+              <amount_paid>450.00</amount_paid>
+              <left_to_be_paid>440.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>deposit_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+
+      </bikes>
+    </tour>
+
+
+    <!-- ========================= -->
+    <!-- TOUR 3 -->
+    <!-- Moderate tour along the Corsican coastline -->
+    <!-- Dates: May 12th to May 15th -->
+    <!-- ========================= -->
+    <tour>
+      <!-- Name of the tour -->
+      <tour_name>Corsica Coastal Ride</tour_name>
+
+      <!-- Company organizing the tour -->
+      <company>
+        <name>AdmiralBike France</name>
+        <contact>
+          <email>contact@admiralbike.fr</email> <!-- Contact email -->
+          <phone_number>+33123456789</phone_number> <!-- Contact phone -->
+        </contact>
+        <address>
+          <street>Port de Bastia</street>
+          <city>Bastia</city>
+          <code>20200</code>
+          <country>France</country>
+        </address>
+      </company>
+
+      <!-- Short description for quick reference -->
+      <short_description>Moderate tour along the Corsican coastline</short_description>
+
+      <!-- Detailed description of the tour -->
+      <long_description>Scenic ride with sea views and mountain climbs.</long_description>
+
+      <!-- Difficulty category of the tour: moderate -->
+      <category>moderate</category>
+
+      <!-- Total distance in kilometers -->
+      <distance>150.0</distance>
+
+      <!-- Duration details -->
+      <duration>
+        <duration_days>4</duration_days><!-- Number of days -->
+        <start_date>2026-05-12</start_date><!-- Start date -->
+        <end_date>2026-05-15</end_date><!-- End date -->
+      </duration>
+
+      <!-- Tour price -->
+      <price>
+        <amount>620.00</amount>
+        <currency>EUR</currency>
+      </price>
+
+      <!-- Assigned guide -->
+      <guide idref="g3" />
+
+      <!-- Tour availability details -->
+      <tour_availability>
+        <capacity>6</capacity><!-- Maximum number of participants -->
+        <current_number_of_participants>5</current_number_of_participants><!-- Currently booked -->
+        <availability>available</availability><!-- Current availability status -->
+      </tour_availability>
+
+      <!-- Starting point details -->
+      <starting_point>
+        <coordinates>
+          <longitude>9.434</longitude>
+          <latitude>41.919</latitude>
+        </coordinates>
+        <address>
+          <street>Port de Bastia</street>
+          <city>Bastia</city>
+          <code>20200</code>
+          <country>France</country>
+        </address>
+      </starting_point>
+
+      <!-- Final destination details -->
+      <final_destination>
+        <coordinates>
+          <longitude>8.742</longitude>
+          <latitude>41.560</latitude>
+        </coordinates>
+        <address>
+          <street>Porto-Vecchio Marina</street>
+          <city>Porto-Vecchio</city>
+          <code>20137</code>
+          <country>France</country>
+        </address>
+      </final_destination>
+
+      <!-- ========================= -->
+      <!-- BIKES AND BOOKINGS -->
+      <!-- ========================= -->
+      <bikes>
+        <!-- Bike reserved by client Nami -->
+        <bike id="b6">
+          <model>Specialized Sirrus</model><!-- Bike model name -->
+          <bike_type>
+            <type>hybrid</type> <!-- Hybrid bike suitable for mixed terrain -->
+          </bike_type>
+          <gear_count>18</gear_count>
+          <size>M</size>
+          <weight>13.5</weight>
+          <rental_price_per_day>
+            <amount>25.00</amount><!-- Daily rental price -->
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability><!-- Bike availability -->
+
+          <!-- Booking information -->
+          <booking>
+            <booking_date>2026-04-25</booking_date>
+            <package idref="p2" />
+
+            <!-- Client personal details -->
+            <client>
+              <identity>
+                <firstname>Nami</firstname>
+                <lastname>Swan</lastname>
+              </identity>
+              <contact>
+                <email>nami.swan@email.com</email>
+                <phone_number>+34911223344</phone_number>
+              </contact>
+              <address>
+                <street>Calle Mayor 12</street>
+                <city>Madrid</city>
+                <code>28013</code>
+                <country>Spain</country>
+              </address>
+              <nationality>Spanish</nationality>
+
+              <!-- Emergency contact -->
+              <emergency_contact>
+                <identity>
+                  <firstname>Robin</firstname>
+                  <lastname>Nico</lastname>
+                </identity>
+                <phone_number>+34955667788</phone_number>
+                <relation>Friend</relation>
+              </emergency_contact>
+            </client>
+
+            <!-- Payment details -->
+            <payment>
+              <amount_paid>620.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>bank_transfer</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+
+    <!-- ========================= -->
+    <!-- TOUR 4 -->
+    <!-- Challenging alpine ride across Switzerland -->
+    <!-- Dates: May 18th to May 22nd -->
+    <!-- ========================= -->
+    <tour>
+      <!-- Name of the tour -->
+      <tour_name>Swiss Alpine Adventure</tour_name>
+
+      <!-- Company organizing the tour -->
+      <company>
+        <name>AdmiralBike France</name>
+        <contact>
+          <email>contact@admiralbike.fr</email> <!-- Contact email -->
+          <phone_number>+33123456789</phone_number> <!-- Contact phone -->
+        </contact>
+        <address>
+          <street>Bahnhofplatz 1</street>
+          <city>Bern</city>
+          <code>3000</code>
+          <country>Switzerland</country>
+        </address>
+      </company>
+
+      <!-- Short description for quick reference -->
+      <short_description>Challenging alpine ride across Switzerland</short_description>
+
+      <!-- Detailed description of the tour -->
+      <long_description>High-altitude climbs, breathtaking views, moderate to expert difficulty.</long_description>
+
+      <!-- Difficulty category of the tour: challenging -->
+      <category>challenging</category>
+
+      <!-- Total distance in kilometers -->
+      <distance>220.0</distance>
+
+      <!-- Duration details -->
+      <duration>
+        <duration_days>5</duration_days> <!-- Number of days -->
+        <start_date>2026-05-18</start_date> <!-- Start date -->
+        <end_date>2026-05-22</end_date> <!-- End date -->
+      </duration>
+
+      <!-- Tour price -->
+      <price>
+        <amount>980.00</amount>
+        <currency>EUR</currency>
+      </price>
+
+      <!-- Assigned guide -->
+      <guide idref="g4" />
+
+      <!-- Tour availability details -->
+      <tour_availability>
+        <capacity>7</capacity> <!-- Maximum number of participants -->
+        <current_number_of_participants>5</current_number_of_participants> <!-- Currently booked -->
+        <availability>available</availability> <!-- Current availability status -->
+      </tour_availability>
+
+      <!-- Starting point details -->
+      <starting_point>
+        <coordinates>
+          <longitude>7.447</longitude>
+          <latitude>46.948</latitude>
+        </coordinates>
+        <address>
+          <street>Bahnhofplatz 1</street>
+          <city>Bern</city>
+          <code>3000</code>
+          <country>Switzerland</country>
+        </address>
+      </starting_point>
+
+      <!-- Final destination details -->
+      <final_destination>
+        <coordinates>
+          <longitude>8.541</longitude>
+          <latitude>47.376</latitude>
+        </coordinates>
+        <address>
+          <street>Sechseläutenplatz 1</street>
+          <city>Zurich</city>
+          <code>8001</code>
+          <country>Switzerland</country>
+        </address>
+      </final_destination>
+
+      <!-- ========================= -->
+      <!-- BIKES AND BOOKINGS -->
+      <!-- ========================= -->
+      <bikes>
+        <!-- Bike reserved by client Sanji -->
+        <bike id="b7">
+          <model>Giant Defy Advanced</model> <!-- Bike model -->
+          <bike_type>
+            <type>road</type> <!-- Road bike for alpine terrain -->
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>L</size>
+          <weight>8.2</weight>
+          <rental_price_per_day>
+            <amount>50.00</amount> <!-- Daily rental price -->
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability> <!-- Bike availability -->
+
+          <!-- Booking information -->
+          <booking>
+            <booking_date>2026-05-01</booking_date> <!-- Date of booking -->
+            <package idref="p2" /> <!-- Applied discount package -->
+
+            <!-- Client personal details -->
+            <client>
+              <identity>
+                <firstname>Sanji</firstname>
+                <lastname>Vinsmoke</lastname>
+              </identity>
+              <contact>
+                <email>sanji.vinsmoke@email.com</email>
+                <phone_number>+33144556677</phone_number>
+              </contact>
+              <address>
+                <street>12 Rue de la Paix</street>
+                <city>Paris</city>
+                <code>75002</code>
+                <country>France</country>
+              </address>
+              <nationality>French</nationality>
+
+              <!-- Emergency contact -->
+              <emergency_contact>
+                <identity>
+                  <firstname>Franky</firstname>
+                  <lastname>Brook</lastname>
+                </identity>
+                <phone_number>+33155667788</phone_number>
+                <relation>Friend</relation>
+              </emergency_contact>
+            </client>
+
+            <!-- Payment details -->
+            <payment>
+              <amount_paid>500.00</amount_paid>
+              <left_to_be_paid>480.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>deposit_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- ========================= -->
+    <!-- TOUR 5 -->
+    <!-- Moderate tour through southern Spain -->
+    <!-- Dates: May 25th to May 28th -->
+    <!-- ========================= -->
+    <tour>
+      <!-- Name of the tour -->
+      <tour_name>Andalusia Explorer</tour_name>
+
+      <!-- Company organizing the tour -->
+      <company>
+        <name>AdmiralBike France</name>
+        <contact>
+          <email>contact@admiralbike.fr</email> <!-- Contact email -->
+          <phone_number>+33123456789</phone_number> <!-- Contact phone -->
+        </contact>
+        <address>
+          <street>Puerta del Sol</street>
+          <city>Madrid</city>
+          <code>28013</code>
+          <country>Spain</country>
+        </address>
+      </company>
+
+      <!-- Short description for quick reference -->
+      <short_description>Scenic ride through southern Spain</short_description>
+
+      <!-- Detailed description of the tour -->
+      <long_description>Mix of historic towns, vineyards, and coastal scenery.</long_description>
+
+      <!-- Tour difficulty category -->
+      <category>moderate</category>
+
+      <!-- Total distance in kilometers -->
+      <distance>180.0</distance>
+
+      <!-- Duration details -->
+      <duration>
+        <duration_days>4</duration_days> <!-- Number of days -->
+        <start_date>2026-05-25</start_date> <!-- Start date -->
+        <end_date>2026-05-28</end_date> <!-- End date -->
+      </duration>
+
+      <!-- Tour price -->
+      <price>
+        <amount>750.00</amount>
+        <currency>EUR</currency>
+      </price>
+
+      <!-- Assigned guide -->
+      <guide idref="g5" />
+
+      <!-- Tour availability details -->
+      <tour_availability>
+        <capacity>6</capacity> <!-- Maximum number of participants -->
+        <current_number_of_participants>4</current_number_of_participants> <!-- Currently booked -->
+        <availability>available</availability> <!-- Current availability status -->
+      </tour_availability>
+
+      <!-- Starting point details -->
+      <starting_point>
+        <coordinates>
+          <longitude>-3.703</longitude>
+          <latitude>40.416</latitude>
+        </coordinates>
+        <address>
+          <street>Puerta del Sol</street>
+          <city>Madrid</city>
+          <code>28013</code>
+          <country>Spain</country>
+        </address>
+      </starting_point>
+
+      <!-- Final destination details -->
+      <final_destination>
+        <coordinates>
+          <longitude>-5.987</longitude>
+          <latitude>37.389</latitude>
+        </coordinates>
+        <address>
+          <street>Plaza de España</street>
+          <city>Seville</city>
+          <code>41001</code>
+          <country>Spain</country>
+        </address>
+      </final_destination>
+
+      <!-- ========================= -->
+      <!-- BIKES AND BOOKINGS -->
+      <!-- ========================= -->
+      <bikes>
+        <!-- Bike reserved by client Usopp -->
+        <bike id="b8">
+          <model>Cannondale Quick</model> <!-- Bike model -->
+          <bike_type>
+            <type>hybrid</type>
+          </bike_type>
+          <gear_count>20</gear_count>
+          <size>M</size>
+          <weight>13.8</weight>
+          <rental_price_per_day>
+            <amount>30.00</amount> <!-- Daily rental price -->
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability> <!-- Bike availability -->
+
+          <!-- Booking information -->
+          <booking>
+            <booking_date>2026-05-05</booking_date> <!-- Date of booking -->
+            <package idref="p1" /> <!-- Applied discount package -->
+
+            <!-- Client personal details -->
+            <client>
+              <identity>
+                <firstname>Usopp</firstname>
+                <lastname>Sogeking</lastname>
+              </identity>
+              <contact>
+                <email>usopp.sogeking@email.com</email>
+                <phone_number>+27611223344</phone_number>
+              </contact>
+              <address>
+                <street>15 Main Road</street>
+                <city>Cape Town</city>
+                <code>8001</code>
+                <country>South Africa</country>
+              </address>
+              <nationality>South African</nationality>
+
+              <!-- Emergency contact -->
+              <emergency_contact>
+                <identity>
+                  <firstname>Kaya</firstname>
+                  <lastname>Smith</lastname>
+                </identity>
+                <phone_number>+27615556677</phone_number>
+                <relation>Friend</relation>
+              </emergency_contact>
+            </client>
+
+            <!-- Payment details -->
+            <payment>
+              <amount_paid>750.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>cash</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+  </tours>
+
+
+  <!-- ========================= -->
+  <!-- GUIDES SECTION -->
+  <!-- ========================= -->
+  <guides>
+    <!-- Main guide assigned to all tours in the month -->
+    <guide id="g1">
+      <identity>
+        <firstname>Aokiji</firstname>
+        <lastname>Kuzan</lastname>
+      </identity>
+      <picture>
+        <picture_name>aokiji_kuzan.jpg</picture_name>
+        <picture_description>Experienced cycling guide</picture_description>
+      </picture>
+      <contact>
+        <email>aokiji@admiralbike.fr</email>
+        <phone_number>+33611223344</phone_number>
+      </contact>
+      <address>
+        <street>12 rue du Buster Call</street>
+        <city>Orléans</city>
+        <code>45000</code>
+        <country>France</country>
+      </address>
+      <nationality>French</nationality>
+      <!-- Languages the guide can speak -->
+      <spoken_languages>
+        <language>French</language>
+        <language>English</language>
+        <language>Japanese</language>
+      </spoken_languages>
+      <!-- Guide qualifications -->
+      <qualifications>
+        <qualification>Certified Tour Guide</qualification>
+        <qualification>First Aid Certificate</qualification>
+      </qualifications>
+    </guide>
+
+    <!-- Additional guides to match the month's tours -->
+    <guide id="g2">
+      <identity>
+        <firstname>Hugo</firstname>
+        <lastname>Lys</lastname>
+      </identity>
+      <picture>
+        <picture_name>hugo_lys.jpg</picture_name>
+        <picture_description>Mountain guide and alpine safety instructor</picture_description>
+      </picture>
+      <contact>
+        <email>hugo@admiralbike.fr</email>
+        <phone_number>+33677889900</phone_number>
+      </contact>
+      <address>
+        <street>4 rue des Alpes</street>
+        <city>Chambéry</city>
+        <code>73000</code>
+        <country>France</country>
+      </address>
+      <nationality>French</nationality>
+      <spoken_languages>
+        <language>French</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Alpine Safety Instructor</qualification>
+        <qualification>Mountain Guide Certification</qualification>
+      </qualifications>
+    </guide>
+
+    <guide id="g3">
+      <identity>
+        <firstname>Edith</firstname>
+        <lastname>Corra</lastname>
+      </identity>
+      <picture>
+        <picture_name>edith_corra.jpg</picture_name>
+        <picture_description>Corsica specialist and coastal route planner</picture_description>
+      </picture>
+      <contact>
+        <email>edith@admiralbike.fr</email>
+        <phone_number>+33699887766</phone_number>
+      </contact>
+      <address>
+        <street>Quai Napoléon</street>
+        <city>Bastia</city>
+        <code>20200</code>
+        <country>France</country>
+      </address>
+      <nationality>French</nationality>
+      <spoken_languages>
+        <language>French</language>
+        <language>Italian</language>
+        <language>Spanish</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Coastal Route Planner</qualification>
+        <qualification>First Aid Certificate</qualification>
+      </qualifications>
+    </guide>
+
+    <guide id="g4">
+      <identity>
+        <firstname>Jean</firstname>
+        <lastname>Peuplu</lastname>
+      </identity>
+      <picture>
+        <picture_name>jean_peuplu.jpg</picture_name>
+        <picture_description>Swiss guide experienced with high-altitude tours</picture_description>
+      </picture>
+      <contact>
+        <email>jean@admiralbike.ch</email>
+        <phone_number>+41791234567</phone_number>
+      </contact>
+      <address>
+        <street>Marktgasse 6</street>
+        <city>Bern</city>
+        <code>3000</code>
+        <country>Switzerland</country>
+      </address>
+      <nationality>Swiss</nationality>
+      <spoken_languages>
+        <language>German</language>
+        <language>French</language>
+        <language>English</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>High-Altitude Guide</qualification>
+        <qualification>Rescue and Evacuation Training</qualification>
+      </qualifications>
+    </guide>
+
+    <guide id="g5">
+      <identity>
+        <firstname>Amy</firstname>
+        <lastname>Santia</lastname>
+      </identity>
+      <picture>
+        <picture_name>amy_santia.jpg</picture_name>
+        <picture_description>Andalusia local guide with cultural insights</picture_description>
+      </picture>
+      <contact>
+        <email>amy@admiralbike.es</email>
+        <phone_number>+34911222333</phone_number>
+      </contact>
+      <address>
+        <street>Calle de la Cruz</street>
+        <city>Seville</city>
+        <code>41001</code>
+        <country>Spain</country>
+      </address>
+      <nationality>Spanish</nationality>
+      <spoken_languages>
+        <language>Spanish</language>
+        <language>English</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Local Culture Guide</qualification>
+        <qualification>Licensed Tour Guide</qualification>
+      </qualifications>
+    </guide>
+  </guides>
+
+
+  <!-- ========================= -->
+  <!-- PACKAGES SECTION -->
+  <!-- Discounts or special offers available -->
+  <!-- ========================= -->
+  <packages>
+    <package id="p1">
+      <name>Spring Discount</name>
+      <reduction>10.0</reduction>
+      <code>SPRING25</code>
+      <description>10% off all May tours</description>
+    </package>
+    <package id="p2">
+      <name>Adventure Bonus</name>
+      <reduction>15.0</reduction>
+      <code>ADVENTURE15</code>
+      <description>15% off for adventure seekers</description>
+    </package>
+  </packages>
+
+</data>

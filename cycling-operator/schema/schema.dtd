@@ -1,0 +1,173 @@
+<!-- TOURS SECTION -->
+<!ELEMENT Tours (tour+)>
+
+<!ELEMENT tour (
+    tour_name,
+    company,
+    short_description,
+    long_description,
+    category,
+    distance,
+    duration,
+    price,
+    guide,
+    tour_availability,
+    starting_point,
+    final_destination,
+    tour_steps,
+    bikes?
+)>
+
+<!ELEMENT tour_name (#PCDATA)>
+
+<!ELEMENT company (name, contact, address)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT contact (email, phone_number)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phone_number (#PCDATA)>
+<!ELEMENT address (street, city, code, country)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+
+<!ELEMENT short_description (#PCDATA)>
+<!ELEMENT long_description (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT distance (#PCDATA)>
+
+<!ELEMENT duration (duration_days, start_date, end_date)>
+<!ELEMENT duration_days (#PCDATA)>
+<!ELEMENT start_date (#PCDATA)>
+<!ELEMENT end_date (#PCDATA)>
+
+<!ELEMENT price (amount, currency)>
+<!ELEMENT amount (#PCDATA)>
+<!ELEMENT currency (#PCDATA)>
+
+<!ELEMENT guide EMPTY>
+<!ATTLIST guide idref IDREF #REQUIRED>
+
+<!ELEMENT tour_availability (capacity, current_number_of_participants, availability)>
+<!ELEMENT capacity (#PCDATA)>
+<!ELEMENT current_number_of_participants (#PCDATA)>
+<!ELEMENT availability (#PCDATA)>
+
+<!ELEMENT starting_point (coordinates, address)>
+<!ELEMENT destination (coordinates, address)>
+<!ELEMENT coordinates (longitude, latitude)>
+<!ELEMENT longitude (#PCDATA)>
+<!ELEMENT latitude (#PCDATA)>
+
+<!ELEMENT tour_steps (step+)>
+<!ELEMENT step (
+    coordinates,
+    address,
+    distance_from_previous_point,
+    surface_type,
+    terrain_elevation,
+    category,
+    activity,
+    accomodations?
+)>
+<!ATTLIST step order CDATA #REQUIRED>
+
+<!ELEMENT distance_from_previous_point (#PCDATA)>
+<!ELEMENT surface_type (#PCDATA)>
+<!ELEMENT terrain_elevation (#PCDATA)>
+
+<!ELEMENT activity (name, activity_type, address, duration, price?)>
+<!ELEMENT activity_type (#PCDATA)>
+<!ELEMENT duration (#PCDATA)>
+
+<!ELEMENT accomodations (accomodation+)>
+<!ELEMENT accomodation (
+    accomodation_type,
+    address,
+    price,
+    included,
+    excluded?
+)>
+<!ELEMENT included (breakfast?, lunch?, dinner?, bedding?, wifi?)>
+<!ELEMENT excluded (breakfast?, lunch?, dinner?, bedding?, wifi?)>
+<!ELEMENT breakfast (#PCDATA)>
+<!ELEMENT lunch (#PCDATA)>
+<!ELEMENT dinner (#PCDATA)>
+<!ELEMENT bedding (#PCDATA)>
+<!ELEMENT wifi (#PCDATA)>
+
+<!ELEMENT bikes (bike+)>
+<!ELEMENT bike (
+    model,
+    bike_type,
+    gear_count,
+    size,
+    weight,
+    rental_price_per_day,
+    bike_availability,
+    booking?
+)>
+<!ATTLIST bike id ID #REQUIRED>
+
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT bike_type (electric_autonomy?)>
+
+<!ELEMENT gear_count (#PCDATA)>
+<!ELEMENT size (#PCDATA)>
+<!ELEMENT weight (#PCDATA)>
+<!ELEMENT rental_price_per_day (amount, currency)>
+<!ELEMENT bike_availability (#PCDATA)>
+
+<!ELEMENT booking (booking_date, package, client, payment)>
+<!ELEMENT booking_date (#PCDATA)>
+<!ELEMENT package EMPTY>
+<!ATTLIST package idref IDREF #REQUIRED>
+
+<!ELEMENT client (identity, contact, address, nationality, emergency_contact)>
+
+<!ELEMENT identity (firstname, lastname)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+
+<!ELEMENT nationality (#PCDATA)>
+<!ELEMENT emergency_contact (identity, phone_number, relation)>
+<!ELEMENT relation (#PCDATA)>
+
+<!ELEMENT payment (amount_paid, left_to_be_paid, currency, method, payment_status)>
+<!ELEMENT amount_paid (#PCDATA)>
+<!ELEMENT left_to_be_paid (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT payment_status (#PCDATA)>
+
+<!-- GUIDES SECTION -->
+ <!-- added "picture" that contains the name of the file and the text content for accessibility => during transfo added <a href="file_name" alt="text description" -->
+<!ELEMENT guides (guide+)>
+<!ELEMENT guide (
+    identity,
+    picture,
+    contact,
+    address,
+    nationality,
+    spoken_languages,
+    qualifications
+)>
+<!ATTLIST guide id ID #REQUIRED> 
+
+<!ELEMENT picture (picture_name, picture_description)>
+<!ELEMENT picture_name (#PCDATA)>
+<!ELEMENT picture_description (#PCDATA)>
+
+<!ELEMENT spoken_languages (language+)>  
+<!ELEMENT language (#PCDATA)>
+
+
+<!ELEMENT qualifications (qualification+)>
+<!ELEMENT qualification (#PCDATA)>
+
+<!-- PACKAGES SECTION -->
+<!ELEMENT packages (package+)>
+<!ELEMENT package (name, reduction, code, description)>
+<!ATTLIST package id ID #REQUIRED>
+<!ELEMENT reduction (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT description (#PCDATA)>

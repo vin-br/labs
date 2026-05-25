@@ -1,0 +1,951 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title></title>
+      <meta name="author" content="Audrey Costes, Halima Lemmouchi, Lina Marcela Diaz Bejarano, Vincent Boettcher">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Display a grid or list of tours with cards for each tour.">
+      <link rel="stylesheet" href="../css/styles.css">
+   </head>
+   <body>
+      <header class="page-header">
+         <h1>Cycle Around the World</h1>
+      </header>
+      <div class="filter-container"><label for="startDateFilter">Filter Tours by Date:</label><input type="date" id="startDateFilter"><button id="filterBtn">Filter</button><button id="resetBtn">Reset</button></div>
+      <div class="cards-container">
+         <div class="card" data-startdate="2024-03-20" data-enddate="2024-03-20">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/japan/tokyo.jpg" alt="Tour image of the Tokyo city in Japan"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Tokyo Urban Explorer</h2>
+                  <p><i>Cycle through the vibrant neighborhoods of Tokyo.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Tokyo Trails</p>
+                     <p><strong>Email: </strong>contact@tokyotrails.jp</p>
+                     <p><strong>Phone: </strong>+81-3-222-4545</p>
+                     <h3>Address</h3>
+                     <p>8-1 Ginza,<br>Tokyo, <br>Japan</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2024-03-20/2024-03-20">2024-03-20 - 2024-03-20</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>120JPY</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2024-07-10" data-enddate="2024-07-13">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/france/chamonix.jpg" alt="Tour image of the Chamonix city in France"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Alpine Discovery Ride</h2>
+                  <p><i>Breathtaking mountain routes</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>MountainVista Adventures</p>
+                     <p><strong>Email: </strong>info@mountainvista.com</p>
+                     <p><strong>Phone: </strong>+41-22-555-1212</p>
+                     <h3>Address</h3>
+                     <p>45 Glacier Way,<br>Chamonix, 74400, <br>France</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2024-07-10/2024-07-13">2024-07-10 - 2024-07-13</time></p>
+                     <p><strong>Difficulty: </strong>difficult</p>
+                     <p><strong>Price: </strong>650.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2024-07-10" data-enddate="2024-07-16">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/norway/bergen.jpg" alt="Tour image of the Bergen city in Norway"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Nordic Fjord Route</h2>
+                  <p><i>Experience Norway’s breathtaking fjords on two wheels.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>ScandiCycle Tours</p>
+                     <p><strong>Email: </strong>info@scandicycle.no</p>
+                     <p><strong>Phone: </strong>+47-555-9988</p>
+                     <h3>Address</h3>
+                     <p>Harbor Road 14,<br>Bergen, <br>Norway</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2024-07-10/2024-07-16">2024-07-10 - 2024-07-16</time></p>
+                     <p><strong>Difficulty: </strong>challenging</p>
+                     <p><strong>Price: </strong>1400.00NOK</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2024-08-05" data-enddate="2024-08-11">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/canada/banff.jpg" alt="Tour image of the Banff city in Canada"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Canadian Rockies Expedition</h2>
+                  <p><i>Explore Banff to Jasper through rugged trails and forest routes.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>NorthTrail Expeditions</p>
+                     <p><strong>Email: </strong>book@northtrail.ca</p>
+                     <p><strong>Phone: </strong>+1-604-222-8989</p>
+                     <h3>Address</h3>
+                     <p>89 Mountain Rd,<br>Banff, <br>Canada</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2024-08-05/2024-08-11">2024-08-05 - 2024-08-11</time></p>
+                     <p><strong>Difficulty: </strong>difficult</p>
+                     <p><strong>Price: </strong>1200.00CAD</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2025-04-10" data-enddate="2025-04-14">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/greece/athens.jpg" alt="Tour image of the Athens city in Greece"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Ancient Paths of Greece</h2>
+                  <p><i>Follow ancient trade routes from Athens to Delphi.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Hellenic Cycle Tours</p>
+                     <p><strong>Email: </strong>contact@helleniccycle.gr</p>
+                     <p><strong>Phone: </strong>+30-21-333-7788</p>
+                     <h3>Address</h3>
+                     <p>15 Dionysiou Areopagitou,<br>Athens, <br>Greece</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2025-04-10/2025-04-14">2025-04-10 - 2025-04-14</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>640.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2025-05-20" data-enddate="2025-05-23">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/germany/freiburg.jpg" alt="Tour image of the Freiburg city in Germany"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Black Forest Trail</h2>
+                  <p><i>Cycle through deep forests and charming villages of the Schwarzwald.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>GreenPath Germany</p>
+                     <p><strong>Email: </strong>info@greenpath.de</p>
+                     <p><strong>Phone: </strong>+49-761-555-9988</p>
+                     <h3>Address</h3>
+                     <p>Waldweg 7,<br>Freiburg, <br>Germany</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2025-05-20/2025-05-23">2025-05-20 - 2025-05-23</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>580.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2025-12-05" data-enddate="2025-12-10">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/indonesia/denpasar.jpg" alt="Tour image of the Denpasar city in Indonesia"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Bali Island Loop</h2>
+                  <p><i>A tropical cycling journey around the island of Bali.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>IslandMotion Adventures</p>
+                     <p><strong>Email: </strong>hello@islandmotion.id</p>
+                     <p><strong>Phone: </strong>+62-361-334455</p>
+                     <h3>Address</h3>
+                     <p>Jl. Sunset Road 99,<br>Denpasar, <br>Indonesia</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2025-12-05/2025-12-10">2025-12-05 - 2025-12-10</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>980.00IDR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-05-01" data-enddate="2026-05-03">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/france/orl%C3%A9ans.jpg" alt="Tour image of the Orléans city in France"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Loire Valley Discovery</h2>
+                  <p><i>Easy tour along the Loire River</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>AdmiralBike France</p>
+                     <p><strong>Email: </strong>contact@admiralbike.fr</p>
+                     <p><strong>Phone: </strong>+33123456789</p>
+                     <h3>Address</h3>
+                     <p>1 place du Martroi,<br>Orléans, 45000, <br>France</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-05-01/2026-05-03">2026-05-01 - 2026-05-03</time></p>
+                     <p><strong>Difficulty: </strong>easy</p>
+                     <p><strong>Price: </strong>450.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-05-05" data-enddate="2026-05-08">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/france/chamb%C3%A9ry.jpg" alt="Tour image of the Chambéry city in France"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Alps Challenge</h2>
+                  <p><i>Challenging mountain tour in the French Alps</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>AdmiralBike France</p>
+                     <p><strong>Email: </strong>contact@admiralbike.fr</p>
+                     <p><strong>Phone: </strong>+33123456789</p>
+                     <h3>Address</h3>
+                     <p>10 avenue de Savoie,<br>Chambéry, 73000, <br>France</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-05-05/2026-05-08">2026-05-05 - 2026-05-08</time></p>
+                     <p><strong>Difficulty: </strong>difficult</p>
+                     <p><strong>Price: </strong>890.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-05-10" data-enddate="2026-05-10">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/japan/tokyo.jpg" alt="Tour image of the Tokyo city in Japan"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Tokyo Urban Explorer</h2>
+                  <p><i>Cycle through the vibrant neighborhoods of Tokyo.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Tokyo Trails</p>
+                     <p><strong>Email: </strong>contact@tokyotrails.jp</p>
+                     <p><strong>Phone: </strong>+81-3-222-4545</p>
+                     <h3>Address</h3>
+                     <p>8-1 Ginza,<br>Tokyo, <br>Japan</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-05-10/2026-05-10">2026-05-10 - 2026-05-10</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>120JPY</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-05-12" data-enddate="2026-05-15">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/france/bastia.jpg" alt="Tour image of the Bastia city in France"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Corsica Coastal Ride</h2>
+                  <p><i>Moderate tour along the Corsican coastline</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>AdmiralBike France</p>
+                     <p><strong>Email: </strong>contact@admiralbike.fr</p>
+                     <p><strong>Phone: </strong>+33123456789</p>
+                     <h3>Address</h3>
+                     <p>Port de Bastia,<br>Bastia, 20200, <br>France</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-05-12/2026-05-15">2026-05-12 - 2026-05-15</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>620.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-05-15" data-enddate="2026-05-18">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/italy/florence.jpg" alt="Tour image of the Florence city in Italy"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Tuscany Vineyard Circuit</h2>
+                  <p><i>Wine, hills, and sunshine through Tuscany's vineyards.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Italy Cycle Tours</p>
+                     <p><strong>Email: </strong>info@italycycle.it</p>
+                     <p><strong>Phone: </strong>+39-02-777-1234</p>
+                     <h3>Address</h3>
+                     <p>Via Roma 15,<br>Florence, <br>Italy</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-05-15/2026-05-18">2026-05-15 - 2026-05-18</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>670.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-05-18" data-enddate="2026-05-22">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/switzerland/bern.jpg" alt="Tour image of the Bern city in Switzerland"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Swiss Alpine Adventure</h2>
+                  <p><i>Challenging alpine ride across Switzerland</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>AdmiralBike France</p>
+                     <p><strong>Email: </strong>contact@admiralbike.fr</p>
+                     <p><strong>Phone: </strong>+33123456789</p>
+                     <h3>Address</h3>
+                     <p>Bahnhofplatz 1,<br>Bern, 3000, <br>Switzerland</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-05-18/2026-05-22">2026-05-18 - 2026-05-22</time></p>
+                     <p><strong>Difficulty: </strong>challenging</p>
+                     <p><strong>Price: </strong>980.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-05-25" data-enddate="2026-05-28">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/spain/madrid.jpg" alt="Tour image of the Madrid city in Spain"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Andalusia Explorer</h2>
+                  <p><i>Scenic ride through southern Spain</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>AdmiralBike France</p>
+                     <p><strong>Email: </strong>contact@admiralbike.fr</p>
+                     <p><strong>Phone: </strong>+33123456789</p>
+                     <h3>Address</h3>
+                     <p>Puerta del Sol,<br>Madrid, 28013, <br>Spain</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-05-25/2026-05-28">2026-05-25 - 2026-05-28</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>750.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-06-10" data-enddate="2026-06-13">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/ireland/cork.jpg" alt="Tour image of the Cork city in Ireland"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Cork Coastal Discovery</h2>
+                  <p><i>Coastal and countryside ride around Cork Harbour.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Cork Coastal Tours</p>
+                     <p><strong>Email: </strong>info@corkcoastaltours.ie</p>
+                     <p><strong>Phone: </strong>+353-21-4000000</p>
+                     <h3>Address</h3>
+                     <p>Pier Road,<br>Cork, <br>Ireland</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-06-10/2026-06-13">2026-06-10 - 2026-06-13</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>520.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-06-10" data-enddate="2026-06-14">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/france/chamonix.jpg" alt="Tour image of the Chamonix city in France"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Alpine Discovery Ride</h2>
+                  <p><i>Ride through the French Alps with stunning mountain views.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>MountainVista Adventures</p>
+                     <p><strong>Email: </strong>info@mountainvista.com</p>
+                     <p><strong>Phone: </strong>+41-22-555-1212</p>
+                     <h3>Address</h3>
+                     <p>45 Glacier Way,<br>Chamonix, 74400, <br>France</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-06-10/2026-06-14">2026-06-10 - 2026-06-14</time></p>
+                     <p><strong>Difficulty: </strong>challenging</p>
+                     <p><strong>Price: </strong>890.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-06-18" data-enddate="2026-06-20">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/denmark/copenhagen.jpg" alt="Tour image of the Copenhagen city in Denmark"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Copenhagen City Ride</h2>
+                  <p><i>Urban cycling through Copenhagen’s canals and neighborhoods.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>City Pedal Denmark</p>
+                     <p><strong>Email: </strong>booking@city-pedal.dk</p>
+                     <p><strong>Phone: </strong>+45-33-210000</p>
+                     <h3>Address</h3>
+                     <p>Nyhavn 12,<br>Copenhagen, <br>Denmark</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-06-18/2026-06-20">2026-06-18 - 2026-06-20</time></p>
+                     <p><strong>Difficulty: </strong>easy</p>
+                     <p><strong>Price: </strong>1800.00DKK</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-06-21" data-enddate="2026-06-21">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/iceland/reykjavik.jpg" alt="Tour image of the Reykjavik city in Iceland"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Reykjavik City Ride</h2>
+                  <p><i>Evening and midnight ride around Reykjavik under long summer light.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Iceland Cycle Ride</p>
+                     <p><strong>Email: </strong>hello@iceland-cycle.is</p>
+                     <p><strong>Phone: </strong>+354-540-0000</p>
+                     <h3>Address</h3>
+                     <p>Skolavordustigur 20,<br>Reykjavik, <br>Iceland</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-06-21/2026-06-21">2026-06-21 - 2026-06-21</time></p>
+                     <p><strong>Difficulty: </strong>easy</p>
+                     <p><strong>Price: </strong>9500.00ISK</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-07-01" data-enddate="2026-07-03">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/spain/barcelona.jpg" alt="Tour image of the Barcelona city in Spain"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Coastal Breeze Journey</h2>
+                  <p><i>Relaxing coastal tour from Barcelona to Tarragona.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Seaside Cycling Co.</p>
+                     <p><strong>Email: </strong>hello@seasidecycling.com</p>
+                     <p><strong>Phone: </strong>+34-93-555-7890</p>
+                     <h3>Address</h3>
+                     <p>12 Carrer del Mar,<br>Barcelona, 08003, <br>Spain</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-07-01/2026-07-03">2026-07-01 - 2026-07-03</time></p>
+                     <p><strong>Difficulty: </strong>easy</p>
+                     <p><strong>Price: </strong>350.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-07-10" data-enddate="2026-07-13">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/scotland/inverness.jpg" alt="Tour image of the Inverness city in Scotland"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Inverness Highlands Loop</h2>
+                  <p><i>Explore the northern Highlands, lochs and gentle climbs around Inverness.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Highland Trails Scotland</p>
+                     <p><strong>Email: </strong>info@highlandtrails.scot</p>
+                     <p><strong>Phone: </strong>+44-1463-400000</p>
+                     <h3>Address</h3>
+                     <p>Castle St,<br>Inverness, <br>Scotland</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-07-10/2026-07-13">2026-07-10 - 2026-07-13</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>420.00GBP</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-07-20" data-enddate="2026-07-22">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/norway/oslo.jpg" alt="Tour image of the Oslo city in Norway"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Oslo Fjord Ride</h2>
+                  <p><i>Scenic ride along the Oslofjord and city highlights.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Oslo Fjord Cycles</p>
+                     <p><strong>Email: </strong>info@oslofjordcycles.no</p>
+                     <p><strong>Phone: </strong>+47-22-100000</p>
+                     <h3>Address</h3>
+                     <p>Strandgata 15,<br>Oslo, <br>Norway</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-07-20/2026-07-22">2026-07-20 - 2026-07-22</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>2500.00NOK</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-08-05" data-enddate="2026-08-08">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/sweden/stockholm.jpg" alt="Tour image of the Stockholm city in Sweden"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Stockholm Seaside Loop</h2>
+                  <p><i>Loop through Stockholm and nearby archipelago islands.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Stockholm Sea Routes</p>
+                     <p><strong>Email: </strong>info@stockholmsearoutes.se</p>
+                     <p><strong>Phone: </strong>+46-8-400000</p>
+                     <h3>Address</h3>
+                     <p>Strömgatan 6,<br>Stockholm, <br>Sweden</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-08-05/2026-08-08">2026-08-05 - 2026-08-08</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>3200.00SEK</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-09-15" data-enddate="2026-09-17">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/spain/barcelona.jpg" alt="Tour image of the Barcelona city in Spain"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Coastal Breeze Journey</h2>
+                  <p><i>Enjoy a relaxing coastal ride with stunning sea views.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Seaside Cycling Co.</p>
+                     <p><strong>Email: </strong>hello@seasidecycling.com</p>
+                     <p><strong>Phone: </strong>+34-93-555-7890</p>
+                     <h3>Address</h3>
+                     <p>12 Carrer del Mar,<br>Barcelona, 08003, <br>Spain</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-09-15/2026-09-17">2026-09-15 - 2026-09-17</time></p>
+                     <p><strong>Difficulty: </strong>easy</p>
+                     <p><strong>Price: </strong>350.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-09-20" data-enddate="2026-09-23">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/italy/florence.jpg" alt="Tour image of the Florence city in Italy"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Tuscany Vineyard Circuit</h2>
+                  <p><i>Wine, hills, and sunshine through Tuscany’s vineyards.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Italy Cycle Tours</p>
+                     <p><strong>Email: </strong>info@italycycle.it</p>
+                     <p><strong>Phone: </strong>+39-02-777-1234</p>
+                     <h3>Address</h3>
+                     <p>Via Roma 15,<br>Florence, <br>Italy</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-09-20/2026-09-23">2026-09-20 - 2026-09-23</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>670.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2026-10-15" data-enddate="2026-10-18">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/morocco/marrakesh.jpg" alt="Tour image of the Marrakesh city in Morocco"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Sahara Desert Expedition</h2>
+                  <p><i>Ride through the dunes and oases of the Moroccan Sahara.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Nomad Rides Morocco</p>
+                     <p><strong>Email: </strong>contact@nomadrides.ma</p>
+                     <p><strong>Phone: </strong>+212-524-445566</p>
+                     <h3>Address</h3>
+                     <p>10 Rue des Dunes,<br>Marrakesh, <br>Morocco</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2026-10-15/2026-10-18">2026-10-15 - 2026-10-18</time></p>
+                     <p><strong>Difficulty: </strong>difficult</p>
+                     <p><strong>Price: </strong>750.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-05-10" data-enddate="2027-05-15">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/france/tours.jpg" alt="Tour image of the Tours city in France"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Loire Valley Castles Ride</h2>
+                  <p><i>Explore the famous castles of the Loire Valley by bike.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Cycle France Adventures</p>
+                     <p><strong>Email: </strong>info@cyclefrance.com</p>
+                     <p><strong>Phone: </strong>+33 1 23 45 67 89</p>
+                     <h3>Address</h3>
+                     <p>12 Rue de la Loire,<br>Tours, 37000, <br>France</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-05-10/2027-05-15">2027-05-10 - 2027-05-15</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>850.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-06-01" data-enddate="2027-06-07">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/italy/florence.jpg" alt="Tour image of the Florence city in Italy"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Tuscany Wine Hills</h2>
+                  <p><i>Cycle through Tuscany's rolling hills and vineyards.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Italia Bike Tours</p>
+                     <p><strong>Email: </strong>contact@italiabike.it</p>
+                     <p><strong>Phone: </strong>+39 055 678901</p>
+                     <h3>Address</h3>
+                     <p>Via Roma 22,<br>Florence, 50123, <br>Italy</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-06-01/2027-06-07">2027-06-01 - 2027-06-07</time></p>
+                     <p><strong>Difficulty: </strong>challenging</p>
+                     <p><strong>Price: </strong>1250.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-07-05" data-enddate="2027-07-12">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/scotland/edinburgh.jpg" alt="Tour image of the Edinburgh city in Scotland"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Scottish Highlands Explorer</h2>
+                  <p><i>Discover rugged landscapes and lochs of the Scottish Highlands.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>UK Trail Rides</p>
+                     <p><strong>Email: </strong>hello@uktrails.co.uk</p>
+                     <p><strong>Phone: </strong>+44 131 222 3344</p>
+                     <h3>Address</h3>
+                     <p>Prince Street 42,<br>Edinburgh, <br>Scotland</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-07-05/2027-07-12">2027-07-05 - 2027-07-12</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>1150.00GBP</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-07-12" data-enddate="2027-07-20">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/switzerland/zurich.jpg" alt="Tour image of the Zurich city in Switzerland"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Swiss Alpine Challenge</h2>
+                  <p><i>Conquer the mountain passes of the Swiss Alps.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Alpine Cycle Expeditions</p>
+                     <p><strong>Email: </strong>info@alpinecycle.ch</p>
+                     <p><strong>Phone: </strong>+41 44 567 8900</p>
+                     <h3>Address</h3>
+                     <p>Bahnstrasse 15,<br>Zurich, 8001, <br>Switzerland</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-07-12/2027-07-20">2027-07-12 - 2027-07-20</time></p>
+                     <p><strong>Difficulty: </strong>challenging</p>
+                     <p><strong>Price: </strong>1850.00CHF</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-07-25" data-enddate="2027-08-02">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/canada/banff.jpg" alt="Tour image of the Banff city in Canada"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Canadian Rockies Adventure</h2>
+                  <p><i>Ride through Canada’s spectacular Rocky Mountains.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Maple Trails Cycling</p>
+                     <p><strong>Email: </strong>info@mapletrails.ca</p>
+                     <p><strong>Phone: </strong>+1 403 555 2211</p>
+                     <h3>Address</h3>
+                     <p>Banff Avenue 125,<br>Banff, T1L 1A1, <br>Canada</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-07-25/2027-08-02">2027-07-25 - 2027-08-02</time></p>
+                     <p><strong>Difficulty: </strong>challenging</p>
+                     <p><strong>Price: </strong>2300.00CAD</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-08-05" data-enddate="2027-08-11">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/austria/vienna.jpg" alt="Tour image of the Vienna city in Austria"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Danube River Path</h2>
+                  <p><i>Ride along the scenic Danube River from Vienna to Budapest.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>EuroCycle Adventures</p>
+                     <p><strong>Email: </strong>info@eurocycle.at</p>
+                     <p><strong>Phone: </strong>+43 1 234 5678</p>
+                     <h3>Address</h3>
+                     <p>Ringstrasse 50,<br>Vienna, 1010, <br>Austria</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-08-05/2027-08-11">2027-08-05 - 2027-08-11</time></p>
+                     <p><strong>Difficulty: </strong>easy</p>
+                     <p><strong>Price: </strong>970.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-09-01" data-enddate="2027-09-10">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/usa/monterey.jpg" alt="Tour image of the Monterey city in USA"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>California Coast Classic</h2>
+                  <p><i>Cycle along the iconic Pacific Coast Highway from San Francisco to Santa Barbara.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Pacific Cycle Tours</p>
+                     <p><strong>Email: </strong>info@pacificcycle.com</p>
+                     <p><strong>Phone: </strong>+1 415 777 9988</p>
+                     <h3>Address</h3>
+                     <p>Monterey Bay 1,<br>Monterey, 93940, <br>USA</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-09-01/2027-09-10">2027-09-01 - 2027-09-10</time></p>
+                     <p><strong>Difficulty: </strong>challenging</p>
+                     <p><strong>Price: </strong>2100.00USD</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-09-03" data-enddate="2027-09-07">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/spain/barcelona.jpg" alt="Tour image of the Barcelona city in Spain"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Coastal Catalonia Ride</h2>
+                  <p><i>Enjoy the Mediterranean coast from Barcelona to Girona.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Cycling Spain Co.</p>
+                     <p><strong>Email: </strong>info@cyclingspain.es</p>
+                     <p><strong>Phone: </strong>+34 933 224 567</p>
+                     <h3>Address</h3>
+                     <p>Gran Via de les Corts Catalanes 112,<br>Barcelona, 08010, <br>Spain</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-09-03/2027-09-07">2027-09-03 - 2027-09-07</time></p>
+                     <p><strong>Difficulty: </strong>easy</p>
+                     <p><strong>Price: </strong>650.00EUR</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-10-12" data-enddate="2027-10-18">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/australia/melbourne.jpg" alt="Tour image of the Melbourne city in Australia"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Great Ocean Road Escape</h2>
+                  <p><i>Ride Australia’s most scenic coastal highway from Melbourne to Warrnambool.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Down Under Cycling</p>
+                     <p><strong>Email: </strong>contact@downundercycling.au</p>
+                     <p><strong>Phone: </strong>+61 3 9650 8899</p>
+                     <h3>Address</h3>
+                     <p>Flinders Lane 88,<br>Melbourne, 3000, <br>Australia</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-10-12/2027-10-18">2027-10-12 - 2027-10-18</time></p>
+                     <p><strong>Difficulty: </strong>moderate</p>
+                     <p><strong>Price: </strong>1300.00AUD</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-11-05" data-enddate="2027-11-15">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/chile/santiago.jpg" alt="Tour image of the Santiago city in Chile"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Patagonia Wilderness Ride</h2>
+                  <p><i>Cycle through the lakes and glaciers of Chilean Patagonia.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Andes Adventure Tours</p>
+                     <p><strong>Email: </strong>info@andesadventures.cl</p>
+                     <p><strong>Phone: </strong>+56 2 2555 8811</p>
+                     <h3>Address</h3>
+                     <p>Avenida Libertador 2500,<br>Santiago, 8320000, <br>Chile</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-11-05/2027-11-15">2027-11-05 - 2027-11-15</time></p>
+                     <p><strong>Difficulty: </strong>challenging</p>
+                     <p><strong>Price: </strong>2450.00USD</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="card" data-startdate="2027-12-01" data-enddate="2027-12-06">
+            <div class="closed-overlay"></div>
+            <div class="card-image"><img src="../images/countries/vietnam/saigon.jpg" alt="Tour image of the Saigon city in Vietnam"></div>
+            <div class="card-content">
+               <div class="upper-text">
+                  <h2>Vietnam Mekong Delta Discovery</h2>
+                  <p><i>Cycle through floating markets and rice paddies in southern Vietnam.</i></p>
+               </div>
+               <div class="lower-text">
+                  <div class="left-col">
+                     <h3>Company Info</h3>
+                     <p><strong>Name: </strong>Indochina Cycle Tours</p>
+                     <p><strong>Email: </strong>info@indocycling.vn</p>
+                     <p><strong>Phone: </strong>+84 28 3920 1234</p>
+                     <h3>Address</h3>
+                     <p>Pham Ngu Lao 20,<br>Saigon, 700000, <br>Vietnam</p>
+                  </div>
+                  <div class="right-col">
+                     <p><time datetime="2027-12-01/2027-12-06">2027-12-01 - 2027-12-06</time></p>
+                     <p><strong>Difficulty: </strong>easy</p>
+                     <p><strong>Price: </strong>890.00USD</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div><script>
+                    // Mark closed tours on page load
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0); // Reset to start of day for accurate comparison
+        document.querySelectorAll('.card').forEach(card => {
+                    const endDateStr = card.getAttribute('data-enddate');
+                    if (endDateStr) {
+                    const endDate = new Date(endDateStr);
+                    if (endDate < today) {
+                    card.classList.add('closed');
+                    }
+                    }
+                    });
+
+                    document.getElementById('filterBtn').addEventListener('click', () => {
+                    const filterValue = document.getElementById('startDateFilter').value;
+                    if (!filterValue) {
+                    // If no date selected, show all
+                    document.querySelectorAll('.card').forEach(card => card.style.display = '');
+                    return;
+                    }
+                    const filterDate = new Date(filterValue);
+                    document.querySelectorAll('.card').forEach(card => {
+                    const cardDateStr = card.getAttribute('data-startdate');
+                    if (!cardDateStr) return;
+                    const cardDate = new Date(cardDateStr);
+                    card.style.display = (cardDate >= filterDate) ? '' : 'none';
+                    });
+                    });
+                    document.getElementById('resetBtn').addEventListener('click', () => {
+        document.getElementById('startDateFilter').value = '';
+                    document.querySelectorAll('.card').forEach(card => card.style.display = '');
+                    });
+                </script></body>
+</html>

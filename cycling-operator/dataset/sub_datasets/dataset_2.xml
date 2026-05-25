@@ -1,0 +1,2221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://city-tour-operator.org/cto"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://city-tour-operator.org/cto ../../schema/schema.xsd">
+
+  <tours>
+
+    <!-- TOUR 1 -->
+    <tour>
+      <tour_name>Alpine Discovery Ride</tour_name>
+      <company>
+        <name>MountainVista Adventures</name>
+        <contact>
+          <email>info@mountainvista.com</email>
+          <phone_number>+41-22-555-1212</phone_number>
+        </contact>
+        <address>
+          <street>45 Glacier Way</street>
+          <city>Chamonix</city>
+          <code>74400</code>
+          <country>France</country>
+        </address>
+      </company>
+      <short_description>Ride through the French Alps with stunning mountain views.</short_description>
+      <long_description>A thrilling multi-day tour across alpine passes and glacier-fed valleys for intermediate riders seeking scenic climbs.</long_description>
+      <category>challenging</category>
+      <distance>220.5</distance>
+      <duration>
+        <duration_days>4</duration_days>
+        <start_date>2026-06-10</start_date>
+        <end_date>2026-06-14</end_date>
+      </duration>
+      <price>
+        <amount>890.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g1" />
+      <tour_availability>
+        <capacity>15</capacity>
+        <current_number_of_participants>8</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>6.8694</longitude>
+          <latitude>45.9237</latitude>
+        </coordinates>
+        <address>
+          <street>1 Route du Mont-Blanc</street>
+          <city>Chamonix</city>
+          <country>France</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>6.8500</longitude>
+          <latitude>46.5300</latitude>
+        </coordinates>
+        <address>
+          <street>5 Rue des Alpes</street>
+          <city>Montreux</city>
+          <country>Switzerland</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b1">
+          <model>Cube Attain GTC</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>8.9</weight>
+          <rental_price_per_day>
+            <amount>35.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-04-01</booking_date>
+            <package idref="p1" />
+            <client>
+              <identity>
+                <firstname>Anna</firstname>
+                <lastname>Keller</lastname>
+              </identity>
+              <contact>
+                <email>anna.keller@example.com</email>
+                <phone_number>+49-30-555-6789</phone_number>
+              </contact>
+              <address>
+                <street>12 Lindenweg</street>
+                <city>Munich</city>
+                <country>Germany</country>
+              </address>
+              <nationality>German</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Markus</firstname>
+                  <lastname>Keller</lastname>
+                </identity>
+                <phone_number>+49-30-777-1234</phone_number>
+                <relation>Brother</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>801.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b1b">
+          <model>Specialized Tarmac SL7</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>24</gear_count>
+          <size>L</size>
+          <weight>7.8</weight>
+          <rental_price_per_day>
+            <amount>42.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-04-15</booking_date>
+            <package idref="p4" />
+            <client>
+              <identity>
+                <firstname>Thomas</firstname>
+                <lastname>Dubois</lastname>
+              </identity>
+              <contact>
+                <email>t.dubois@example.fr</email>
+                <phone_number>+33-1-4555-7788</phone_number>
+              </contact>
+              <address>
+                <street>88 Rue de la Paix</street>
+                <city>Lyon</city>
+                <country>France</country>
+              </address>
+              <nationality>French</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Marie</firstname>
+                  <lastname>Dubois</lastname>
+                </identity>
+                <phone_number>+33-1-4555-9900</phone_number>
+                <relation>Wife</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>783.20</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>bank_transfer</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b1c">
+          <model>Trek Domane SL 5</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>8.5</weight>
+          <rental_price_per_day>
+            <amount>38.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b1d">
+          <model>Canyon Endurace CF</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>L</size>
+          <weight>7.9</weight>
+          <rental_price_per_day>
+            <amount>40.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 1 - Past Instance (July 2024) -->
+    <tour>
+      <tour_name>Alpine Discovery Ride</tour_name>
+      <company>
+        <name>MountainVista Adventures</name>
+        <contact>
+          <email>info@mountainvista.com</email>
+          <phone_number>+41-22-555-1212</phone_number>
+        </contact>
+        <address>
+          <street>45 Glacier Way</street>
+          <city>Chamonix</city>
+          <code>74400</code>
+          <country>France</country>
+        </address>
+      </company>
+      <short_description>Breathtaking mountain routes</short_description>
+      <category>difficult</category>
+      <distance>120.5</distance>
+      <duration>
+        <duration_days>3</duration_days>
+        <start_date>2024-07-10</start_date>
+        <end_date>2024-07-13</end_date>
+      </duration>
+      <price>
+        <amount>650.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g1" />
+      <tour_availability>
+        <capacity>15</capacity>
+        <current_number_of_participants>15</current_number_of_participants>
+        <availability>Full</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>7.4474</longitude>
+          <latitude>46.9479</latitude>
+        </coordinates>
+        <address>
+          <street>Bahnhofplatz</street>
+          <city>Interlaken</city>
+          <country>Switzerland</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>7.7489</longitude>
+          <latitude>46.0207</latitude>
+        </coordinates>
+        <address>
+          <street>Via Principale</street>
+          <city>Zermatt</city>
+          <country>Switzerland</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b1_2024_a">
+          <model>Cube Attain GTC</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>8.9</weight>
+          <rental_price_per_day>
+            <amount>35.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2024-06-15</booking_date>
+            <package idref="p1" />
+            <client>
+              <identity>
+                <firstname>Sophie</firstname>
+                <lastname>Laurent</lastname>
+              </identity>
+              <contact>
+                <email>sophie.laurent@example.fr</email>
+                <phone_number>+33-6-1234-5678</phone_number>
+              </contact>
+              <address>
+                <street>15 Avenue des Champs</street>
+                <city>Paris</city>
+                <country>France</country>
+              </address>
+              <nationality>French</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Pierre</firstname>
+                  <lastname>Laurent</lastname>
+                </identity>
+                <phone_number>+33-6-9876-5432</phone_number>
+                <relation>Husband</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>801.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>paypal</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b1_2024_b">
+          <model>Specialized Tarmac SL7</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>24</gear_count>
+          <size>L</size>
+          <weight>7.8</weight>
+          <rental_price_per_day>
+            <amount>42.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2024-06-20</booking_date>
+            <package idref="p2" />
+            <client>
+              <identity>
+                <firstname>Luca</firstname>
+                <lastname>Romano</lastname>
+              </identity>
+              <contact>
+                <email>luca.romano@example.it</email>
+                <phone_number>+39-02-5555-1234</phone_number>
+              </contact>
+              <address>
+                <street>Via Milano 42</street>
+                <city>Milan</city>
+                <country>Italy</country>
+              </address>
+              <nationality>Italian</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Giulia</firstname>
+                  <lastname>Romano</lastname>
+                </identity>
+                <phone_number>+39-02-5555-5678</phone_number>
+                <relation>Sister</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>950.00</amount_paid>
+              <left_to_be_paid>50.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>overdue</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b1_2024_c">
+          <model>Trek Domane SL 5</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>8.5</weight>
+          <rental_price_per_day>
+            <amount>38.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2024-06-18</booking_date>
+            <package idref="p1" />
+            <client>
+              <identity>
+                <firstname>Hans</firstname>
+                <lastname>Mueller</lastname>
+              </identity>
+              <contact>
+                <email>hans.mueller@example.de</email>
+                <phone_number>+49-89-1234-5678</phone_number>
+              </contact>
+              <address>
+                <street>Hauptstrasse 88</street>
+                <city>Berlin</city>
+                <country>Germany</country>
+              </address>
+              <nationality>German</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Petra</firstname>
+                  <lastname>Mueller</lastname>
+                </identity>
+                <phone_number>+49-89-8765-4321</phone_number>
+                <relation>Wife</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>801.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>bank_transfer</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 2 -->
+    <tour>
+      <tour_name>Coastal Breeze Journey</tour_name>
+      <company>
+        <name>Seaside Cycling Co.</name>
+        <contact>
+          <email>hello@seasidecycling.com</email>
+          <phone_number>+34-93-555-7890</phone_number>
+        </contact>
+        <address>
+          <street>12 Carrer del Mar</street>
+          <city>Barcelona</city>
+          <code>08003</code>
+          <country>Spain</country>
+        </address>
+      </company>
+      <short_description>Relaxing coastal tour from Barcelona to Tarragona.</short_description>
+      <category>easy</category>
+      <distance>95.2</distance>
+      <duration>
+        <duration_days>2</duration_days>
+        <start_date>2026-07-01</start_date>
+        <end_date>2026-07-03</end_date>
+      </duration>
+      <price>
+        <amount>350.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g2" />
+      <tour_availability>
+        <capacity>20</capacity>
+        <current_number_of_participants>14</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>2.1734</longitude>
+          <latitude>41.3851</latitude>
+        </coordinates>
+        <address>
+          <street>Port Olímpic</street>
+          <city>Barcelona</city>
+          <country>Spain</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>1.2510</longitude>
+          <latitude>41.1189</latitude>
+        </coordinates>
+        <address>
+          <street>Platja del Miracle</street>
+          <city>Tarragona</city>
+          <country>Spain</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b2a">
+          <model>Gazelle Easyflow</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>80</electric_autonomy>
+          </bike_type>
+          <gear_count>8</gear_count>
+          <size>L</size>
+          <weight>23.5</weight>
+          <rental_price_per_day>
+            <amount>45.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-06-01</booking_date>
+            <package idref="p3" />
+            <client>
+              <identity>
+                <firstname>Elena</firstname>
+                <lastname>Rodriguez</lastname>
+              </identity>
+              <contact>
+                <email>elena.rodriguez@example.es</email>
+                <phone_number>+34-93-222-3344</phone_number>
+              </contact>
+              <address>
+                <street>Carrer de Balmes 45</street>
+                <city>Barcelona</city>
+                <country>Spain</country>
+              </address>
+              <nationality>Spanish</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Carlos</firstname>
+                  <lastname>Rodriguez</lastname>
+                </identity>
+                <phone_number>+34-93-222-5566</phone_number>
+                <relation>Brother</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>440.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>qr_code</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b2b">
+          <model>Orbea Gain F25</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>100</electric_autonomy>
+          </bike_type>
+          <gear_count>10</gear_count>
+          <size>M</size>
+          <weight>19.2</weight>
+          <rental_price_per_day>
+            <amount>48.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-06-05</booking_date>
+            <package idref="p3" />
+            <client>
+              <identity>
+                <firstname>Marta</firstname>
+                <lastname>Garcia</lastname>
+              </identity>
+              <contact>
+                <email>marta.garcia@example.es</email>
+                <phone_number>+34-91-777-8899</phone_number>
+              </contact>
+              <address>
+                <street>Gran Via 123</street>
+                <city>Madrid</city>
+                <country>Spain</country>
+              </address>
+              <nationality>Spanish</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Juan</firstname>
+                  <lastname>Garcia</lastname>
+                </identity>
+                <phone_number>+34-91-777-9988</phone_number>
+                <relation>Husband</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>200.00</amount_paid>
+              <left_to_be_paid>246.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>partial</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b2c">
+          <model>Riese &amp; Müller Supercharger</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>120</electric_autonomy>
+          </bike_type>
+          <gear_count>11</gear_count>
+          <size>L</size>
+          <weight>24.0</weight>
+          <rental_price_per_day>
+            <amount>50.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-05-28</booking_date>
+            <package idref="p5" />
+            <client>
+              <identity>
+                <firstname>David</firstname>
+                <lastname>Smith</lastname>
+              </identity>
+              <contact>
+                <email>david.smith@example.com</email>
+                <phone_number>+1-212-555-7788</phone_number>
+              </contact>
+              <address>
+                <street>5th Avenue 234</street>
+                <city>New York</city>
+                <country>USA</country>
+              </address>
+              <nationality>American</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Sarah</firstname>
+                  <lastname>Smith</lastname>
+                </identity>
+                <phone_number>+1-212-555-9988</phone_number>
+                <relation>Wife</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>380.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>USD</currency>
+              <method>paypal</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b2d">
+          <model>Haibike Trekking 8</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>90</electric_autonomy>
+          </bike_type>
+          <gear_count>9</gear_count>
+          <size>M</size>
+          <weight>22.0</weight>
+          <rental_price_per_day>
+            <amount>46.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 2 - Future Instance (September 2026) -->
+    <tour>
+      <tour_name>Coastal Breeze Journey</tour_name>
+      <company>
+        <name>Seaside Cycling Co.</name>
+        <contact>
+          <email>hello@seasidecycling.com</email>
+          <phone_number>+34-93-555-7890</phone_number>
+        </contact>
+        <address>
+          <street>12 Carrer del Mar</street>
+          <city>Barcelona</city>
+          <code>08003</code>
+          <country>Spain</country>
+        </address>
+      </company>
+      <short_description>Enjoy a relaxing coastal ride with stunning sea views.</short_description>
+      <category>easy</category>
+      <distance>95.2</distance>
+      <duration>
+        <duration_days>2</duration_days>
+        <start_date>2026-09-15</start_date>
+        <end_date>2026-09-17</end_date>
+      </duration>
+      <price>
+        <amount>350.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g2" />
+      <tour_availability>
+        <capacity>20</capacity>
+        <current_number_of_participants>6</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>2.1734</longitude>
+          <latitude>41.3851</latitude>
+        </coordinates>
+        <address>
+          <street>Port Olímpic</street>
+          <city>Barcelona</city>
+          <country>Spain</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>1.2510</longitude>
+          <latitude>41.1189</latitude>
+        </coordinates>
+        <address>
+          <street>Platja del Miracle</street>
+          <city>Tarragona</city>
+          <country>Spain</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b2_2026_a">
+          <model>Gazelle Easyflow</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>80</electric_autonomy>
+          </bike_type>
+          <gear_count>8</gear_count>
+          <size>L</size>
+          <weight>23.5</weight>
+          <rental_price_per_day>
+            <amount>45.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-08-10</booking_date>
+            <package idref="p3" />
+            <client>
+              <identity>
+                <firstname>Isabella</firstname>
+                <lastname>Ferreira</lastname>
+              </identity>
+              <contact>
+                <email>isabella.ferreira@example.pt</email>
+                <phone_number>+351-21-333-4455</phone_number>
+              </contact>
+              <address>
+                <street>Rua Augusta 89</street>
+                <city>Lisbon</city>
+                <country>Portugal</country>
+              </address>
+              <nationality>Portuguese</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Miguel</firstname>
+                  <lastname>Ferreira</lastname>
+                </identity>
+                <phone_number>+351-21-333-6677</phone_number>
+                <relation>Father</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>0.00</amount_paid>
+              <left_to_be_paid>440.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>bank_transfer</method>
+              <payment_status>pending</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b2_2026_b">
+          <model>Orbea Gain F25</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>100</electric_autonomy>
+          </bike_type>
+          <gear_count>10</gear_count>
+          <size>M</size>
+          <weight>19.2</weight>
+          <rental_price_per_day>
+            <amount>48.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-08-12</booking_date>
+            <package idref="p5" />
+            <client>
+              <identity>
+                <firstname>Nikolaos</firstname>
+                <lastname>Papadopoulos</lastname>
+              </identity>
+              <contact>
+                <email>nikos.papadopoulos@example.gr</email>
+                <phone_number>+30-21-444-5566</phone_number>
+              </contact>
+              <address>
+                <street>Ermou 56</street>
+                <city>Athens</city>
+                <country>Greece</country>
+              </address>
+              <nationality>Greek</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Maria</firstname>
+                  <lastname>Papadopoulos</lastname>
+                </identity>
+                <phone_number>+30-21-444-7788</phone_number>
+                <relation>Sister</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>200.00</amount_paid>
+              <left_to_be_paid>176.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>partial</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 3 -->
+    <tour>
+      <tour_name>Tokyo Urban Explorer</tour_name>
+      <company>
+        <name>Tokyo Trails</name>
+        <contact>
+          <email>contact@tokyotrails.jp</email>
+          <phone_number>+81-3-222-4545</phone_number>
+        </contact>
+        <address>
+          <street>8-1 Ginza</street>
+          <city>Tokyo</city>
+          <country>Japan</country>
+        </address>
+      </company>
+      <short_description>Cycle through the vibrant neighborhoods of Tokyo.</short_description>
+      <category>moderate</category>
+      <distance>45.3</distance>
+      <duration>
+        <duration_days>1</duration_days>
+        <start_date>2026-05-10</start_date>
+        <end_date>2026-05-10</end_date>
+      </duration>
+      <price>
+        <amount>120</amount>
+        <currency>JPY</currency>
+      </price>
+      <guide idref="g3" />
+      <tour_availability>
+        <capacity>15</capacity>
+        <current_number_of_participants>15</current_number_of_participants>
+        <availability>Full</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>139.7671</longitude>
+          <latitude>35.6812</latitude>
+        </coordinates>
+        <address>
+          <street>Tokyo Station</street>
+          <city>Tokyo</city>
+          <country>Japan</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>139.8107</longitude>
+          <latitude>35.7101</latitude>
+        </coordinates>
+        <address>
+          <street>Asakusa</street>
+          <city>Tokyo</city>
+          <country>Japan</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b3a">
+          <model>Giant Escape</model>
+          <bike_type>
+            <type>city</type>
+          </bike_type>
+          <gear_count>7</gear_count>
+          <size>M</size>
+          <weight>11.5</weight>
+          <rental_price_per_day>
+            <amount>15</amount>
+            <currency>JPY</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-04-20</booking_date>
+            <package idref="p3" />
+            <client>
+              <identity>
+                <firstname>Yuki</firstname>
+                <lastname>Nakamura</lastname>
+              </identity>
+              <contact>
+                <email>yuki.nakamura@example.jp</email>
+                <phone_number>+81-3-5555-6677</phone_number>
+              </contact>
+              <address>
+                <street>3-2 Shibuya</street>
+                <city>Tokyo</city>
+                <country>Japan</country>
+              </address>
+              <nationality>Japanese</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Hiroshi</firstname>
+                  <lastname>Nakamura</lastname>
+                </identity>
+                <phone_number>+81-3-5555-8899</phone_number>
+                <relation>Father</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>135.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>JPY</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b3b">
+          <model>Panasonic Vivi DX</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>50</electric_autonomy>
+          </bike_type>
+          <gear_count>6</gear_count>
+          <size>S</size>
+          <weight>24.0</weight>
+          <rental_price_per_day>
+            <amount>20</amount>
+            <currency>JPY</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-04-22</booking_date>
+            <package idref="p1" />
+            <client>
+              <identity>
+                <firstname>Emily</firstname>
+                <lastname>Johnson</lastname>
+              </identity>
+              <contact>
+                <email>emily.johnson@example.com</email>
+                <phone_number>+1-415-555-1122</phone_number>
+              </contact>
+              <address>
+                <street>567 Market Street</street>
+                <city>San Francisco</city>
+                <country>USA</country>
+              </address>
+              <nationality>American</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Michael</firstname>
+                  <lastname>Johnson</lastname>
+                </identity>
+                <phone_number>+1-415-555-3344</phone_number>
+                <relation>Brother</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>140.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>USD</currency>
+              <method>paypal</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b3c">
+          <model>Bridgestone Markrosa</model>
+          <bike_type>
+            <type>city</type>
+          </bike_type>
+          <gear_count>7</gear_count>
+          <size>M</size>
+          <weight>13.0</weight>
+          <rental_price_per_day>
+            <amount>17</amount>
+            <currency>JPY</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b3d">
+          <model>Yamaha PAS City-C</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>55</electric_autonomy>
+          </bike_type>
+          <gear_count>5</gear_count>
+          <size>S</size>
+          <weight>23.5</weight>
+          <rental_price_per_day>
+            <amount>22</amount>
+            <currency>JPY</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 3 - Past Instance (March 2024) -->
+    <tour>
+      <tour_name>Tokyo Urban Explorer</tour_name>
+      <company>
+        <name>Tokyo Trails</name>
+        <contact>
+          <email>contact@tokyotrails.jp</email>
+          <phone_number>+81-3-222-4545</phone_number>
+        </contact>
+        <address>
+          <street>8-1 Ginza</street>
+          <city>Tokyo</city>
+          <country>Japan</country>
+        </address>
+      </company>
+      <short_description>Cycle through the vibrant neighborhoods of Tokyo.</short_description>
+      <category>moderate</category>
+      <distance>45.3</distance>
+      <duration>
+        <duration_days>1</duration_days>
+        <start_date>2024-03-20</start_date>
+        <end_date>2024-03-20</end_date>
+      </duration>
+      <price>
+        <amount>120</amount>
+        <currency>JPY</currency>
+      </price>
+      <guide idref="g3" />
+      <tour_availability>
+        <capacity>15</capacity>
+        <current_number_of_participants>15</current_number_of_participants>
+        <availability>Full</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>139.7671</longitude>
+          <latitude>35.6812</latitude>
+        </coordinates>
+        <address>
+          <street>Tokyo Station</street>
+          <city>Tokyo</city>
+          <country>Japan</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>139.8107</longitude>
+          <latitude>35.7101</latitude>
+        </coordinates>
+        <address>
+          <street>Asakusa</street>
+          <city>Tokyo</city>
+          <country>Japan</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b3_2024_a">
+          <model>Giant Escape</model>
+          <bike_type>
+            <type>city</type>
+          </bike_type>
+          <gear_count>7</gear_count>
+          <size>M</size>
+          <weight>11.5</weight>
+          <rental_price_per_day>
+            <amount>15</amount>
+            <currency>JPY</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2024-02-15</booking_date>
+            <package idref="p3" />
+            <client>
+              <identity>
+                <firstname>Kenji</firstname>
+                <lastname>Sato</lastname>
+              </identity>
+              <contact>
+                <email>kenji.sato@example.jp</email>
+                <phone_number>+81-3-6666-7788</phone_number>
+              </contact>
+              <address>
+                <street>5-5 Shinjuku</street>
+                <city>Tokyo</city>
+                <country>Japan</country>
+              </address>
+              <nationality>Japanese</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Aiko</firstname>
+                  <lastname>Sato</lastname>
+                </identity>
+                <phone_number>+81-3-6666-9900</phone_number>
+                <relation>Wife</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>135.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>JPY</currency>
+              <method>qr_code</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b3_2024_b">
+          <model>Panasonic Vivi DX</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>50</electric_autonomy>
+          </bike_type>
+          <gear_count>6</gear_count>
+          <size>S</size>
+          <weight>24.0</weight>
+          <rental_price_per_day>
+            <amount>20</amount>
+            <currency>JPY</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2024-02-20</booking_date>
+            <package idref="p2" />
+            <client>
+              <identity>
+                <firstname>Rachel</firstname>
+                <lastname>Brown</lastname>
+              </identity>
+              <contact>
+                <email>rachel.brown@example.com</email>
+                <phone_number>+1-555-234-5678</phone_number>
+              </contact>
+              <address>
+                <street>123 Main Street</street>
+                <city>Seattle</city>
+                <country>USA</country>
+              </address>
+              <nationality>American</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>James</firstname>
+                  <lastname>Brown</lastname>
+                </identity>
+                <phone_number>+1-555-876-5432</phone_number>
+                <relation>Husband</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>130.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>USD</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 4 -->
+    <tour>
+      <tour_name>Tuscany Vineyard Circuit</tour_name>
+      <company>
+        <name>Italy Cycle Tours</name>
+        <contact>
+          <email>info@italycycle.it</email>
+          <phone_number>+39-02-777-1234</phone_number>
+        </contact>
+        <address>
+          <street>Via Roma 15</street>
+          <city>Florence</city>
+          <country>Italy</country>
+        </address>
+      </company>
+      <short_description>Wine, hills, and sunshine through Tuscany’s vineyards.</short_description>
+      <category>moderate</category>
+      <distance>160</distance>
+      <duration>
+        <duration_days>3</duration_days>
+        <start_date>2026-09-20</start_date>
+        <end_date>2026-09-23</end_date>
+      </duration>
+      <price>
+        <amount>670.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g5" />
+      <tour_availability>
+        <capacity>10</capacity>
+        <current_number_of_participants>10</current_number_of_participants>
+        <availability>Full</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>11.2558</longitude>
+          <latitude>43.7696</latitude>
+        </coordinates>
+        <address>
+          <street>Piazza della Signoria</street>
+          <city>Florence</city>
+          <country>Italy</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>11.3401</longitude>
+          <latitude>43.3188</latitude>
+        </coordinates>
+        <address>
+          <street>Via del Campo</street>
+          <city>Siena</city>
+          <country>Italy</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b4a">
+          <model>Pinarello Paris</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>L</size>
+          <weight>7.6</weight>
+          <rental_price_per_day>
+            <amount>40.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-08-01</booking_date>
+            <package idref="p2" />
+            <client>
+              <identity>
+                <firstname>Alessandro</firstname>
+                <lastname>Conti</lastname>
+              </identity>
+              <contact>
+                <email>alessandro.conti@example.it</email>
+                <phone_number>+39-055-123-4567</phone_number>
+              </contact>
+              <address>
+                <street>Via Tornabuoni 25</street>
+                <city>Florence</city>
+                <country>Italy</country>
+              </address>
+              <nationality>Italian</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Francesca</firstname>
+                  <lastname>Conti</lastname>
+                </identity>
+                <phone_number>+39-055-765-4321</phone_number>
+                <relation>Sister</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>790.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>bank_transfer</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b4b">
+          <model>Bianchi Aria E-Road</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>90</electric_autonomy>
+          </bike_type>
+          <gear_count>11</gear_count>
+          <size>M</size>
+          <weight>12.4</weight>
+          <rental_price_per_day>
+            <amount>50.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-08-05</booking_date>
+            <package idref="p4" />
+            <client>
+              <identity>
+                <firstname>Claire</firstname>
+                <lastname>Martin</lastname>
+              </identity>
+              <contact>
+                <email>claire.martin@example.fr</email>
+                <phone_number>+33-4-7777-8888</phone_number>
+              </contact>
+              <address>
+                <street>Rue de la République 78</street>
+                <city>Lyon</city>
+                <country>France</country>
+              </address>
+              <nationality>French</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Antoine</firstname>
+                  <lastname>Martin</lastname>
+                </identity>
+                <phone_number>+33-4-7777-9999</phone_number>
+                <relation>Husband</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>820.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b4c">
+          <model>Colnago C64</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>7.2</weight>
+          <rental_price_per_day>
+            <amount>45.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-08-03</booking_date>
+            <package idref="p1" />
+            <client>
+              <identity>
+                <firstname>William</firstname>
+                <lastname>Anderson</lastname>
+              </identity>
+              <contact>
+                <email>william.anderson@example.co.uk</email>
+                <phone_number>+44-20-8888-9999</phone_number>
+              </contact>
+              <address>
+                <street>Baker Street 221B</street>
+                <city>London</city>
+                <country>United Kingdom</country>
+              </address>
+              <nationality>British</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Elizabeth</firstname>
+                  <lastname>Anderson</lastname>
+                </identity>
+                <phone_number>+44-20-8888-7777</phone_number>
+                <relation>Wife</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>550.00</amount_paid>
+              <left_to_be_paid>255.00</left_to_be_paid>
+              <currency>GBP</currency>
+              <method>paypal</method>
+              <payment_status>partial</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 4 - Future Instance (May 2026) -->
+    <tour>
+      <tour_name>Tuscany Vineyard Circuit</tour_name>
+      <company>
+        <name>Italy Cycle Tours</name>
+        <contact>
+          <email>info@italycycle.it</email>
+          <phone_number>+39-02-777-1234</phone_number>
+        </contact>
+        <address>
+          <street>Via Roma 15</street>
+          <city>Florence</city>
+          <country>Italy</country>
+        </address>
+      </company>
+      <short_description>Wine, hills, and sunshine through Tuscany's vineyards.</short_description>
+      <category>moderate</category>
+      <distance>160</distance>
+      <duration>
+        <duration_days>3</duration_days>
+        <start_date>2026-05-15</start_date>
+        <end_date>2026-05-18</end_date>
+      </duration>
+      <price>
+        <amount>670.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g5" />
+      <tour_availability>
+        <capacity>10</capacity>
+        <current_number_of_participants>3</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>11.2558</longitude>
+          <latitude>43.7696</latitude>
+        </coordinates>
+        <address>
+          <street>Piazza della Signoria</street>
+          <city>Florence</city>
+          <country>Italy</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>11.3401</longitude>
+          <latitude>43.3188</latitude>
+        </coordinates>
+        <address>
+          <street>Via del Campo</street>
+          <city>Siena</city>
+          <country>Italy</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b4_2026_a">
+          <model>Pinarello Paris</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>L</size>
+          <weight>7.6</weight>
+          <rental_price_per_day>
+            <amount>40.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-04-10</booking_date>
+            <package idref="p2" />
+            <client>
+              <identity>
+                <firstname>Oliver</firstname>
+                <lastname>Schmidt</lastname>
+              </identity>
+              <contact>
+                <email>oliver.schmidt@example.de</email>
+                <phone_number>+49-89-555-6677</phone_number>
+              </contact>
+              <address>
+                <street>Maximilianstrasse 33</street>
+                <city>Munich</city>
+                <country>Germany</country>
+              </address>
+              <nationality>German</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Anna</firstname>
+                  <lastname>Schmidt</lastname>
+                </identity>
+                <phone_number>+49-89-555-8899</phone_number>
+                <relation>Wife</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>790.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b4_2026_b">
+          <model>Bianchi Aria E-Road</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>90</electric_autonomy>
+          </bike_type>
+          <gear_count>11</gear_count>
+          <size>M</size>
+          <weight>12.4</weight>
+          <rental_price_per_day>
+            <amount>50.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 5 -->
+    <tour>
+      <tour_name>Canadian Rockies Expedition</tour_name>
+      <company>
+        <name>NorthTrail Expeditions</name>
+        <contact>
+          <email>book@northtrail.ca</email>
+          <phone_number>+1-604-222-8989</phone_number>
+        </contact>
+        <address>
+          <street>89 Mountain Rd</street>
+          <city>Banff</city>
+          <country>Canada</country>
+        </address>
+      </company>
+      <short_description>Explore Banff to Jasper through rugged trails and forest routes.</short_description>
+      <category>difficult</category>
+      <distance>340</distance>
+      <duration>
+        <duration_days>6</duration_days>
+        <start_date>2024-08-05</start_date>
+        <end_date>2024-08-11</end_date>
+      </duration>
+      <price>
+        <amount>1200.00</amount>
+        <currency>CAD</currency>
+      </price>
+      <guide idref="g4" />
+      <tour_availability>
+        <capacity>8</capacity>
+        <current_number_of_participants>6</current_number_of_participants>
+        <availability>Finished</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>-115.5708</longitude>
+          <latitude>51.1784</latitude>
+        </coordinates>
+        <address>
+          <street>Main St</street>
+          <city>Banff</city>
+          <country>Canada</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>-118.0800</longitude>
+          <latitude>52.8731</latitude>
+        </coordinates>
+        <address>
+          <street>Connaught Dr</street>
+          <city>Jasper</city>
+          <country>Canada</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b5a">
+          <model>Trek Marlin 7</model>
+          <bike_type>
+            <type>mountain</type>
+          </bike_type>
+          <gear_count>21</gear_count>
+          <size>L</size>
+          <weight>13.8</weight>
+          <rental_price_per_day>
+            <amount>38.00</amount>
+            <currency>CAD</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+        </bike>
+        <bike id="b5b">
+          <model>Rocky Mountain Altitude</model>
+          <bike_type>
+            <type>mountain</type>
+          </bike_type>
+          <gear_count>24</gear_count>
+          <size>M</size>
+          <weight>14.5</weight>
+          <rental_price_per_day>
+            <amount>45.00</amount>
+            <currency>CAD</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+      </bikes>
+    </tour>
+    <!-- TOUR 6 -->
+    <tour>
+      <tour_name>Sahara Desert Expedition</tour_name>
+      <company>
+        <name>Nomad Rides Morocco</name>
+        <contact>
+          <email>contact@nomadrides.ma</email>
+          <phone_number>+212-524-445566</phone_number>
+        </contact>
+        <address>
+          <street>10 Rue des Dunes</street>
+          <city>Marrakesh</city>
+          <country>Morocco</country>
+        </address>
+      </company>
+      <short_description>Ride through the dunes and oases of the Moroccan Sahara.</short_description>
+      <long_description>Discover the raw beauty of the desert landscapes on this 3-day guided adventure. Ride early morning and sunset, camp under the stars, and visit local Berber villages.</long_description>
+      <category>difficult</category>
+      <distance>180</distance>
+      <duration>
+        <duration_days>3</duration_days>
+        <start_date>2026-10-15</start_date>
+        <end_date>2026-10-18</end_date>
+      </duration>
+      <price>
+        <amount>750.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g2" />
+      <tour_availability>
+        <capacity>10</capacity>
+        <current_number_of_participants>5</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>-7.9811</longitude>
+          <latitude>31.6295</latitude>
+        </coordinates>
+        <address>
+          <street>Place Jemaa el-Fna</street>
+          <city>Marrakesh</city>
+          <country>Morocco</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>-4.0164</longitude>
+          <latitude>31.1013</latitude>
+        </coordinates>
+        <address>
+          <street>Merzouga Dunes</street>
+          <city>Errachidia</city>
+          <country>Morocco</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b6a">
+          <model>Giant Talon 1</model>
+          <bike_type>
+            <type>mountain</type>
+          </bike_type>
+          <gear_count>18</gear_count>
+          <size>M</size>
+          <weight>13.5</weight>
+          <rental_price_per_day>
+            <amount>35.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b6b">
+          <model>Cannondale Trail SE</model>
+          <bike_type>
+            <type>mountain</type>
+          </bike_type>
+          <gear_count>24</gear_count>
+          <size>L</size>
+          <weight>12.9</weight>
+          <rental_price_per_day>
+            <amount>40.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2026-08-01</booking_date>
+            <package idref="p2" />
+            <client>
+              <identity>
+                <firstname>Omar</firstname>
+                <lastname>Benali</lastname>
+              </identity>
+              <contact>
+                <email>omar.benali@example.com</email>
+                <phone_number>+212-600-234567</phone_number>
+              </contact>
+              <address>
+                <street>Rue Marrakech 22</street>
+                <city>Casablanca</city>
+                <country>Morocco</country>
+              </address>
+              <nationality>Moroccan</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Salma</firstname>
+                  <lastname>Benali</lastname>
+                </identity>
+                <phone_number>+212-600-998877</phone_number>
+                <relation>Sister</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>300.00</amount_paid>
+              <left_to_be_paid>450.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>paypal</method>
+              <payment_status>partial</payment_status>
+            </payment>
+          </booking>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 7 -->
+    <tour>
+      <tour_name>Black Forest Trail</tour_name>
+      <company>
+        <name>GreenPath Germany</name>
+        <contact>
+          <email>info@greenpath.de</email>
+          <phone_number>+49-761-555-9988</phone_number>
+        </contact>
+        <address>
+          <street>Waldweg 7</street>
+          <city>Freiburg</city>
+          <country>Germany</country>
+        </address>
+      </company>
+      <short_description>Cycle through deep forests and charming villages of the Schwarzwald.</short_description>
+      <category>moderate</category>
+      <distance>120</distance>
+      <duration>
+        <duration_days>3</duration_days>
+        <start_date>2025-05-20</start_date>
+        <end_date>2025-05-23</end_date>
+      </duration>
+      <price>
+        <amount>580.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g1" />
+      <tour_availability>
+        <capacity>15</capacity>
+        <current_number_of_participants>15</current_number_of_participants>
+        <availability>Full</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>7.8522</longitude>
+          <latitude>47.9990</latitude>
+        </coordinates>
+        <address>
+          <street>Freiburg Hauptbahnhof</street>
+          <city>Freiburg</city>
+          <country>Germany</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>8.1963</longitude>
+          <latitude>48.4789</latitude>
+        </coordinates>
+        <address>
+          <street>Triberg Falls</street>
+          <city>Triberg</city>
+          <country>Germany</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b7a">
+          <model>Haibike Trekking 5</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>100</electric_autonomy>
+          </bike_type>
+          <gear_count>10</gear_count>
+          <size>M</size>
+          <weight>24.1</weight>
+          <rental_price_per_day>
+            <amount>45.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+        </bike>
+        <bike id="b7b">
+          <model>Canyon Pathlite</model>
+          <bike_type>
+            <type>hybrid</type>
+          </bike_type>
+          <gear_count>9</gear_count>
+          <size>L</size>
+          <weight>12.3</weight>
+          <rental_price_per_day>
+            <amount>30.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 8 -->
+    <tour>
+      <tour_name>Bali Island Loop</tour_name>
+      <company>
+        <name>IslandMotion Adventures</name>
+        <contact>
+          <email>hello@islandmotion.id</email>
+          <phone_number>+62-361-334455</phone_number>
+        </contact>
+        <address>
+          <street>Jl. Sunset Road 99</street>
+          <city>Denpasar</city>
+          <country>Indonesia</country>
+        </address>
+      </company>
+      <short_description>A tropical cycling journey around the island of Bali.</short_description>
+      <category>moderate</category>
+      <distance>260</distance>
+      <duration>
+        <duration_days>5</duration_days>
+        <start_date>2025-12-05</start_date>
+        <end_date>2025-12-10</end_date>
+      </duration>
+      <price>
+        <amount>980.00</amount>
+        <currency>IDR</currency>
+      </price>
+      <guide idref="g5" />
+      <tour_availability>
+        <capacity>12</capacity>
+        <current_number_of_participants>3</current_number_of_participants>
+        <availability>Available</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>115.2167</longitude>
+          <latitude>-8.6500</latitude>
+        </coordinates>
+        <address>
+          <street>Jl. Kuta Beach</street>
+          <city>Denpasar</city>
+          <country>Indonesia</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>115.2167</longitude>
+          <latitude>-8.6500</latitude>
+        </coordinates>
+        <address>
+          <street>Same as start (Loop Tour)</street>
+          <city>Denpasar</city>
+          <country>Indonesia</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b8a">
+          <model>Polygon Heist X7</model>
+          <bike_type>
+            <type>hybrid</type>
+          </bike_type>
+          <gear_count>10</gear_count>
+          <size>M</size>
+          <weight>11.0</weight>
+          <rental_price_per_day>
+            <amount>25.00</amount>
+            <currency>IDR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+        <bike id="b8b">
+          <model>United Detroit 2</model>
+          <bike_type>
+            <type>mountain</type>
+          </bike_type>
+          <gear_count>21</gear_count>
+          <size>L</size>
+          <weight>13.2</weight>
+          <rental_price_per_day>
+            <amount>28.00</amount>
+            <currency>IDR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 9 -->
+    <tour>
+      <tour_name>Nordic Fjord Route</tour_name>
+      <company>
+        <name>ScandiCycle Tours</name>
+        <contact>
+          <email>info@scandicycle.no</email>
+          <phone_number>+47-555-9988</phone_number>
+        </contact>
+        <address>
+          <street>Harbor Road 14</street>
+          <city>Bergen</city>
+          <country>Norway</country>
+        </address>
+      </company>
+      <short_description>Experience Norway’s breathtaking fjords on two wheels.</short_description>
+      <category>challenging</category>
+      <distance>300</distance>
+      <duration>
+        <duration_days>6</duration_days>
+        <start_date>2024-07-10</start_date>
+        <end_date>2024-07-16</end_date>
+      </duration>
+      <price>
+        <amount>1400.00</amount>
+        <currency>NOK</currency>
+      </price>
+      <guide idref="g3" />
+      <tour_availability>
+        <capacity>10</capacity>
+        <current_number_of_participants>9</current_number_of_participants>
+        <availability>Finished</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>5.3221</longitude>
+          <latitude>60.3929</latitude>
+        </coordinates>
+        <address>
+          <street>Bergen Bryggen</street>
+          <city>Bergen</city>
+          <country>Norway</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>7.1607</longitude>
+          <latitude>61.5984</latitude>
+        </coordinates>
+        <address>
+          <street>Geiranger Port</street>
+          <city>Geiranger</city>
+          <country>Norway</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b9a">
+          <model>Merida Silex 400</model>
+          <bike_type>
+            <type>gravel</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>9.6</weight>
+          <rental_price_per_day>
+            <amount>50.00</amount>
+            <currency>NOK</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+        </bike>
+        <bike id="b9b">
+          <model>Bergamont E-Grandurance</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>110</electric_autonomy>
+          </bike_type>
+          <gear_count>11</gear_count>
+          <size>L</size>
+          <weight>18.9</weight>
+          <rental_price_per_day>
+            <amount>60.00</amount>
+            <currency>NOK</currency>
+          </rental_price_per_day>
+          <availability>maintenance</availability>
+        </bike>
+      </bikes>
+    </tour>
+
+    <!-- TOUR 10 -->
+    <tour>
+      <tour_name>Ancient Paths of Greece</tour_name>
+      <company>
+        <name>Hellenic Cycle Tours</name>
+        <contact>
+          <email>contact@helleniccycle.gr</email>
+          <phone_number>+30-21-333-7788</phone_number>
+        </contact>
+        <address>
+          <street>15 Dionysiou Areopagitou</street>
+          <city>Athens</city>
+          <country>Greece</country>
+        </address>
+      </company>
+      <short_description>Follow ancient trade routes from Athens to Delphi.</short_description>
+      <long_description>Explore historical Greek landscapes, ancient ruins, and mountain passes with expert guides and well-equipped bikes. Includes archaeological site visits and authentic local meals.</long_description>
+      <category>moderate</category>
+      <distance>210</distance>
+      <duration>
+        <duration_days>4</duration_days>
+        <start_date>2025-04-10</start_date>
+        <end_date>2025-04-14</end_date>
+      </duration>
+      <price>
+        <amount>640.00</amount>
+        <currency>EUR</currency>
+      </price>
+      <guide idref="g4" />
+      <tour_availability>
+        <capacity>10</capacity>
+        <current_number_of_participants>10</current_number_of_participants>
+        <availability>Full</availability>
+      </tour_availability>
+      <starting_point>
+        <coordinates>
+          <longitude>23.7275</longitude>
+          <latitude>37.9838</latitude>
+        </coordinates>
+        <address>
+          <street>Acropolis Hill</street>
+          <city>Athens</city>
+          <country>Greece</country>
+        </address>
+      </starting_point>
+      <final_destination>
+        <coordinates>
+          <longitude>22.5010</longitude>
+          <latitude>38.4833</latitude>
+        </coordinates>
+        <address>
+          <street>Temple of Apollo</street>
+          <city>Delphi</city>
+          <country>Greece</country>
+        </address>
+      </final_destination>
+      <bikes>
+        <bike id="b10a">
+          <model>Cannondale Synapse Carbon</model>
+          <bike_type>
+            <type>road</type>
+          </bike_type>
+          <gear_count>22</gear_count>
+          <size>M</size>
+          <weight>8.4</weight>
+          <rental_price_per_day>
+            <amount>37.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>reserved</availability>
+          <booking>
+            <booking_date>2025-02-25</booking_date>
+            <package idref="p4" />
+            <client>
+              <identity>
+                <firstname>Elena</firstname>
+                <lastname>Papadopoulos</lastname>
+              </identity>
+              <contact>
+                <email>elena.papadopoulos@example.com</email>
+                <phone_number>+30-21-111-4444</phone_number>
+              </contact>
+              <address>
+                <street>20 Kolonaki</street>
+                <city>Athens</city>
+                <country>Greece</country>
+              </address>
+              <nationality>Greek</nationality>
+              <emergency_contact>
+                <identity>
+                  <firstname>Nikos</firstname>
+                  <lastname>Papadopoulos</lastname>
+                </identity>
+                <phone_number>+30-21-222-5555</phone_number>
+                <relation>Father</relation>
+              </emergency_contact>
+            </client>
+            <payment>
+              <amount_paid>640.00</amount_paid>
+              <left_to_be_paid>0.00</left_to_be_paid>
+              <currency>EUR</currency>
+              <method>credit_card</method>
+              <payment_status>fully_paid</payment_status>
+            </payment>
+          </booking>
+        </bike>
+        <bike id="b10b">
+          <model>Cube Kathmandu Hybrid</model>
+          <bike_type>
+            <type>electric</type>
+            <electric_autonomy>120</electric_autonomy>
+          </bike_type>
+          <gear_count>11</gear_count>
+          <size>L</size>
+          <weight>23.0</weight>
+          <rental_price_per_day>
+            <amount>48.00</amount>
+            <currency>EUR</currency>
+          </rental_price_per_day>
+          <availability>available</availability>
+        </bike>
+      </bikes>
+    </tour>
+  </tours>
+  <guides>
+    <guide id="g1">
+      <identity>
+        <firstname>Paul</firstname>
+        <lastname>Pera</lastname>
+      </identity>
+      <picture>
+        <picture_name>paul_pera.jpg</picture_name>
+        <picture_description>Smiling in the Alps</picture_description>
+      </picture>
+      <contact>
+        <email>paul@mountainvista.com</email>
+        <phone_number>+41-22-900-1122</phone_number>
+      </contact>
+      <address>
+        <street>10 Rue des Glaciers</street>
+        <city>Annecy</city>
+        <country>France</country>
+      </address>
+      <nationality>Swiss</nationality>
+      <spoken_languages>
+        <language>French</language>
+        <language>English</language>
+        <language>German</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Mountain Guide License</qualification>
+        <qualification>First Aid Certificate</qualification>
+      </qualifications>
+    </guide>
+
+    <guide id="g2">
+      <identity>
+        <firstname>Rosa</firstname>
+        <lastname>Diaz</lastname>
+      </identity>
+      <picture>
+        <picture_name>rosa_diaz.jpg</picture_name>
+        <picture_description>At the Barcelona coastline</picture_description>
+      </picture>
+      <contact>
+        <email>rosa@seasidecycling.com</email>
+        <phone_number>+34-93-111-2222</phone_number>
+      </contact>
+      <nationality>Spanish</nationality>
+      <spoken_languages>
+        <language>Spanish</language>
+        <language>English</language>
+        <language>Italian</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Tour Leader Certification</qualification>
+      </qualifications>
+    </guide>
+
+    <guide id="g3">
+      <identity>
+        <firstname>Akira</firstname>
+        <lastname>Sato</lastname>
+      </identity>
+      <picture>
+        <picture_name>akira_sato.jpg</picture_name>
+        <picture_description>In front of Tokyo Tower</picture_description>
+      </picture>
+      <contact>
+        <email>akira@tokyotrails.jp</email>
+        <phone_number>+81-3-5555-1234</phone_number>
+      </contact>
+      <nationality>Japanese</nationality>
+      <spoken_languages>
+        <language>Japanese</language>
+        <language>English</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Urban Cycling Safety License</qualification>
+      </qualifications>
+    </guide>
+
+    <guide id="g4">
+      <identity>
+        <firstname>Emma</firstname>
+        <lastname>Watts</lastname>
+      </identity>
+      <picture>
+        <picture_name>emma_watts.jpg</picture_name>
+        <picture_description>Hiking in the Canadian Rockies</picture_description>
+      </picture>
+      <contact>
+        <email>emma@greenroads.co.uk</email>
+        <phone_number>+44-20-5555-8989</phone_number>
+      </contact>
+      <nationality>British</nationality>
+      <spoken_languages>
+        <language>English</language>
+        <language>French</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Outdoor Leadership Diploma</qualification>
+        <qualification>Eco-tour Specialist</qualification>
+      </qualifications>
+    </guide>
+
+    <guide id="g5">
+      <identity>
+        <firstname>Elio</firstname>
+        <lastname>Verde</lastname>
+      </identity>
+      <picture>
+        <picture_name>elio_verde.jpg</picture_name>
+        <picture_description>In the Tuscan vineyards</picture_description>
+      </picture>
+      <contact>
+        <email>elio@italycycle.it</email>
+        <phone_number>+39-02-999-7711</phone_number>
+      </contact>
+      <nationality>Italian</nationality>
+      <spoken_languages>
+        <language>Italian</language>
+        <language>English</language>
+        <language>German</language>
+      </spoken_languages>
+      <qualifications>
+        <qualification>Tour Guide License</qualification>
+      </qualifications>
+    </guide>
+  </guides>
+
+  <packages>
+    <package id="p1">
+      <name>Spring Promo</name>
+      <reduction>10</reduction>
+      <code>SPRING10</code>
+      <description>10% off all tours booked before March 1st.</description>
+    </package>
+
+    <package id="p2">
+      <name>Family Fun Pack</name>
+      <reduction>15</reduction>
+      <code>FAMILY15</code>
+      <description>Special discount for families of 3 or more.</description>
+    </package>
+
+    <package id="p3">
+      <name>Weekend Escape</name>
+      <reduction>8</reduction>
+      <code>WEEKEND8</code>
+      <description>Short 2-3 day tours at discounted rates.</description>
+    </package>
+
+    <package id="p4">
+      <name>Early Bird</name>
+      <reduction>12</reduction>
+      <code>EARLY12</code>
+      <description>Book at least 60 days in advance to save.</description>
+    </package>
+
+    <package id="p5">
+      <name>VIP Experience</name>
+      <reduction>20</reduction>
+      <code>VIP20</code>
+      <description>Exclusive luxury packages with premium gear.</description>
+    </package>
+  </packages>
+</data>
