@@ -88,3 +88,4 @@ pyenv*
 .vscode/
 .history/
 *.code-workspace
+.DS_Store

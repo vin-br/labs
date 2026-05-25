@@ -1,0 +1,247 @@
+html {
+  background-color: #fdfbfb;
+}
+
+body {
+  font-family: "Graphik", Arial, sans-serif; /* using a specific macOS font*/
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  height: auto;
+}
+
+header {
+  color: white;
+  padding: 0.2% 0;
+  text-align: center;
+}
+
+header h1 a,
+h2 {
+  /* Using a gradiant as text color bypassing the issues with webkit*/
+  /* to apply the gradiant to the text and after making the back transparent*/
+  background-image: linear-gradient(120deg, #277f8e, #1fa187, #4ac16d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 5%;
+  padding-top: 1%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  padding-bottom: 2%;
+  max-width: 95%;
+  margin: 2 auto;
+}
+
+/* Left column params (form and submit button) */
+.left-column {
+  display: grid;
+  gap: 2%;
+}
+
+.left-column fieldset {
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px; /* used to make round corners */
+  box-shadow: 0 3px 6px 0 #1fa187;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  font-weight: bold;
+  color: #1e0d48;
+}
+
+.left-column form {
+  display: flex;
+  flex-direction: column; /* = vertical alignment */
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.left-column form input,
+.left-column form select {
+  width: 100%;
+  padding: 0.4%;
+  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  box-shadow: 0.2px 0.2px 1px 0.2px #46327e;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-sizing: border-box; /* includes padding into total size */
+}
+
+.left-column form input:focus,
+.left-column form select:focus {
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0.2px 0.2px 1px 0.2px #1fa187;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.left-column form button {
+  background-image: linear-gradient(260deg, #277f8e, #1fa187, #4ac16d);
+  color: white;
+  width: 70%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 2.9%;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin: 3% auto 0; /* centers the button + adds space on top of it */
+  margin-bottom: 3%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.left-column form button:hover {
+  background-image: linear-gradient(80deg, #440154, #46327e, #365c8d);
+}
+
+/* Right column params (filter and map and predictions) */
+.right-column {
+  display: grid;
+  gap: 2%;
+  padding-right: 5%;
+}
+
+.right-column fieldset {
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 #1fa187;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 1%;
+}
+
+/* Styles specific to the filter by card */
+/* nth-of-type(1) = first element of the right column */
+.right-column section:nth-of-type(1) fieldset {
+  display: flex;
+  flex-direction: grid; /* = horizontal alignment */
+  justify-content: center; /* = vertical centering */
+  align-items: center;
+  gap: 15%;
+}
+
+.right-column section:nth-of-type(1) .filter-group {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-weight: bold;
+  color: #1e0d48;
+}
+
+.right-column section:nth-of-type(1) .filter-group input[type="radio"] {
+  align-items: center;
+  margin: 0;
+  width: auto;
+  accent-color: #1fa187;
+}
+
+.right-column section:nth-of-type(1) .filter-group label {
+  font-weight: bold;
+  color: #1e0d48;
+  margin: 0;
+}
+
+.right-column section:nth-of-type(1) .filter-group input[type="number"],
+.right-column section:nth-of-type(1) .filter-group input[type="text"] {
+  width: 100%;
+  padding-left: 0.4%;
+  padding-right: 0.4%;
+  font-size: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  box-shadow: 0.2px 0.2px 1px 0.2px #46327e;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+.right-column section:nth-of-type(1) .filter-group input:focus {
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0.2px 0.2px 1px 0.2px #1fa187;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* More general styles for the right column */
+.right-column fieldset div {
+  display: flex;
+  flex-direction: grid;
+}
+
+.right-column fieldset input[type="radio"] {
+  margin-right: 2%;
+}
+
+.right-column fieldset label {
+  font-weight: normal;
+}
+#plotlyDiv {
+  width: 100%;
+  height: 100%; /* plotly map height */
+}
+
+#predicted_stage {
+  display: flex;
+  flex-direction: column; /* vertical aligment*/
+  justify-content: center; /* vertical centering */
+  align-items: center;
+  margin-bottom: 4%;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #46327e;
+}
+
+/* Footer styles with social links */
+footer {
+  text-align: center;
+  padding: 1% 1%;
+  color: white;
+  margin-top: auto;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer i {
+  transition: transform 0.3s ease;
+}
+
+footer i:hover {
+  transform: scale(1.2); /* makes icons bigger when hovering */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.social-links a {
+  margin-left: 2%;
+  margin-right: 2%;
+  color: #277f8e;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #46327e; /* changes the color of the icon when hovering */
+}

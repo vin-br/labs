@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This project aims to classify stages of cyclones data"
+    />
+    <meta
+      name="authors"
+      content="Arnaud Gomez, Audrey Costes, Claire Peyran, Favour Chinonyerem Okike, Lydéric Gandibleux, Vincent Boettcher"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <!-- Loading the CSS stylesheet -->
+    {% load static %}
+    <title>Tropical Cyclones</title>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}?v=1.1" />
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let data_to_display = []; // Holds the dataset
+
+        function getCSRFToken() {
+          return document.cookie
+            .split("; ")
+            .find((row) => row.startsWith("csrftoken="))
+            ?.split("=")[1];
+        }
+
+        function fetchAndRenderMostRecent() {
+          console.log(numberOfStormsInput.value);
+
+          fetch(`/most-recent/?nb_predictions=${numberOfStormsInput.value}`)
+            .then((response) => response.json())
+            .then((data) => {
+              data_to_display = data.data; // Store response in frontend variable
+              console.log(data);
+              renderPlotlyChart(); // Call function to update the graph
+            })
+            .catch((error) =>
+              console.error("Error fetching most recent cyclones:", error)
+            );
+        }
+
+        function fetchByCycloneId(cyclone_id) {
+          fetch(`/get-id/${cyclone_id}/`)
+            .then((response) => response.json())
+            .then((data) => {
+              data_to_display = data.data; // Store response in frontend variable
+              renderPlotlyChart(); // Call function to update the graph
+            })
+            .catch((error) =>
+              console.error("Error fetching cyclone data by ID:", error)
+            );
+        }
+
+        function renderPlotlyChart() {
+          if (!data_to_display.length) return; // Do nothing if no data
+
+          let df = data_to_display.map((item) => ({
+            LAT: item.latitude,
+            LON: item.longitude,
+            STAGE: Math.floor(parseFloat(item.stage)),
+            WIND: item.wind,
+            DIST2LAND: item.dist2land,
+          }));
+
+          // Color mapping based on cyclone stage
+          const stageColorMap = {
+            0: "#440154",
+            1: "#46327e",
+            2: "#365c8d",
+            3: "#277f8e",
+            4: "#1fa187",
+            5: "#4ac16d",
+            6: "#a0da39",
+            7: "#fde725",
+          };
+
+          // Generates a color table based on the stage
+          // Plus it sets a generic color for cyclones with no stages or an incorrect one
+          let custom_colors = df.map(
+            (d) => stageColorMap[d.STAGE] || "#cccccc"
+          );
+
+          let fig = {
+            data: [
+              {
+                type: "scattergeo",
+                lat: df.map((d) => d.LAT),
+                lon: df.map((d) => d.LON),
+                mode: "markers",
+                marker: {
+                  size: df.map((d) => d.WIND / 5),
+                  color: custom_colors,
+                },
+                text: df.map((d) => `Distance to land: ${d.DIST2LAND}km`),
+              },
+            ],
+            layout: {
+              geo: {
+                showland: true,
+                landcolor: "#ebedee",
+                showcountries: true,
+                countrycolor: "#797979",
+              },
+            },
+          };
+
+          Plotly.newPlot("plotlyDiv", fig);
+        }
+
+        // Get all the radio buttons and inputs
+        const lastNStormsRadio = document.getElementById("last_n_storms");
+        const bySidRadio = document.getElementById("by_sid");
+        const numberOfStormsInput = document.getElementById("number_of_storms");
+        const sidInput = document.getElementById("sid_input");
+
+        // Set default value for number of storms
+        numberOfStormsInput.value = "3";
+
+        // Event listener for "Last N storms" option
+        lastNStormsRadio.addEventListener("change", function () {
+          if (this.checked) {
+            console.log("Last storms selected: ", numberOfStormsInput.value);
+            fetchAndRenderMostRecent(parseInt(numberOfStormsInput.value, 10));
+          }
+        });
+
+        // Event listener for number input
+        numberOfStormsInput.addEventListener("input", function () {
+          let n = parseInt(this.value, 10);
+          if (!isNaN(n) && n > 0 && lastNStormsRadio.checked) {
+            // console.log(n);
+            console.log(n);
+            fetchAndRenderMostRecent(n);
+          }
+        });
+
+        // Event listener for "By SID" option
+        bySidRadio.addEventListener("change", function () {
+          if (this.checked && sidInput.value.trim()) {
+            fetchByCycloneId(sidInput.value.trim());
+          }
+        });
+
+        // Event listener for SID input
+        sidInput.addEventListener("input", function () {
+          let cycloneId = this.value.trim();
+          if (cycloneId && bySidRadio.checked) {
+            fetchByCycloneId(cycloneId);
+          }
+        });
+
+        document
+          .getElementById("dataForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const latitude = parseFloat(
+              document.getElementById("latitude").value
+            );
+            const longitude = parseFloat(
+              document.getElementById("longitude").value
+            );
+
+            // Limits for latitude and longitude to avoid putting dots outside of the map
+            if (latitude < -90 || latitude > 90) {
+              alert("Latitude must be between -90 and 90.");
+              return;
+            }
+
+            if (longitude < -180 || longitude > 180) {
+              alert("Longitude must be between -180 and 180.");
+              return;
+            }
+
+            let timestampInput = document.getElementById("timestamp").value;
+            let formattedTimestamp = timestampInput.replace("T", " ") + ":00";
+
+            let formData = {
+              cyclone_id: document.getElementById("sid").value,
+              season: formattedTimestamp,
+              basin: document.getElementById("basin").value,
+              nature: document.getElementById("nature").value,
+              latitude: parseFloat(document.getElementById("latitude").value),
+              longitude: parseFloat(document.getElementById("longitude").value),
+              wind: parseFloat(document.getElementById("wind").value),
+              dist2land: parseFloat(document.getElementById("dist2land").value),
+              storm_dir: parseFloat(document.getElementById("storm_dir").value),
+              storm_speed: parseFloat(
+                document.getElementById("storm_speed").value
+              ),
+            };
+
+            fetch("/submit-form/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": getCSRFToken(),
+              },
+              body: JSON.stringify(formData),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                console.log("Form submitted successfully:", data);
+
+                if (data.status === 200) {
+                  console.log(data);
+                  console.log(data.cyclone_id);
+                  console.log(data.stage);
+                  document.getElementById(
+                    "predicted_stage"
+                  ).innerText = `Predicted Stage: ${data.stage}`;
+                  fetchByCycloneId(data.cyclone_id); // Fetch and display updated data
+                }
+              })
+              .catch((error) => console.error("Error submitting form:", error));
+          });
+
+        // Load the most recent cyclone on page load
+        fetchAndRenderMostRecent(1);
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="javascript:location.reload()">TROPICAL CYCLONES</a></h1>
+    </header>
+    <main>
+      <!-- Left column with the form and submit button -->
+      <div class="left-column">
+        <section>
+          <h2>INSERT NEW DATA</h2>
+          <fieldset>
+            <form id="dataForm">
+              <label for="sid">SID</label>
+              <input type="text" id="sid" name="sid" required />
+
+              <label for="wind">Wind Speed (knots)</label>
+              <input type="number" id="wind" name="wind" required />
+
+              <label for="timestamp">Timestamp</label>
+              <input
+                type="datetime-local"
+                id="timestamp"
+                name="timestamp"
+                required
+              />
+
+              <label for="basin">Basin</label>
+              <select id="basin" name="basin" required>
+                <option value="">Select a basin</option>
+                <option value="NA">NA - North Atlantic</option>
+                <option value="EP">EP - Eastern North Pacific</option>
+                <option value="WP">WP - Western North Pacific</option>
+                <option value="NI">NI - North Indian</option>
+                <option value="SI">SI - South Indian</option>
+                <option value="SP">SP - Southern Pacific</option>
+                <option value="SA">SA - South Atlantic</option>
+                <option value="MM">MM - Missing</option>
+              </select>
+
+              <label for="nature">Nature</label>
+              <select id="nature" name="nature" required>
+                <option value="">Select nature type</option>
+                <option value="DS">DS - Disturbance</option>
+                <option value="TS">TS - Tropical</option>
+                <option value="ET">ET - Extratropical</option>
+                <option value="SS">SS - Subtropical</option>
+                <option value="NR">NR - Not reported</option>
+                <option value="MX">MX - Mixture</option>
+              </select>
+
+              <label for="latitude">Latitude (degrees north)</label>
+              <input
+                type="number"
+                id="latitude"
+                name="latitude"
+                min="-90"
+                max="90"
+                step="1"
+                required
+              />
+
+              <label for="longitude">Longitude (degrees east)</label>
+              <input
+                type="number"
+                id="longitude"
+                name="longitude"
+                min="-180"
+                max="180"
+                step="1"
+                required
+              />
+
+              <label for="dist2land">Distance to Land (km)</label>
+              <input type="number" id="dist2land" name="dist2land" required />
+
+              <label for="storm_speed">Storm Translation Speed (knots)</label>
+              <input
+                type="number"
+                id="storm_speed"
+                name="storm_speed"
+                required
+              />
+
+              <label for="storm_dir">Storm Direction (degrees)</label>
+              <input type="number" id="storm_dir" name="storm_dir" required />
+
+              <button type="submit">SUBMIT</button>
+            </form>
+          </fieldset>
+        </section>
+      </div>
+
+      <!-- Right column with filter, map and prediction -->
+      <div class="right-column">
+        <section>
+          <h2>FILTER BY</h2>
+          <fieldset>
+            <div class="filter-group">
+              <input
+                type="radio"
+                id="last_n_storms"
+                name="filter"
+                value="last_n"
+                checked
+              />
+              <label for="last_n_storms">LAST</label>
+              <input type="number" id="number_of_storms" />
+              STORMS
+            </div>
+            <div class="filter-group">
+              <input type="radio" id="by_sid" name="filter" value="sid" />
+              <label for="by_sid">SID</label>
+              <input type="text" id="sid_input" />
+            </div>
+          </fieldset>
+        </section>
+        <!-- Content Display -->
+        <section>
+          <h2>LATEST CYCLONE ACTIVITY</h2>
+          <fieldset>
+            {{ plot_html|safe }}
+            <div id="plotlyDiv"></div>
+            <div id="predicted_stage">No predictions available yet.</div>
+          </fieldset>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="social-links">
+        <a href="https://github.com/dsti-labs/tropical-cyclones"
+          ><i class="fab fa-github" style="font-size: 2.5rem"></i
+        ></a>
+        <a href="https://mit-license.org/"
+          ><i class="fas fa-file-contract" style="font-size: 2.5rem"></i
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>
