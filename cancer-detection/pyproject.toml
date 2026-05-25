@@ -1,0 +1,28 @@
+[project]
+name = "cancer-detection"
+version = "26.05"
+description = "Breast cancer classification using Decision Tree and KNN models"
+requires-python = ">=3.14.5"
+dependencies = [
+    "polars>=1.41.0",
+    "pyarrow>=24.0.0",
+    "plotly>=6.7.0",
+    "scikit-learn>=1.8.0",
+    "optuna>=4.8.0",
+    "tqdm>=4.67.3",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "nbformat>=5.10.4",
+    "pytest>=9.0.3",
+    "ruff>=0.15.14",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
