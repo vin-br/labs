@@ -29,15 +29,18 @@ cover/
 # Django:
 *.log
 local_settings.py
+db.sqlite3
 db.sqlite3-journal
 .db/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Java Libraries
-libs/
-*.jar
+# R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
 
 # Python
 __pypackages__/
@@ -66,9 +69,9 @@ venv.bak/
 .history/
 *.code-workspace
 
-# tropical-cyclone project files
-data/ibtracs.csv
-web_app/app/data/weights/base_augmented_model_histGradientBoost.pkl
+# tropical-cyclones project files
+tropical-cyclones/data/ibtracs.csv
+tropical-cyclones/web_app/app/data/weights/base_augmented_model_histGradientBoost.pkl
 
 # cycling-operator project files
-cycling_operator/libs/
+cycling-operator/libs/
