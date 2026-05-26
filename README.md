@@ -13,9 +13,9 @@ A collection of data science, machine learning, and data engineering projects ex
 Labs/
 ├── cancer-detection/
 ├── cycling-operator/
-├── enron/
-├── house-prices/
-├── titanic/
+├── enron-analysis/
+├── price-estimation/
+├── survival-prediction/
 └── tropical-cyclones/
 ```
 
@@ -25,10 +25,10 @@ Labs/
 
 ### Machine Learning Classification
 - **`cancer-detection/`**: Binary classification of breast cancer cells from biopsy measurements (Kaggle dataset) using Decision Tree, KNN, and MLP classifiers with Optuna hyperparameter tuning.
-- **`titanic/`**: Passenger survival prediction using feature engineering and multiple algorithms.
+- **`survival-prediction/`**: Passenger survival prediction using feature engineering and multiple algorithms.
 
 ### Machine Learning Regression
-- **`house-prices/`**: Ames housing price prediction using 79 explanatory variables (Kaggle competition).
+- **`price-estimation/`**: Ames housing price estimation using 79 explanatory variables (Kaggle dataset).
 
 ### Data Analysis & Visualization
 - **`enron/`**: Exploratory data analysis of the Enron email dataset using R (notebooks and Shiny app).
