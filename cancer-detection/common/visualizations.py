@@ -4,7 +4,6 @@ Cancer Detection - Visualizations
 Plotly charts for EDA and model evaluation.
 """
 
-import optuna
 import plotly.graph_objects as go
 import plotly.subplots as sp
 import polars as pl

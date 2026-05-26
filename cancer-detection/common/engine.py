@@ -132,7 +132,3 @@ def train_mlp(
                  classification_report(target_test, test_predictions))
 
     return model, study, test_predictions
-
-
-# To test ML:
-# HistGradientBoosting, SVC, Random Forest, CatBoost
