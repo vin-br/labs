@@ -18,8 +18,8 @@ from sklearn.neural_network import MLPClassifier
 from .visualizations import plot_mlp_loss_curve, plot_optuna_trials
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
-log = logging.getLogger(__name__)
-optuna.logging.set_verbosity(optuna.logging.WARNING)
+log = logging.getLogger(name=__name__)
+optuna.logging.set_verbosity(verbosity=optuna.logging.WARNING)
 mlflow.sklearn.autolog(log_models=True, serialization_format="pickle")
 
 ROOT = Path(__file__).parent.parent
@@ -53,7 +53,7 @@ def train_knn(
     with mlflow.start_run(run_name="knn"):
 
         def objective(trial: optuna.Trial) -> float:
-            k = trial.suggest_int("n_neighbors", 2, 41)
+            k = trial.suggest_int(name="n_neighbors", low=2, high=41)
             model = neighbors.KNeighborsClassifier(n_neighbors=k)
             return model_selection.cross_val_score(model, features_train, target_train, cv=5, scoring="accuracy").mean()  # noqa: E501
 
@@ -64,7 +64,7 @@ def train_knn(
         model.fit(features_train, target_train)
         test_predictions = model.predict(features_test)
 
-        mlflow.log_figure(plot_optuna_trials(study, "KNN"), "optuna_trials.html")
+        mlflow.log_figure(figure=plot_optuna_trials(study, model_name="KNN"), artifact_file="optuna_trials.html") # noqa: E501
 
         log.info("KNN best k=%d (cross-validation accuracy: %.4f)\n%s",
                  study.best_params["n_neighbors"], study.best_value,
@@ -81,13 +81,13 @@ def train_mlp(
 
         def objective(trial: optuna.Trial) -> float:
             hidden_layer_sizes = tuple(
-                trial.suggest_int(f"units_layer_{i}", 16, 128, step=16)
-                for i in range(trial.suggest_int("n_layers", 1, 3))
+                trial.suggest_int(f"units_layer_{i}", low=16, high=128, step=16)
+                for i in range(trial.suggest_int(name="n_layers", low=1, high=3))
             )
             model = MLPClassifier(
                 hidden_layer_sizes=hidden_layer_sizes,
-                alpha=trial.suggest_float("alpha", 1e-4, 1e-1, log=True),
-                learning_rate_init=trial.suggest_float("learning_rate_init", 1e-4, 1e-1, log=True),
+                alpha=trial.suggest_float(name="alpha", low=1e-4, high=1e-1, log=True),
+                learning_rate_init=trial.suggest_float(name="learning_rate_init", low=1e-4, high=1e-1, log=True), # noqa: E501
                 max_iter=1200,
                 random_state=42,
             )
@@ -109,7 +109,7 @@ def train_mlp(
         model.fit(features_train, target_train)
         test_predictions = model.predict(features_test)
 
-        mlflow.log_figure(plot_mlp_loss_curve(model, "MLP"), "loss_curve.html")
+        mlflow.log_figure(figure=plot_mlp_loss_curve(model, model_name="MLP"), artifact_file="loss_curve.html") # noqa: E501
 
         log.info("MLP best params: layers=%s, alpha=%.4f, lr=%.4f (cv accuracy: %.4f)\n%s",
                  hidden_layer_sizes, best["alpha"], best["learning_rate_init"], study.best_value,
