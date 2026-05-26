@@ -2,14 +2,42 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vin-br/)
 
-## Context
+## Overview
+A collection of data science, machine learning, and data engineering projects exploring various datasets, algorithms, and analytical pipelines.
 
-A set of data science and machine learning projects exploring various datasets — a place to test ideas, models, and analytical approaches.
+---
 
-## About
+## Repository Structure
 
-This repository regroups my data science and machine learning projects linked to my studies.
+```
+Labs/
+├── cancer-detection/
+├── cycling-operator/
+├── enron/
+├── house-prices/
+├── titanic/
+└── tropical-cyclones/
+```
 
-## Disclamer
+---
 
-This repository is intended for learning purposes only.
+## Projects
+
+### Machine Learning Classification
+- **`cancer-detection/`**: Binary classification of breast cancer cells from biopsy measurements (Kaggle dataset) using Decision Tree, KNN, and MLP classifiers with Optuna hyperparameter tuning.
+- **`titanic/`**: Passenger survival prediction using feature engineering and multiple algorithms.
+
+### Machine Learning Regression
+- **`house-prices/`**: Ames housing price prediction using 79 explanatory variables (Kaggle competition).
+
+### Data Analysis & Visualization
+- **`enron/`**: Exploratory data analysis of the Enron email dataset using R (notebooks and Shiny app).
+- **`tropical-cyclones/`**: Machine learning pipeline and Django web app for tropical cyclone analysis.
+
+### Data Engineering & Transformation
+- **`cycling-operator/`**: XML/XSL transformation pipelines for cycling tour data with Python validation and JSON exports.
+
+---
+
+## Notes
+All projects are intended for learning and exploration purposes.
