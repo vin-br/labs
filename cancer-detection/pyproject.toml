@@ -1,7 +1,7 @@
 [project]
 name = "cancer-detection"
 version = "26.05"
-description = "Breast cancer classification using Decision Tree and KNN models"
+description = "ML Pipeline for Cancer Classification"
 requires-python = ">=3.14.5"
 dependencies = [
     "polars>=1.41.0",
