@@ -11,14 +11,11 @@ from pathlib import Path
 import mlflow
 import mlflow.sklearn
 import optuna
-import polars as pl
 from sklearn import model_selection, neighbors, tree
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
-from sklearn.preprocessing import StandardScaler
 
-from common.visualizations import plot_mlp_loss_curve, plot_optuna_trials
+from .visualizations import plot_mlp_loss_curve, plot_optuna_trials
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
@@ -26,29 +23,6 @@ optuna.logging.set_verbosity(optuna.logging.WARNING)
 mlflow.sklearn.autolog(log_models=True, serialization_format="pickle")
 
 ROOT = Path(__file__).parent.parent
-
-
-def load_and_prepare_data(
-    data_path: str = "data/breast_cancer.parquet",
-) -> tuple:
-    """Load parquet, split 80/20 train/test, scale features."""
-    breast_cancer = pl.read_parquet(ROOT / data_path)
-
-    feature_columns = breast_cancer.columns[
-        breast_cancer.columns.index("radius_mean"):breast_cancer.columns.index("fractal_dimension_worst") + 1
-    ]
-    features = breast_cancer.select(feature_columns).to_numpy()
-    target = breast_cancer["diagnosis"].to_numpy()
-
-    features_train, features_test, target_train, target_test = train_test_split(
-        features, target, test_size=0.2, random_state=42
-    )
-
-    scaler = StandardScaler()
-    features_train = scaler.fit_transform(features_train)
-    features_test = scaler.transform(features_test)
-
-    return features_train, features_test, target_train, target_test, scaler
 
 
 def train_decision_tree(
@@ -64,7 +38,7 @@ def train_decision_tree(
         model.fit(features_train, target_train)
         test_predictions = model.predict(features_test)
 
-        log.info("Decision Tree - Cross-validation Accuracy: %.4f", cross_validation_scores["test_accuracy"].mean())
+        log.info("Decision Tree - Cross-validation Accuracy: %.4f", cross_validation_scores["test_accuracy"].mean())  # noqa: E501
         log.info("Decision Tree - Test Accuracy:             %.4f\n%s",
                  accuracy_score(target_test, test_predictions),
                  classification_report(target_test, test_predictions))
@@ -75,13 +49,13 @@ def train_decision_tree(
 def train_knn(
     features_train, features_test, target_train, target_test
 ) -> tuple:
-    """Tune KNN k via Optuna (5-fold cross-validation), retrain on full train set, evaluate on test."""
+    """Tune KNN k via Optuna (5-fold cross-validation), retrain on train set, evaluate on test."""
     with mlflow.start_run(run_name="knn"):
 
         def objective(trial: optuna.Trial) -> float:
             k = trial.suggest_int("n_neighbors", 2, 41)
             model = neighbors.KNeighborsClassifier(n_neighbors=k)
-            return model_selection.cross_val_score(model, features_train, target_train, cv=5, scoring="accuracy").mean()
+            return model_selection.cross_val_score(model, features_train, target_train, cv=5, scoring="accuracy").mean()  # noqa: E501
 
         study = optuna.create_study(direction="maximize")
         study.optimize(objective, n_trials=40)
@@ -117,7 +91,7 @@ def train_mlp(
                 max_iter=1200,
                 random_state=42,
             )
-            return model_selection.cross_val_score(model, features_train, target_train, cv=5, scoring="accuracy").mean()
+            return model_selection.cross_val_score(model, features_train, target_train, cv=5, scoring="accuracy").mean()  # noqa: E501
 
         study = optuna.create_study(direction="maximize")
         study.optimize(objective, n_trials=40)

@@ -8,7 +8,7 @@ import logging
 
 import mlflow
 
-from common.engine import load_and_prepare_data, train_decision_tree, train_knn, train_mlp
+from common import load_and_prepare_data, train_decision_tree, train_knn, train_mlp
 
 log = logging.getLogger(name=__name__)
 logging.getLogger(name="mlflow.sklearn").setLevel(level=logging.ERROR)
