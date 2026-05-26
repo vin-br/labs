@@ -9,7 +9,6 @@ dependencies = [
     "plotly>=6.7.0",
     "scikit-learn>=1.8.0",
     "optuna>=4.8.0",
-    "tqdm>=4.67.3",
 ]
 
 [dependency-groups]

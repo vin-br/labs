@@ -11,18 +11,21 @@ import polars as pl
 from sklearn import model_selection, neighbors, tree
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__name__)
 optuna.logging.set_verbosity(optuna.logging.WARNING)
 
+ROOT = Path(__file__).parent.parent
 
 def load_and_prepare_data(
     data_path: str = "data/breast_cancer.parquet",
 ) -> tuple:
     """Load parquet, split 80/20 train/test, scale features."""
-    breast_cancer = pl.read_parquet(data_path)
+    full_path = ROOT / data_path if not Path(data_path).is_absolute() else Path(data_path)
+    breast_cancer = pl.read_parquet(str(full_path))
 
     feature_columns = breast_cancer.columns[
         breast_cancer.columns.index("radius_mean"):breast_cancer.columns.index("fractal_dimension_worst") + 1
@@ -43,7 +46,7 @@ def load_and_prepare_data(
 
 def save_model(model: object, name: str, models_dir: str = "models") -> None:
     """Persist a trained model to disk via joblib."""
-    path = Path(models_dir)
+    path = ROOT / models_dir if not Path(models_dir).is_absolute() else Path(models_dir)
     path.mkdir(exist_ok=True)
     joblib.dump(model, path / f"{name}.joblib")
     log.info("Saved model → %s/%s.joblib", models_dir, name)
@@ -85,6 +88,50 @@ def train_knn(
     test_predictions = model.predict(features_test)
 
     log.info("KNN best k=%d (cross-validation accuracy: %.4f)", study.best_params["n_neighbors"], study.best_value)
+    log.info("\nTest Set Metrics:\n%s", classification_report(target_test, test_predictions))
+
+    return model, study, test_predictions
+
+
+def train_mlp(
+    features_train, features_test, target_train, target_test
+) -> tuple:
+    """Tune the Multi-Layer Perceptron architecture via Optuna (5-fold cross-validation)
+       Retrain, evaluate on test set."""
+
+    def objective(trial: optuna.Trial) -> float:
+        hidden_layer_sizes = tuple(
+            trial.suggest_int(f"units_layer_{i}", 16, 128, step=16)
+            for i in range(trial.suggest_int("n_layers", 1, 3))
+        )
+        model = MLPClassifier(
+            hidden_layer_sizes=hidden_layer_sizes,
+            alpha=trial.suggest_float("alpha", 1e-4, 1e-1, log=True),
+            learning_rate_init=trial.suggest_float("learning_rate_init", 1e-4, 1e-1, log=True),
+            max_iter=1000,
+            random_state=42,
+        )
+        return model_selection.cross_val_score(model, features_train, target_train, cv=5, scoring="accuracy").mean()
+
+    study = optuna.create_study(direction="maximize")
+    study.optimize(objective, n_trials=40)
+
+    best = study.best_params
+    hidden_layer_sizes = tuple(
+        best[f"units_layer_{i}"] for i in range(best["n_layers"])
+    )
+    model = MLPClassifier(
+        hidden_layer_sizes=hidden_layer_sizes,
+        alpha=best["alpha"],
+        learning_rate_init=best["learning_rate_init"],
+        max_iter=1000,
+        random_state=42,
+    )
+    model.fit(features_train, target_train)
+    test_predictions = model.predict(features_test)
+
+    log.info("MLP best params: layers=%s, alpha=%.4f, lr=%.4f (cross-validation accuracy: %.4f)",
+             hidden_layer_sizes, best["alpha"], best["learning_rate_init"], study.best_value)
     log.info("\nTest Set Metrics:\n%s", classification_report(target_test, test_predictions))
 
     return model, study, test_predictions

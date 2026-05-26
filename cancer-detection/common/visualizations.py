@@ -151,6 +151,23 @@ def plot_optuna_trials(study: optuna.Study, model_name: str) -> go.Figure:
     )
 
 
+def plot_mlp_loss_curve(model, model_name: str = "MLP") -> go.Figure:
+    """Line chart of training loss over iterations from MLPClassifier.loss_curve_."""
+    return go.Figure(
+        data=go.Scatter(
+            x=list(range(1, len(model.loss_curve_) + 1)),
+            y=model.loss_curve_,
+            mode="lines",
+            line=dict(color="steelblue", width=2),
+        ),
+        layout=go.Layout(
+            title=f"{model_name} — Training Loss Curve",
+            xaxis_title="Iteration", yaxis_title="Loss",
+            width=700, height=450,
+        ),
+    )
+
+
 def plot_metrics_comparison(
     model_names: list[str],
     test_accuracies: list[float],

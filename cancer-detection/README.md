@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Objective](#objective)
 - [Data](#data)
-- [Project Files](#project-files)
+- [Models](#models)
 - [Setup & Usage](#setup--usage)
 
 ## Overview
@@ -20,21 +20,26 @@ Classify breast cancer cells as malignant or benign using fine-needle biopsy mea
 - **File**: `breast_cancer.parquet`
 - **Samples**: 569
 - **Features**: 31 (mean, std, worst) from 10 measurements
-- **Format**: Parquet (optimized for analytics, ~50% smaller than CSV)
+- **Format**: Parquet
 
-### Data Split Strategy
+### Data Split
 
-The dataset is split into three sets:
+- **Train**: 80% (~455 samples) — used for model training & 5-fold cross-validation
+- **Test**: 20% (~114 samples) — held out for final evaluation
 
-| Set | Samples | Purpose |
-|-----|---------|---------|
-| Training | 341 (60%) | Model learning |
-| Validation | 114 (20%) | Hyperparameter tuning & model selection |
-| Test | 114 (20%) | Final performance evaluation |
-
-**Key Note**: Scaler is fitted on training data only and applied to validation/test sets to prevent data leakage.
+**Note**: Scaler is fitted on training data only and applied to test set to prevent data leakage.
 
 </details>
+
+## Models
+
+Three classifiers trained with hyperparameter optimization:
+
+| Model | Optimization |
+|-------|--------------|
+| Decision Tree | 5-fold cross-validation |
+| K-Nearest Neighbors (KNN) | Optuna (40 trials, k=2–41) |
+| Multi-Layer Perceptron (MLP) | Optuna (40 trials, architecture search) |
 
 
 ## Setup & Usage
@@ -51,19 +56,5 @@ uv sync
 ```bash
 uv run python cli.py
 ```
-
-This trains both Decision Tree and KNN models on the dataset with 60/20/20 train/val/test split.
-
-### Option 2: Interactive Evaluation (Recommended)
-Open and run `evaluation.ipynb` to:
-- Train both models
-- View cross-validation training curves (with validation included)
-- Display interactive confusion matrices for validation and test sets
-- Compare model performance metrics side-by-side
-
-**Key Visualizations in the Notebook:**
-- **Training Curves**: Cross-validation accuracy by fold (Decision Tree) or by hyperparameter (KNN)
-- **Confusion Matrices**: Interactive heatmaps for validation and test sets with cell counts
-- **Performance Metrics**: Accuracy, precision, recall, F1-score comparison table
 
 </details>
