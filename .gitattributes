@@ -1,0 +1,2 @@
+# Avoid counting notebooks stats as code contributions in GitHub. These files are for exploration purposes only.
+*.ipynb linguist-vendored
