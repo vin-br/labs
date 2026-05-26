@@ -8,17 +8,19 @@ All notable changes to this repository are documented here.
 - Merged cycling-operator XML data pipeline project
 - Merged enron R analysis and Shiny app
 - Merged tropical-cyclones project
+- Added MLP classifier from sklearn to cancer-detection + reorganized files
+- Added MLflow tracking to cancer-detection CLI
 
 ### Changed
 - Updated README with repo structure and projects details
 - Updated .gitignore for all projects
 - Rebuilt cancer-detection with modern stack (latest Python, Optuna, Polars, Plotly)
-- Added MLP classifier from sklearn to cancer-detection, reorganized files
 - Code cleanup
 
 ### Removed
 
 - Custom MLP exercise
+- Remove most of the manual plots in cancer-detection in favor of MLflow + remove evaluation notebook.
 
 ## [25.10]
 

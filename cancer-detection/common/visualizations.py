@@ -8,7 +8,6 @@ import optuna
 import plotly.graph_objects as go
 import plotly.subplots as sp
 import polars as pl
-from sklearn.metrics import confusion_matrix
 
 COLORS = {"B": "steelblue", "M": "coral"}
 
@@ -39,7 +38,7 @@ def plot_scatter_pairs(
 ) -> go.Figure:
     """Subplot grid of scatter plots coloured by diagnosis."""
     cols = 2
-    rows = -(-len(feature_pairs) // cols)  # ceiling division
+    rows = -(-len(feature_pairs) // cols)
     figure = sp.make_subplots(rows=rows, cols=cols, subplot_titles=[t for _, _, t in feature_pairs])
 
     for index, (x_col, y_col, _) in enumerate(feature_pairs):
@@ -94,40 +93,6 @@ def plot_feature_distributions(data: pl.DataFrame, features: list[str]) -> go.Fi
     return figure
 
 
-def plot_confusion_matrix(y_true, y_pred, model_name: str) -> go.Figure:
-    """Heatmap confusion matrix for binary classification."""
-    matrix = confusion_matrix(y_true, y_pred)
-    labels = ["Benign", "Malignant"]
-    return go.Figure(
-        data=go.Heatmap(
-            z=matrix, x=labels, y=labels,
-            text=matrix, texttemplate="%{text}", textfont={"size": 18},
-            colorscale="Blues", colorbar=dict(title="Count"),
-        ),
-        layout=go.Layout(
-            title=f"{model_name} — Confusion Matrix (Test Set)",
-            xaxis_title="Predicted", yaxis_title="Actual",
-            width=500, height=450,
-        ),
-    )
-
-
-def plot_cross_validation_scores(cross_validation_scores: dict, model_name: str) -> go.Figure:
-    """Bar chart of per-fold train vs test accuracy from cross_validate()."""
-    n_folds = len(cross_validation_scores["test_accuracy"])
-    folds = [f"Fold {i + 1}" for i in range(n_folds)]
-    figure = go.Figure()
-    figure.add_trace(go.Bar(name="Train", x=folds, y=cross_validation_scores["train_accuracy"], marker_color="steelblue"))
-    figure.add_trace(go.Bar(name="Test", x=folds, y=cross_validation_scores["test_accuracy"], marker_color="coral"))
-    figure.update_layout(
-        title=f"{model_name} — Cross-Validation Accuracy per Fold",
-        xaxis_title="Fold", yaxis_title="Accuracy",
-        yaxis_range=[0.8, 1.0], barmode="group",
-        width=700, height=450, hovermode="x unified",
-    )
-    return figure
-
-
 def plot_optuna_trials(study: optuna.Study, model_name: str) -> go.Figure:
     """Scatter plot of Optuna trial accuracy over k values."""
     trials = pl.DataFrame({
@@ -139,8 +104,8 @@ def plot_optuna_trials(study: optuna.Study, model_name: str) -> go.Figure:
             x=trials["k"].to_list(),
             y=trials["accuracy"].to_list(),
             mode="markers",
-            marker=dict(size=8, color=trials["accuracy"].to_list(), colorscale="Blues", showscale=True),
-            text=[f"k={k}, acc={a:.4f}" for k, a in zip(trials["k"].to_list(), trials["accuracy"].to_list())],
+            marker=dict(size=8, color=trials["accuracy"].to_list(), colorscale="Blues", showscale=True),  # noqa: E501
+            text=[f"k={k}, acc={a:.4f}" for k, a in zip(trials["k"].to_list(), trials["accuracy"].to_list())],  # noqa: E501
             hoverinfo="text",
         ),
         layout=go.Layout(
@@ -166,29 +131,3 @@ def plot_mlp_loss_curve(model, model_name: str = "MLP") -> go.Figure:
             width=700, height=450,
         ),
     )
-
-
-def plot_metrics_comparison(
-    model_names: list[str],
-    test_accuracies: list[float],
-    test_precisions: list[float],
-    test_recalls: list[float],
-) -> go.Figure:
-    """Grouped bar chart comparing accuracy, precision, recall across models."""
-    figure = go.Figure()
-    for metric, values, color in [
-        ("Accuracy", test_accuracies, "steelblue"),
-        ("Precision", test_precisions, "coral"),
-        ("Recall", test_recalls, "mediumseagreen"),
-    ]:
-        figure.add_trace(go.Bar(
-            name=metric, x=model_names, y=values,
-            marker_color=color,
-            text=[f"{v:.4f}" for v in values], textposition="outside",
-        ))
-    figure.update_layout(
-        title="Model Comparison — Test Set Metrics",
-        yaxis_range=[0.85, 1.02], barmode="group",
-        width=700, height=450, hovermode="x unified",
-    )
-    return figure

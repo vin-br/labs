@@ -57,6 +57,11 @@ venv.bak/
 .env
 .env.*
 
+# MLflow
+mlruns/
+mlruns.db
+mlflow.db
+
 # System files
 .DS_Store
 .Trash-*

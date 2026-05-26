@@ -52,9 +52,14 @@ Three classifiers trained with hyperparameter optimization:
 uv sync
 ```
 
-### Option 1: Train Models from CLI
+### Train Models from CLI
 ```bash
 uv run python cli.py
+```
+
+### View Results
+```bash
+mlflow ui --backend-store-uri sqlite:///mlruns/mlruns.db
 ```
 
 </details>
