@@ -1,0 +1,33 @@
+[project]
+name = "survival-prediction"
+version = "26.05"
+description = "ML Pipeline for Survival Prediction"
+requires-python = ">=3.14.5"
+dependencies = [
+    "polars>=1.41.0",
+    "plotly>=6.7.0",
+    "scikit-learn>=1.8.0",
+    "catboost>=1.2.10",
+    "optuna>=4.8.0",
+    "mlflow>=3.12.0",
+    "skops>=0.14.0",
+]
+
+[dependency-groups]
+dev = [
+    "pip",
+    "ipykernel>=7.2.0",
+    "nbformat>=5.10.4",
+    "pytest>=9.0.3",
+    "ruff>=0.15.14",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.uv]
+environments = ["sys_platform == 'darwin'"]
