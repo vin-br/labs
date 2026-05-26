@@ -8,7 +8,14 @@ import logging
 
 import mlflow
 
-from common import load_and_prepare_data, train_decision_tree, train_knn, train_mlp
+from common import (
+    load_and_prepare_data,
+    train_catboost,
+    train_hist_gradient_boosting,
+    train_mlp,
+    train_random_forest,
+    train_svc,
+)
 
 log = logging.getLogger(name=__name__)
 logging.getLogger(name="mlflow.sklearn").setLevel(level=logging.ERROR)
@@ -24,11 +31,17 @@ def main() -> None:
     log.info(msg="Loading and preparing data...")
     features_train, features_test, target_train, target_test, _ = load_and_prepare_data()
 
-    log.info(msg="Training Decision Tree...")
-    train_decision_tree(features_train, features_test, target_train, target_test)
+    log.info(msg="Training Random Forest...")
+    train_random_forest(features_train, features_test, target_train, target_test)
 
-    log.info(msg="Training K-Nearest Neighbors with Optuna...")
-    train_knn(features_train, features_test, target_train, target_test)
+    log.info(msg="Training CatBoost...")
+    train_catboost(features_train, features_test, target_train, target_test)
+
+    log.info(msg="Training HistGradientBoosting...")
+    train_hist_gradient_boosting(features_train, features_test, target_train, target_test)
+
+    log.info(msg="Training SVC...")
+    train_svc(features_train, features_test, target_train, target_test)
 
     log.info(msg="Training Multi-Layer Perceptron with Optuna...")
     train_mlp(features_train, features_test, target_train, target_test)

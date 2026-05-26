@@ -93,29 +93,6 @@ def plot_feature_distributions(data: pl.DataFrame, features: list[str]) -> go.Fi
     return figure
 
 
-def plot_optuna_trials(study: optuna.Study, model_name: str) -> go.Figure:
-    """Scatter plot of Optuna trial accuracy over k values."""
-    trials = pl.DataFrame({
-        "k": [trial.params["n_neighbors"] for trial in study.trials],
-        "accuracy": [trial.value for trial in study.trials],
-    }).sort("k")
-    return go.Figure(
-        data=go.Scatter(
-            x=trials["k"].to_list(),
-            y=trials["accuracy"].to_list(),
-            mode="markers",
-            marker=dict(size=8, color=trials["accuracy"].to_list(), colorscale="Blues", showscale=True),  # noqa: E501
-            text=[f"k={k}, acc={a:.4f}" for k, a in zip(trials["k"].to_list(), trials["accuracy"].to_list())],  # noqa: E501
-            hoverinfo="text",
-        ),
-        layout=go.Layout(
-            title=f"{model_name} — Optuna Trial Accuracy by k",
-            xaxis_title="k (n_neighbors)", yaxis_title="Cross-Validation Accuracy",
-            width=700, height=450,
-        ),
-    )
-
-
 def plot_mlp_loss_curve(model, model_name: str = "MLP") -> go.Figure:
     """Line chart of training loss over iterations from MLPClassifier.loss_curve_."""
     return go.Figure(

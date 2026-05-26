@@ -57,6 +57,9 @@ venv.bak/
 .env
 .env.*
 
+# ML Catboost
+catboost_info/
+
 # MLflow
 mlruns/
 mlruns.db

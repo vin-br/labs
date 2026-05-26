@@ -11,11 +11,12 @@ from pathlib import Path
 import mlflow
 import mlflow.sklearn
 import optuna
-from sklearn import model_selection, neighbors, tree
+from catboost import CatBoostClassifier
+from sklearn import ensemble, model_selection, svm
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.neural_network import MLPClassifier
 
-from .visualizations import plot_mlp_loss_curve, plot_optuna_trials
+from .visualizations import plot_mlp_loss_curve
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(name=__name__)
@@ -25,52 +26,67 @@ mlflow.sklearn.autolog(log_models=True, serialization_format="pickle")
 ROOT = Path(__file__).parent.parent
 
 
-def train_decision_tree(
+def train_random_forest(
     features_train, features_test, target_train, target_test
 ) -> tuple:
-    """Train Decision Tree with 5-fold cross-validation, evaluate on test set."""
-    with mlflow.start_run(run_name="decision_tree"):
-        model = tree.DecisionTreeClassifier(random_state=42)
-
-        cross_validation_scores = model_selection.cross_validate(
-            model, features_train, target_train, cv=5, scoring=["accuracy"], return_train_score=True
-        )
+    """Train Random Forest with default parameters, evaluate on test set."""
+    with mlflow.start_run(run_name="random_forest"):
+        model = ensemble.RandomForestClassifier(random_state=42)
         model.fit(features_train, target_train)
         test_predictions = model.predict(features_test)
 
-        log.info("Decision Tree - Cross-validation Accuracy: %.4f", cross_validation_scores["test_accuracy"].mean())  # noqa: E501
-        log.info("Decision Tree - Test Accuracy:             %.4f\n%s",
+        log.info("Random Forest accuracy: %.4f\n%s",
                  accuracy_score(target_test, test_predictions),
                  classification_report(target_test, test_predictions))
 
-    return model, cross_validation_scores, test_predictions
+    return model, None, test_predictions
 
-
-def train_knn(
+def train_catboost(
     features_train, features_test, target_train, target_test
 ) -> tuple:
-    """Tune KNN k via Optuna (5-fold cross-validation), retrain on train set, evaluate on test."""
-    with mlflow.start_run(run_name="knn"):
-
-        def objective(trial: optuna.Trial) -> float:
-            k = trial.suggest_int(name="n_neighbors", low=2, high=41)
-            model = neighbors.KNeighborsClassifier(n_neighbors=k)
-            return model_selection.cross_val_score(model, features_train, target_train, cv=5, scoring="accuracy").mean()  # noqa: E501
-
-        study = optuna.create_study(direction="maximize")
-        study.optimize(objective, n_trials=40)
-
-        model = neighbors.KNeighborsClassifier(n_neighbors=study.best_params["n_neighbors"])
+    """Train CatBoost with default parameters, evaluate on test set."""
+    with mlflow.start_run(run_name="catboost"):
+        model = CatBoostClassifier(random_state=42, verbose=0)
         model.fit(features_train, target_train)
         test_predictions = model.predict(features_test)
 
-        mlflow.log_figure(figure=plot_optuna_trials(study, model_name="KNN"), artifact_file="optuna_trials.html") # noqa: E501
-
-        log.info("KNN best k=%d (cross-validation accuracy: %.4f)\n%s",
-                 study.best_params["n_neighbors"], study.best_value,
+        log.info("CatBoost accuracy: %.4f\n%s",
+                 accuracy_score(target_test, test_predictions),
                  classification_report(target_test, test_predictions))
 
-    return model, study, test_predictions
+    return model, None, test_predictions
+
+
+def train_hist_gradient_boosting(
+    features_train, features_test, target_train, target_test
+) -> tuple:
+    """Train HistGradientBoosting with default parameters, evaluate on test set."""
+    with mlflow.start_run(run_name="hist_gradient_boosting"):
+        model = ensemble.HistGradientBoostingClassifier(random_state=42)
+        model.fit(features_train, target_train)
+        test_predictions = model.predict(features_test)
+
+        log.info("HistGradientBoosting accuracy: %.4f\n%s",
+                 accuracy_score(target_test, test_predictions),
+                 classification_report(target_test, test_predictions))
+
+    return model, None, test_predictions
+
+
+def train_svc(
+    features_train, features_test, target_train, target_test
+) -> tuple:
+    """Train SVC with default parameters, evaluate on test set."""
+    with mlflow.start_run(run_name="svc"):
+        model = svm.SVC(random_state=42)
+        model.fit(features_train, target_train)
+        test_predictions = model.predict(features_test)
+
+        log.info("SVC accuracy: %.4f\n%s",
+                 accuracy_score(target_test, test_predictions),
+                 classification_report(target_test, test_predictions))
+
+    return model, None, test_predictions
 
 
 def train_mlp(
@@ -116,3 +132,7 @@ def train_mlp(
                  classification_report(target_test, test_predictions))
 
     return model, study, test_predictions
+
+
+# To test ML:
+# HistGradientBoosting, SVC, Random Forest, CatBoost
