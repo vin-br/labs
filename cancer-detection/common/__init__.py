@@ -1,4 +1,3 @@
-# Init
 """Cancer Detection - Common utilities"""
 
 from .engine import train_decision_tree, train_knn, train_mlp
