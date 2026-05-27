@@ -2,19 +2,19 @@
 
 Usage
 -----
-python python/11_validate_and_transform.py
+uv run python run.py
 """
 
 import argparse
 import subprocess
 import sys
+from pathlib import Path
+
 import lxml.etree as ET
 
-from pathlib import Path
-from typing import List
-
-# Classpath for Saxon-HE and XML Resolver libraries
-SAXON_CLASSPATH = ":".join(["libs/saxon-he-12.4.jar", "libs/xmlresolver-5.1.1.jar"])
+# Classpath separator: ";" on Windows, ":" on Mac/Linux
+_SEP = ";" if sys.platform == "win32" else ":"
+SAXON_CLASSPATH = _SEP.join(["libs/saxon-he-12.4.jar", "libs/xmlresolver-5.1.1.jar"])
 
 # Supported languages for the filtering guides transformation (scenario 3)
 SUPPORTED_LANGUAGES = (
@@ -113,7 +113,7 @@ def transform_with_saxon(
     # The XML files use the Title Case for language tags, so we convert
     # the language to title case here before sending it to Saxon.
     if lang:
-        command: List[str] = [
+        command: list[str] = [
             "java",
             "-cp",
             SAXON_CLASSPATH,
@@ -134,7 +134,7 @@ def transform_with_saxon(
         # Saxon expects one argument (not a Python list) for that parameter.
         new_xml_path = [f"../{p}" for p in xml_paths]
         merged_path = " ".join(new_xml_path)
-        command: List[str] = [
+        command: list[str] = [
             "java",
             "-cp",
             SAXON_CLASSPATH,
@@ -146,7 +146,7 @@ def transform_with_saxon(
         ]
 
     else:
-        command: List[str] = [
+        command: list[str] = [
             "java",
             "-cp",
             SAXON_CLASSPATH,

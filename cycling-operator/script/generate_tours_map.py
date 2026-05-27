@@ -262,8 +262,8 @@ def main() -> None:
     )
     parser.add_argument(
         "--out",
-        default="outputs/html/12_tours_map_py.html",
-        help="Path to the HTML output file (default: outputs/html/12_tours_map_py.html)",
+        default="outputs/html/11_tours_map_py.html",
+        help="Path to the HTML output file (default: outputs/html/11_tours_map_py.html)",
     )
     parser.add_argument("--title", default="Tours Map (Python)", help="Page title")
     args = parser.parse_args()

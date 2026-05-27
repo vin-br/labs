@@ -1,3 +1,19 @@
-[tool.black]
+[project]
+name = "cycling-operator"
+version = "26.05"
+requires-python = ">=3.14.5"
+dependencies = [
+    "lxml>=6.1.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.14",
+]
+
+[tool.ruff]
 line-length = 100
-extend-exclude = '^outputs/'
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
