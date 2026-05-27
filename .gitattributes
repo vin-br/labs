@@ -1,2 +1,4 @@
-# Avoid counting notebooks stats as code contributions in GitHub. These files are for exploration purposes only.
+# Avoid counting notebooks stats as code contributions in GitHub.
 *.ipynb linguist-vendored
+# Avoid counting generated files as code contributions in GitHub.
+enron-analysis/eda.html linguist-vendored
