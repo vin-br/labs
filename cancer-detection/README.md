@@ -104,10 +104,10 @@ Five classifiers trained with hyperparameter optimization:
 
 | Model | Optimization |
 |-------|--------------|
-| Random Forest | Default parameters |
-| CatBoost | Default parameters |
-| HistGradientBoosting | Default parameters |
-| Support Vector Classifier (SVC) | Default parameters |
-| Multi-Layer Perceptron (MLP) | Optuna (40 trials, architecture search) |
+| Random Forest | Optuna (20 trials, 5-fold CV) |
+| CatBoost | Optuna (20 trials, 5-fold CV) |
+| HistGradientBoosting | Optuna (20 trials, 5-fold CV) |
+| Support Vector Classifier (SVC) | Optuna (20 trials, 5-fold CV) |
+| Multi-Layer Perceptron (MLP) | Optuna (20 trials, architecture search) |
 
 </details>
