@@ -78,8 +78,7 @@ mlflow.db
 *.code-workspace
 
 # tropical-cyclones project files
-tropical-cyclones/data/ibtracs.csv
-tropical-cyclones/web_app/app/data/weights/base_augmented_model_histGradientBoost.pkl
+tropical-cyclones/pipeline/runs/*
 
 # cycling-operator project files
 cycling-operator/libs/
